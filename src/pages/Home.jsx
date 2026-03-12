@@ -302,7 +302,7 @@ function Services() {
             <div className="service-card__icon">{s.icon}</div>
             <h3 className="service-card__title">{s.title}</h3>
             <p className="service-card__desc">{s.desc}</p>
-            <a href="/services" className="service-card__link">
+            <a href="./services" className="service-card__link">
               Learn More
               <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
