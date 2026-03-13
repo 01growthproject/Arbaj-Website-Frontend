@@ -211,7 +211,7 @@ export default function Footer() {
       {/* ── BOTTOM BAR ── */}
       <div className="footer__bottom">
         <div className="footer__wrap footer__bottom-inner">
-          <p>© 2018 Arbaj Technology Pvt. Ltd. — All rights reserved.</p>
+          <p>© 2021 Arbaj Technology Pvt. Ltd. — All rights reserved.</p>
           {/* <p>Made with <span className="footer__heart">♥</span> in Punjab, India</p> */}
         </div>
       </div>
