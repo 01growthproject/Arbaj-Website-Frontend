@@ -319,9 +319,9 @@ function Team() {
             <p className="team-card__role">{member.role}</p>
             <p className="team-card__bio">{member.bio}</p>
             <div className="team-card__socials">
-              {member.socials.map((s) => (
+              {/* {member.socials.map((s) => (
                 <a key={s} href="#" className="team-card__social">{s}</a>
-              ))}
+              ))} */}
             </div>
           </div>
         ))}
