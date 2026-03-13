@@ -139,6 +139,8 @@
   /* Entry animation */
   animation: navbarSlideDown 0.6s var(--spring) both;
   animation-delay: 0.05s;
+
+
 }
 
 .navbar--scrolled {
@@ -689,9 +691,10 @@
   }
   .navbar {
     width: 100%;
-    padding: 11px 18px;
+    padding: 11px 15px;
     border-radius: 40px;
     margin-top: 12px;
+
   }
   .navbar--scrolled {
     padding: 12px 5vw;
@@ -884,7 +887,7 @@
     padding: 0;
   }
   .navbar {
-    padding: 10px 16px;
+    padding: 8px 16px;
   }
   .navbar--scrolled {
     padding: 11px 5vw;
