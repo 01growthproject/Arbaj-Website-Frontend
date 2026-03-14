@@ -479,6 +479,13 @@ export default function AboutPage() {
   return (
     <>
       <main>
+
+        <SEOptimization
+          title="About Us | Arbaj Technology – Digital Growth Partner"
+          description="About Us – Arbaj Technology provides expert digital marketing, web development, and creative services to help brands succeed online. Call +91 79 7361 1226"
+        />
+
+
         <AboutHero />
         <Ticker />
         <WhoWeAre />

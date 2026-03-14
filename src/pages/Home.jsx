@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/home.css';
 import { SERVICES, STATS, FAQS } from '../components/Data/HomeData';
-import {Helmet} from 'react-helmet-async'
+// import {Helmet} from 'react-helmet-async'
+import SEOptimization from "../components/SEOptimization";
 /* ═══════════════════════════════════════════════
    PARTICLE CANVAS — floats in Hero background
 ═══════════════════════════════════════════════ */
@@ -471,14 +472,10 @@ export default function HomePage() {
     <>
       <main>
 
-
-        <Helmet>
-          <title>Best Digital Marketing Company | Arbaj Technology</title>
-          <meta 
-          name="description"
-          content="This is my home page"
-          />
-        </Helmet>
+        <SEOptimization
+          title="Best Digital Marketing Company | Arbaj Technology"
+          description="Arbaj Technology is a trusted digital marketing company helping businesses grow online with real results. Call us today at +91 79 7361 1226."
+        />
 
 
 

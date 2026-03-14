@@ -449,6 +449,13 @@ export default function ContactPage() {
   return (
     <>
       <main>
+
+        <SEOptimization
+          title="Contact us Arbaj Technology | Digital Marketing Agency"
+          description="Contact Us at Arbaj Technology for digital marketing, website development, and creative services. Call +91 79 7361 1226 for a free consultation."
+        />
+
+
         <ContactHero />
         <Ticker />
         <ContactCards />

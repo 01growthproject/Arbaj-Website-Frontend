@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/services.css'
 import { STATS, SERVICES, PROCESS, FAQS } from "../components/Data/ServicesData";
+import SEOptimization from "../components/SEOptimization";
 
 
 function useReveal() {
@@ -456,6 +457,12 @@ export default function ServicePage() {
   return (
     <>
       <main>
+
+        <SEOptimization
+          title="Digital Marketing &amp; Web Development Services"
+          description="Get expert digital marketing, SEO, PPC, social media, and web development services to grow your business online with Arbaj Technology. Call +91 79 7361 1226"
+        
+        />
         <ServiceHero />
         <Ticker />
         <ServicesMini />

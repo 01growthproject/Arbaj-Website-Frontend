@@ -1,13 +1,11 @@
 import { Helmet } from "react-helmet-async"
-const SEOptimization:React.FC<{title: string}> = () => {
+
+const SEOptimization = ({ title, description }) => {
   return (
-      <Helmet>
-              <title>{title}</title>
-              <meta 
-              name="description"
-              content={descriptoin}
-              />
-            </Helmet>
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+    </Helmet>
   )
 }
 
