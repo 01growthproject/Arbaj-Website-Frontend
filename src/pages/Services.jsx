@@ -463,6 +463,8 @@ export default function ServicePage() {
           description="Get expert digital marketing, SEO, PPC, social media, and web development services to grow your business online with Arbaj Technology. Call +91 79 7361 1226"
         
         />
+
+        
         <ServiceHero />
         <Ticker />
         <ServicesMini />

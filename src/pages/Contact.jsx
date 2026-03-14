@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/contact.css';
 import { CONTACT_INFO, FAQS } from '../components/Data/ContactData'
-
+import SEOptimization from "../components/SEOptimization";
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);

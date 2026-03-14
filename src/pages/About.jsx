@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/about.css';
 import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta'
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
