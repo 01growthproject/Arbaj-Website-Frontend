@@ -12,11 +12,14 @@ import WebDevelopmentPage from "./pages/WebDevelopement";
 import DigitalMarketingPage from "./pages/DigitalMarketing";
 import GraphicDesigningPage from "./pages/GrapicDesigning";
 import SocialMediaPage from "./pages/SocialMediaMarketing";
-
+import { HelmetProvider } from 'react-helmet-async';
 // import ContactForm from "./components/Form";
 
 function App() {
   return (
+    <HelmetProvider>
+
+   
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -38,6 +41,7 @@ function App() {
       </Routes>
       <Footer />
     </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

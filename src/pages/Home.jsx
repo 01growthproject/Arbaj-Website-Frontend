@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/home.css';
 import { SERVICES, STATS, FAQS } from '../components/Data/HomeData';
-
+import {Helmet} from 'react-helmet-async'
 /* ═══════════════════════════════════════════════
    PARTICLE CANVAS — floats in Hero background
 ═══════════════════════════════════════════════ */
@@ -470,6 +470,20 @@ export default function HomePage() {
   return (
     <>
       <main>
+
+
+        <Helmet>
+          <title>Best Digital Marketing Company | Arbaj Technology</title>
+          <meta 
+          name="description"
+          content="This is my home page"
+          />
+        </Helmet>
+
+
+
+
+
         <Hero />
         <Ticker />
         <Services />
