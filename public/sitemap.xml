@@ -3,25 +3,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://arbajtechnologypvtltd.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/about</loc>
+    <loc>https://arbajtechnologypvtltd.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/services</loc>
+    <loc>https://arbajtechnologypvtltd.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://yourdomain.com/contact</loc>
+    <loc>https://arbajtechnologypvtltd.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
