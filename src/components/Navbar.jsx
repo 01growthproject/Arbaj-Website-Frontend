@@ -304,13 +304,27 @@ export default function Navbar() {
               </div>
             </li>
 
+            {/* ── ABOUT ── */}
             <li className="navbar__link-item" style={{ "--li": 2 }}>
               <Link to="/about" className={location.pathname === "/about" ? "active" : ""}>About</Link>
             </li>
 
+            {/* ── BLOG (NEW) ── */}
             <li className="navbar__link-item" style={{ "--li": 3 }}>
+
+              {/* <Link to="/blog" className={location.pathname.startsWith("/blog") ? "active" : ""}>Blog</Link> */}
+
+
+            </li>
+            
+
+            {/* ── CONTACT ── */}
+            <li className="navbar__link-item" style={{ "--li": 4 }}>
               <Link to="/contact" className={location.pathname === "/contact" ? "active" : ""}>Contact</Link>
             </li>
+
+
+
 
             {/* CTA inside mobile drawer */}
             <li className="navbar__links-cta">

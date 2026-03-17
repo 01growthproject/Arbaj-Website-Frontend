@@ -14,6 +14,7 @@ import GraphicDesigningPage from "./pages/GrapicDesigning";
 import SocialMediaPage from "./pages/SocialMediaMarketing";
 import { HelmetProvider } from 'react-helmet-async';
 // import ContactForm from "./components/Form";
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Blog />} />
 
         {/* //-----------------------DropDown---------------------------// */}
         <Route path="/seo" element={<SEOPage />} />
