@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/GraphicDesigning.css'
 import {STATS, GD_SERVICES, PROCESS, TOOLS,FAQS} from '../components/Data/DesigningData'
+
+import SEOptimization from "../components/SEOptimization";
 // ─────────────────────────────────────────
 // HOOK
 // ─────────────────────────────────────────
@@ -283,15 +285,27 @@ function CTABanner() {
 export default function GraphicDesigningPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <main>
-      <Hero />
-      <Ticker />
-      <StatsStrip />
-      <GDServices />
-      <Process />
-      <Tools />
-      <FAQ />
-      <CTABanner />
-    </main>
+   <>
+      <main>
+
+
+        <SEOptimization
+          title="Graphic Designing Services in India | Logo, Branding & Social Media Design | Arbaj Technology"
+          description="Arbaj Technology offers professional graphic designing services including logo design, brand identity, social media creatives, brochures, and packaging design to make your brand stand out."
+          keywords="graphic designing services India, logo design company, branding agency India, social media post design, brochure design, packaging design, Arbaj Technology"
+          url="https://arbajtechnologypvtltd.com/graphic"
+          image="https://arbajtechnologypvtltd.com/og-graphic.jpg"
+
+        />
+        <Hero />
+        <Ticker />
+        <StatsStrip />
+        <GDServices />
+        <Process />
+        <Tools />
+        <FAQ />
+        <CTABanner />
+      </main>
+   </>
   );
 }

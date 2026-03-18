@@ -195,7 +195,8 @@
 ════════════════════════════════════════ */
 .bl-hero__stats {
   position: absolute;
-  bottom: 32px; left: 50%;
+  bottom: 32px;
+   left: 41%;
   transform: translateX(-50%);
   display: flex;
   background: rgba(4,30,28,.7);

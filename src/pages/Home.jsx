@@ -3,6 +3,7 @@ import '../styles/home.css';
 import { SERVICES, STATS, FAQS } from '../components/Data/HomeData';
 // import {Helmet} from 'react-helmet-async'
 import SEOptimization from "../components/SEOptimization";
+import { Link } from "react-router-dom";
 /* ═══════════════════════════════════════════════
    PARTICLE CANVAS — floats in Hero background
 ═══════════════════════════════════════════════ */
@@ -185,9 +186,9 @@ function Hero() {
         </div>
 
         <h1 className="hero__title">
-          Dominate Online &amp;<br />
-          <span className="hero__title-highlight">Grow Your Business</span><br />
-          With Confidence
+          Best Digital Marketing Company<br />
+          <span className="hero__title-highlight">in India to Grow </span><br />
+          Your Business
         </h1>
 
         <p className="hero__desc">
@@ -197,15 +198,15 @@ function Hero() {
         </p>
 
         <div className="hero__actions">
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Get Free Consultation
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
-          </a>
-          <a href="/services" className="btn btn--ghost">
-            Explore Our Services
-          </a>
+          </Link>
+          <Link to="/services" className="btn btn--ghost">
+            Explore Digital Marketing Services
+          </Link>
         </div>
 
         <div className="hero__stats">
@@ -289,7 +290,10 @@ function Services() {
         <span>To Win Online</span>
       </h2>
       <p className="section__sub">
-        Complete digital marketing solutions under one roof — from strategy and design to execution and growth.
+        Complete digital marketing solutions under one roof — from strategy and design
+        to execution and growth. As a leading digital marketing company, we offer
+        result-driven SEO services in Punjab to improve your online visibility,
+        increase traffic, and grow your business faster.
       </p>
 
       <div className="services__grid">
@@ -303,12 +307,12 @@ function Services() {
             <div className="service-card__icon">{s.icon}</div>
             <h3 className="service-card__title">{s.title}</h3>
             <p className="service-card__desc">{s.desc}</p>
-            <a href="./services" className="service-card__link">
+            <Link to="./services" className="service-card__link">
               Learn More
               <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -336,7 +340,11 @@ function About() {
               <span>🎯</span>
               <div>
                 <strong>Our Mission</strong>
-                <p>To empower businesses with innovative digital solutions that fuel growth, visibility, and lasting success.</p>
+                <p>
+                  To empower businesses with innovative digital solutions that fuel growth, visibility,
+                  and lasting success. As a trusted Google Ads expert in Zirakpur, we create
+                  high-converting ad campaigns that drive targeted traffic and boost your ROI.
+                </p>
               </div>
             </div>
             <div className="about__badge-card about__badge-card--vision">
@@ -381,12 +389,12 @@ function About() {
             ))}
           </ul>
 
-          <a href="/about" className="btn btn--primary">
+          <Link to="/about" className="btn btn--primary">
             Learn More About Us
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -449,15 +457,15 @@ function CTABanner() {
         <h2>Ready to Grow Your Business?</h2>
         <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
         <div className="cta-banner__actions">
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Book Free Consultation
-          </a>
-          <a href="tel:917973611226" className="btn btn--ghost btn--ghost-light">
+          </Link>
+          <Link  to="tel:917973611226" className="btn btn--ghost btn--ghost-light">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            +91 79 7361 1226
-          </a>
+            Call Us
+          </Link>
         </div>
       </div>
     </section>
@@ -470,12 +478,19 @@ function CTABanner() {
 export default function HomePage() {
   return (
     <>
+        <SEOptimization
+          title="Best Digital Marketing Company in India | SEO & Web Development | Arbaj Technology"
+          description="Arbaj Technology is the best digital marketing company in India offering SEO services, web development, Google Ads and social media marketing to grow your business online."
+
+          keywords="digital marketing company, SEO services India, web development company, Google Ads expert, social media marketing India, Arbaj Technology"
+
+          url="https://arbajtechnologypvtltd.com/"
+
+          image="https://arbajtechnologypvtltd.com/preview.jpg"
+
+        />
       <main>
 
-        <SEOptimization
-          title="Best Digital Marketing Company | Arbaj Technology"
-          description="Arbaj Technology is a trusted digital marketing company helping businesses grow online with real results. Call us today at +91 79 7361 1226."
-        />
 
 
 

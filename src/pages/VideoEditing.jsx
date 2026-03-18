@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { Link } from "react-router-dom";
 import '../styles/VideoEditing.css';
 import { STATS, PROCESS, VE_SERVICES, TOOLS, FAQS } from '../components/Data/EditingData';
+import SEOptimization from "../components/SEOptimization";
 
 
 function useReveal() {
@@ -189,10 +190,22 @@ export default function VideoEditingPage() {
   }, []);
 
   return (
+
+    <>
+      <SEOptimization
+        title="Video Editing Services in India | Reels, Ads & YouTube Editing | Arbaj Technology"
+        description="Arbaj Technology provides professional video editing services including Instagram Reels, YouTube videos, ads, motion graphics, and color grading to grow your brand with engaging content."
+        keywords="video editing services India, reels editing, YouTube video editor, ad video editing, motion graphics India, color grading services, Arbaj Technology"
+        url="https://arbajtechnologypvtltd.com/video"
+        image="https://arbajtechnologypvtltd.com/og-video.jpg"
+      />
     <main className="ve-page-wrapper">
+
+
       <Hero />
       <Ticker />
       <VEServices />
     </main>
+    </>
   );
 }

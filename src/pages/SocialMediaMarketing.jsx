@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/SocialMediaMarketing.css'
 import {RESULTS, SMM_SERVICES, PROCESS, WHY_US, TOOLS, FAQS} from '../components/Data/SocialData'
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
@@ -287,6 +288,15 @@ function CTABanner() {
 export default function SocialMediaPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
+
+    <>
+      <SEOptimization
+        title="Social Media Marketing Agency in India | Instagram, Facebook Ads | Arbaj Technology"
+        description="Grow your brand with Arbaj Technology’s social media marketing services. We manage Instagram, Facebook, LinkedIn & YouTube to boost engagement, followers, and sales."
+        keywords="social media marketing India, Instagram marketing agency, Facebook ads service, social media management India, SMM services, Arbaj Technology"
+        url="https://arbajtechnologypvtltd.com/social-media-marketing"
+        image="https://arbajtechnologypvtltd.com/og-smm.jpg"
+      />
     <main>
       <Hero />
       <Ticker />
@@ -298,5 +308,6 @@ export default function SocialMediaPage() {
       <FAQ />
       <CTABanner />
     </main>
+    </>
   );
 }

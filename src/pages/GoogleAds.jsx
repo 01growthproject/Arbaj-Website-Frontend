@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/GoogleAds.css';
 import {RESULTS, GA_SERVICES,PROCESS,TOOLS,WHY_US,FAQS} from '../components/Data/GoogleAdsData'
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
@@ -274,6 +275,17 @@ function CTABanner() {
 export default function GoogleAdsPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
+
+
+    <>
+      <SEOptimization
+        title="Google Ads Agency in India | PPC Services | Arbaj Technology"
+        description="Boost your business with high-converting Google Ads campaigns. Arbaj Technology offers expert PPC management, search ads, display ads, and YouTube ads services."
+        keywords="Google Ads agency India, PPC services India, Google Ads management, search ads, display ads, YouTube ads, Arbaj Technology"
+        url="https://arbajtechnologypvtltd.com/google-ads"
+        image="https://arbajtechnologypvtltd.com/og-google-ads.jpg"
+      />
+    
     <main>
       <Hero />
       <Ticker />
@@ -285,5 +297,6 @@ export default function GoogleAdsPage() {
       <FAQ />
       <CTABanner />
     </main>
+    </>
   );
 }

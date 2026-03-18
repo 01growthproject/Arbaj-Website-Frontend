@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import '../styles/services.css'
 import { STATS, SERVICES, PROCESS, FAQS } from "../components/Data/ServicesData";
 import SEOptimization from "../components/SEOptimization";
-
+import { Link } from "react-router-dom";
 
 function useReveal() {
   const ref = useRef(null);
@@ -102,13 +102,13 @@ function ServiceHero() {
       </p>
 
       <div className="sh__actions">
-        <a href="/contact" className="sh__btn sh__btn--primary">
+        <Link to="/contact" className="sh__btn sh__btn--primary">
           Get Free Consultation
           <svg viewBox="0 0 20 20" fill="currentColor" width="17" height="17">
             <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
           </svg>
-        </a>
-        <a href="#services-grid" className="sh__btn sh__btn--ghost">Explore Services</a>
+        </Link>
+        {/* <Link to="#services-grid" className="sh__btn sh__btn--ghost">Explore Services</Link> */}
       </div>
 
       <div className="sh__divider" />
@@ -226,12 +226,12 @@ function ServicesGrid() {
                     </li>
                   ))}
                 </ul>
-                <a href="/contact" className="btn btn--primary svc-card__cta">
+                <Link to="/contact" className="btn btn--primary svc-card__cta">
                   Get Started
                   <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
                     <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -375,12 +375,12 @@ function WhyUs() {
             ))}
           </ul>
 
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Book Free Consultation
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -436,15 +436,15 @@ function CTABanner() {
         <h2>Ready to Grow Your Business?</h2>
         <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
         <div className="cta-banner__actions">
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Book Free Consultation
-          </a>
-          <a href="tel:917973611226" className="btn btn--ghost btn--ghost-light">
+          </Link>
+          <Link to="tel:917973611226" className="btn btn--ghost btn--ghost-light">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            +91 79 7361 1226
-          </a>
+           Call Us
+          </Link>
         </div>
       </div>
     </section>
@@ -456,13 +456,19 @@ function CTABanner() {
 export default function ServicePage() {
   return (
     <>
+    <SEOptimization
+      title="Digital Marketing Company in India | SEO, Google Ads & Web Development"
+
+      description="Arbaj Technology is a leading digital marketing company in India offering SEO services, Google Ads, social media marketing and web development solutions to grow your business online and increase leads."
+
+      keywords="digital marketing company India, SEO services India, Google Ads agency India, social media marketing company, web development company India"
+
+      url="https://arbajtechnologypvtltd.com/services"
+
+      image="https://arbajtechnologypvtltd.com/preview.jpg"
+    />
       <main>
 
-        <SEOptimization
-          title="Digital Marketing &amp; Web Development Services"
-          description="Get expert digital marketing, SEO, PPC, social media, and web development services to grow your business online with Arbaj Technology. Call +91 79 7361 1226"
-        
-        />
 
         
         <ServiceHero />

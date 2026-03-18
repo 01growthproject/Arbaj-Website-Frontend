@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/blog.css";
+import SEOptimization from "../components/SEOptimization";
 
 /* ─────────────────────────────────────────
    DIGITAL MARKETING POSTS ONLY
@@ -143,46 +144,58 @@ function Newsletter() {
   const [focused, setFocused] = useState(false);
 
   return (
-    <div className="bl-nl">
-      <div className="bl-nl__bg" aria-hidden />
-      <div className="bl-nl__content">
-        <span className="bl-nl__eyebrow">Stay Ahead</span>
-        <h2 className="bl-nl__heading">
-          Digital Marketing tips,<br />straight to your inbox
-        </h2>
-        <p className="bl-nl__sub">
-          Weekly insights on SEO, social, ads and growth. No spam. Unsubscribe anytime.
-        </p>
-        {sent ? (
-          <div className="bl-nl__success">
-            <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
-              <circle cx="10" cy="10" r="9" stroke="#17abbc" strokeWidth="1.5" />
-              <path d="M6 10l3 3 5-5" stroke="#17abbc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            You are on the list!
-          </div>
-        ) : (
-          <div className={`bl-nl__form${focused ? " bl-nl__form--focus" : ""}`}>
-            <svg viewBox="0 0 20 20" fill="none" width="16" height="16" className="bl-nl__icon">
-              <path d="M2 5l8 5 8-5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-              <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.4" />
-            </svg>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              className="bl-nl__input"
-            />
-            <button className="bl-nl__btn" onClick={() => email && setSent(true)}>
-              Subscribe
-            </button>
-          </div>
-        )}
+
+
+   <>
+      <SEOptimization
+        title="Digital Marketing Blog | SEO, Google Ads, Social Media Tips | Arbaj Technology"
+        description="Read the latest digital marketing insights on SEO, Google Ads, social media, content marketing and growth strategies by Arbaj Technology."
+        keywords="digital marketing blog India, SEO tips, Google Ads strategies, social media marketing tips, content marketing blog, Arbaj Technology blog"
+        url="https://arbajtechnologypvtltd.com/blog"
+        image="https://arbajtechnologypvtltd.com/og-blog.jpg"
+      />
+   
+      <div className="bl-nl">
+        <div className="bl-nl__bg" aria-hidden />
+        <div className="bl-nl__content">
+          <span className="bl-nl__eyebrow">Stay Ahead</span>
+          <h2 className="bl-nl__heading">
+            Digital Marketing tips,<br />straight to your inbox
+          </h2>
+          <p className="bl-nl__sub">
+            Weekly insights on SEO, social, ads and growth. No spam. Unsubscribe anytime.
+          </p>
+          {sent ? (
+            <div className="bl-nl__success">
+              <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
+                <circle cx="10" cy="10" r="9" stroke="#17abbc" strokeWidth="1.5" />
+                <path d="M6 10l3 3 5-5" stroke="#17abbc" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              You are on the list!
+            </div>
+          ) : (
+            <div className={`bl-nl__form${focused ? " bl-nl__form--focus" : ""}`}>
+              <svg viewBox="0 0 20 20" fill="none" width="16" height="16" className="bl-nl__icon">
+                <path d="M2 5l8 5 8-5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+              <input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                className="bl-nl__input"
+              />
+              <button className="bl-nl__btn" onClick={() => email && setSent(true)}>
+                Subscribe
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+   </>
   );
 }
 

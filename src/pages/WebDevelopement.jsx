@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/WebDevelopement.css'
 import {STATS, WEB_SERVICES, PROCESS, TECH_STACK, WHY_US, FAQS} from '../components/Data/WebData'
-
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
@@ -330,12 +330,12 @@ function CTABanner() {
           <Link to="/contact" className="btn btn--primary">
             Get Free Consultation
           </Link>
-          <a href="tel:+917973611226" className="btn btn--ghost btn--ghost-light">
+          <Link to="tel:+917973611226" className="btn btn--ghost btn--ghost-light">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            +91 79 7361 1226
-          </a>
+        Call Us
+          </Link>
         </div>
       </div>
     </section>
@@ -345,15 +345,27 @@ function CTABanner() {
 export default function WebDevelopmentPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <main>
-      <Hero />
-      <Ticker />
-      <WebServices />
-      <Process />
-      <TechStack />
-      <WhyChooseUs />
-      <FAQ />
-      <CTABanner />
-    </main>
+   <>
+      <main>
+
+        <SEOptimization
+          title="Web Development Company in India | Custom Websites & E-commerce | Arbaj Technology"
+          description="Arbaj Technology offers professional web development services including custom websites, e-commerce, React apps, and SEO-friendly fast-loading websites to grow your business online."
+          keywords="web development company India, custom website development, ecommerce website development, React web development, SEO friendly websites, Arbaj Technology"
+          url="https://arbajtechnologypvtltd.com/web"
+          image="https://arbajtechnologypvtltd.com/og-web.jpg"
+        />
+
+
+        <Hero />
+        <Ticker />
+        <WebServices />
+        <Process />
+        <TechStack />
+        <WhyChooseUs />
+        <FAQ />
+        <CTABanner />
+      </main>
+   </>
   );
 }

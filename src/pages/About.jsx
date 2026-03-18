@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import '../styles/about.css';
 import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta'
 import SEOptimization from "../components/SEOptimization";
-
+import { Link } from "react-router-dom";
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -111,12 +111,12 @@ function AboutHero() {
 
       {/* ── CTA ── */}
       <div className="sh__actions">
-        <a href="/contact" className="sh__btn sh__btn--primary">
+        <Link to="/contact" className="sh__btn sh__btn--primary">
           Work With Us
           <svg viewBox="0 0 20 20" fill="currentColor" width="17" height="17">
             <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
           </svg>
-        </a>
+        </Link>
         <a href="#story" className="sh__btn sh__btn--ghost">Our Story</a>
       </div>
 
@@ -238,12 +238,12 @@ function WhoWeAre() {
               </li>
             ))}
           </ul>
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Start a Project
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -460,15 +460,15 @@ function CTABanner() {
         <h2>Ready to Grow Your Business?</h2>
         <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
         <div className="cta-banner__actions">
-          <a href="/contact" className="btn btn--primary">
+          <Link to="/contact" className="btn btn--primary">
             Book Free Consultation
-          </a>
-          <a href="tel:917973611226" className="btn btn--ghost btn--ghost-light">
+          </Link>
+          <Link to="tel:917973611226" className="btn btn--ghost btn--ghost-light">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             +91 79 7361 1226
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -479,12 +479,14 @@ function CTABanner() {
 export default function AboutPage() {
   return (
     <>
-      <main>
-
         <SEOptimization
           title="About Us | Arbaj Technology – Digital Growth Partner"
-          description="About Us – Arbaj Technology provides expert digital marketing, web development, and creative services to help brands succeed online. Call +91 79 7361 1226"
+          description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 500+ businesses grow with SEO, ads, and web development."
+          keywords="Arbaj Technology, digital marketing agency Zirakpur, SEO company India, web development, social media marketing"
+          url="https://arbajtechnologypvtltd.com/about"
+          image="https://arbajtechnologypvtltd.com/og-image.jpg"
         />
+      <main>
 
 
         <AboutHero />

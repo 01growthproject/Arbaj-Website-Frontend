@@ -195,7 +195,7 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link to="/" className="navbar__logo">
-            <img src={Logo} alt="Arbaj Technology" className="logo" />
+            <img src={Logo} alt="Arbaj Technology Digital Marketing Company in India" className="logo" />
           </Link>
 
           {/* ── DESKTOP + MOBILE DRAWER LINKS ── */}
@@ -312,7 +312,7 @@ export default function Navbar() {
             {/* ── BLOG (NEW) ── */}
             <li className="navbar__link-item" style={{ "--li": 3 }}>
 
-              {/* <Link to="/blog" className={location.pathname.startsWith("/blog") ? "active" : ""}>Blog</Link> */}
+              <Link to="/blog" className={location.pathname.startsWith("/blog") ? "active" : ""}>Blog</Link>
 
 
             </li>

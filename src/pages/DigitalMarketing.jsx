@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/DigitalMarketing.css'
 import{RESULTS, DM_SERVICES, PROCESS, TOOLS, PACKAGES, FAQS} from'../components/Data/MarketingData'
-
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
@@ -385,6 +385,15 @@ function CTABanner() {
 export default function DigitalMarketingPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
+    <>
+
+      <SEOptimization
+        title="Digital Marketing Company in India | SEO, Google Ads & Social Media | Arbaj Technology"
+        description="Arbaj Technology is a results-driven digital marketing agency offering SEO, Google Ads, social media marketing, and lead generation services to grow your business online."
+        keywords="digital marketing company India, SEO services India, Google Ads agency, social media marketing India, lead generation services, PPC marketing, Arbaj Technology"
+        url="https://arbajtechnologypvtltd.com/marketing"
+        image="https://arbajtechnologypvtltd.com/og-marketing.jpg"
+      />
     <main>
       <Hero />
       <Ticker />
@@ -396,5 +405,6 @@ export default function DigitalMarketingPage() {
       <FAQ />
       <CTABanner />
     </main>
+    </>
   );
 }

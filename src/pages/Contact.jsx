@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import '../styles/contact.css';
 import { CONTACT_INFO, FAQS } from '../components/Data/ContactData'
 import SEOptimization from "../components/SEOptimization";
+import { Link } from "react-router-dom";
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -160,7 +161,7 @@ function ContactHero() {
                 <div>
                   <span className="contact-hero__info-label">{item.label}</span>
                   {item.link
-                    ? <a href={item.link} className="contact-hero__info-value link">{item.value}</a>
+                    ? <Link to={item.link} className="contact-hero__info-value link">{item.value}</Link>
                     : <span className="contact-hero__info-value">{item.value}</span>
                   }
                 </div>
@@ -173,9 +174,9 @@ function ContactHero() {
             <p className="contact-hero__socials-label">Follow Us</p>
             <div className="contact-hero__socials">
               {SOCIAL_LINKS.map((s) => (
-                <a
+                <Link
                   key={s.key}
-                  href={s.href}
+                  to={s.href}
                   className="contact-hero__social"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -185,7 +186,7 @@ function ContactHero() {
                 >
                   <span className="contact-hero__social-icon">{s.icon}</span>
                   <span className="contact-hero__social-tooltip">{s.label}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -307,10 +308,10 @@ function ContactCards() {
             <div className="contact-info-card__icon">{c.icon}</div>
             <h3 className="contact-info-card__title">{c.title}</h3>
             <p className="contact-info-card__desc">{c.desc}</p>
-            <a href={c.link} className="contact-info-card__link">
+            <Link to={c.link} className="contact-info-card__link">
               {c.value}
               <svg viewBox="0 0 16 16" fill="none" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -360,10 +361,10 @@ function WhyContact() {
               <li key={f}><span className="contact-why__check">✓</span>{f}</li>
             ))}
           </ul>
-          <a href="tel:917973611226" className="btn btn--primary">
+          <Link to="tel:917973611226" className="btn btn--primary">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
             Call Us Now
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -434,10 +435,10 @@ function CTABanner() {
         <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
         <div className="cta-banner__actions">
           <a href="#contact-form" className="btn btn--primary">Get Free Consultation</a>
-          <a href="tel:917973611226" className="btn btn--ghost btn--ghost-light">
+          <Link to="tel:917973611226" className="btn btn--ghost btn--ghost-light">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
-            +91 79 7361 1226
-          </a>
+            Call Us 
+          </Link>
         </div>
       </div>
     </section>
@@ -448,12 +449,15 @@ function CTABanner() {
 export default function ContactPage() {
   return (
     <>
+        <SEOptimization
+          title="Contact Arbaj Technology | Get Free Digital Marketing Consultation"
+          description="Contact Arbaj Technology – Zirakpur based digital marketing agency. Get free consultation for SEO, Google Ads, social media & web development. Call +91 79 7361 1226."
+          keywords="contact Arbaj Technology, digital marketing agency Zirakpur contact, SEO company phone number, web development contact India, Google Ads agency contact"
+          url="https://arbajtechnologypvtltd.com/contact"
+          image="https://arbajtechnologypvtltd.com/og-contact.jpg"
+        />
       <main>
 
-        <SEOptimization
-          title="Contact us Arbaj Technology | Digital Marketing Agency"
-          description="Contact Us at Arbaj Technology for digital marketing, website development, and creative services. Call +91 79 7361 1226 for a free consultation."
-        />
 
 
         <ContactHero />

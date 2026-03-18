@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../styles/SEO.css'
 
 import {RESULTS, SEO_SERVICES, PROCESS, TOOLS, WHY_US, FAQS} from '../components/Data/SeoData'
+import SEOptimization from "../components/SEOptimization";
 
 function useReveal() {
   const ref = useRef(null);
@@ -283,6 +284,16 @@ function CTABanner() {
 export default function SEOPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
+
+    <>
+
+      <SEOptimization
+        title="SEO Services in India | #1 SEO Company | Arbaj Technology"
+        description="Boost your Google rankings with Arbaj Technology. We provide technical SEO, on-page SEO, link building, and local SEO services to grow your business online."
+        keywords="SEO services India, SEO company India, local SEO Chandigarh, technical SEO, on page SEO, link building services, SEO expert India"
+        url="https://arbajtechnologypvtltd.com/seo"
+        image="https://arbajtechnologypvtltd.com/og-seo.jpg"
+      />
     <main>
       <Hero />
       <Ticker />
@@ -294,5 +305,6 @@ export default function SEOPage() {
       <FAQ />
       <CTABanner />
     </main>
+    </>
   );
 }
