@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/footer.css';
-import Logo from '../assets/A-logo.png';
+import Logo from '../assets/A-lg.webp';
 
 const socials = [
   {

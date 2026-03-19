@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../styles/navbar.css';
-import Logo from '../assets/A-logo.png';
+import Logo from '../assets/A-lg.webp'
 
 const SERVICE_LINKS = [
   {
@@ -195,7 +195,8 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link to="/" className="navbar__logo">
-            <img src={Logo} alt="Arbaj Technology Digital Marketing Company in India" className="logo" />
+            <img src={Logo} alt="Arbaj Technology Digital Marketing Company in India" width="160"
+              height="50" loading="lazy" />
           </Link>
 
           {/* ── DESKTOP + MOBILE DRAWER LINKS ── */}
