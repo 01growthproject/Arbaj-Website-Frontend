@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { POSTS } from "./Blog";
-import "../styles/Blogpost.css";
+import "../styles/blogpost.css";
 
 function parseInline(text) {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
