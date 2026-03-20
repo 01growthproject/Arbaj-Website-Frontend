@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800;900&family=Nunito:wght@400;500;600;700&display=swap");
 
 /* ─────────────── CSS VARIABLES ─────────────── */
@@ -163,112 +161,8 @@ button {
   margin-bottom: 56px;
 }
 
-/* ─────────────── NAVBAR ─────────────── */
-/* .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 6vw;
-  transition: var(--transition);
-}
-.navbar--scrolled {
-  background: rgba(4, 16, 15, 0.94);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 6vw;
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
-}
-.navbar__logo {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--white);
-  letter-spacing: -0.5px;
-}
-.navbar__logo span {
-  color: var(--mint);
-}
-.navbar__logo img {
-  height: 44px;
-  width: auto;
-  display: block;
-}
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
-}
-.navbar__links a {
-  color: var(--muted);
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: color 0.2s;
-  position: relative;
-  padding-bottom: 2px;
-}
-.navbar__links a:hover,
-.navbar__links a.active {
-  color: var(--white);
-}
-.navbar__links a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: linear-gradient(90deg, var(--teal), var(--aqua));
-  border-radius: 2px;
-  transition: width 0.28s;
-}
-.navbar__links a:hover::after,
-.navbar__links a.active::after {
-  width: 100%;
-}
-.navbar__cta {
-  background: var(--teal-soft) !important;
-  color: var(--aqua) !important;
-  border: 1px solid rgba(4, 140, 140, 0.38) !important;
-  padding: 9px 22px !important;
-  border-radius: 50px !important;
-  font-family: var(--font-body) !important;
-  font-weight: 700 !important;
-  transition: var(--transition) !important;
-}
-.navbar__cta::after {
-  display: none !important;
-}
-.navbar__cta:hover {
-  background: linear-gradient(135deg, var(--teal), var(--aqua)) !important;
-  color: #fff !important;
-  box-shadow: 0 4px 22px var(--teal-glow) !important;
-  transform: translateY(-1px);
-}
-.navbar__burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
-}
-.navbar__burger span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: var(--transition);
-} */
-
 /* ═══════════════════════════════════════════════
-   ABOUT HERO — sh__* (centered, cinematic)
-   Exact same as service hero
+   ABOUT HERO — sh__*
 ═══════════════════════════════════════════════ */
 .sh {
   position: relative;
@@ -493,7 +387,6 @@ button {
     background-position: 200% center;
   }
 }
-/* About page — flip word WITHOUT underline */
 .sh__title-flip--no-line::after {
   display: none;
 }
@@ -1756,51 +1649,112 @@ button {
 }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — 1100px
 ═══════════════════════════════════════════════ */
 @media (max-width: 1100px) {
+  /* Team: 2-col */
   .about-team__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Footer: 2-col */
   .footer__top {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* MVV: 2-col */
+  .about-mvv__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Story: tighten gap */
+  .about-story__inner {
+    gap: 48px;
+  }
+
+  /* Why: tighten gap */
+  .about-why__inner {
+    gap: 48px;
+  }
 }
 
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 900px  (TABLET)
+═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
+  /* Hero */
   .sh {
     padding: 110px 5vw 70px;
+    min-height: auto;
   }
   .sh__title {
     font-size: clamp(2.2rem, 6vw, 3.2rem);
     letter-spacing: -1px;
   }
+
+  /* Stats: 2×2 */
   .sh__stats {
     flex-wrap: wrap;
   }
   .sh__stat {
     min-width: 50%;
+    flex: 0 0 50%;
   }
+  .sh__stat:nth-child(3),
+  .sh__stat:nth-child(4) {
+    border-top: 1px solid rgba(4, 140, 140, 0.13);
+  }
+  .sh__stat:nth-child(3)::before,
+  .sh__stat:nth-child(4)::before {
+    display: none;
+  }
+
+  /* Hero action buttons */
+  .sh__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .sh__btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* Story: single col, visual on top */
   .about-story__inner {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
   .about-story__visual {
     height: 320px;
+    order: -1;
   }
+
+  /* MVV: single col */
   .about-mvv__grid {
     grid-template-columns: 1fr;
+    margin-top: 36px;
   }
+
+  /* Why: single col, visual on top */
   .about-why__inner {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
   .about-why__visual {
     height: 320px;
+    order: -1;
   }
+
+  /* Timeline: left-aligned single track */
   .timeline::before {
     left: 20px;
+    transform: none;
   }
   .timeline__item {
     grid-template-columns: 40px 1fr;
+    margin-bottom: 28px;
   }
   .timeline__item .timeline__card {
     grid-column: 2;
@@ -1809,10 +1763,46 @@ button {
   .timeline__item .timeline__node {
     grid-column: 1;
     grid-row: 1;
+    padding-top: 18px;
   }
+  /* Hide right-side spacer column on alternating items */
   .timeline__item .timeline__spacer {
     display: none;
   }
+
+  /* Footer: 2-col, brand spans full */
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+  .footer__brand p {
+    max-width: 100%;
+  }
+
+  /* Stack section */
+  .about-stack__grid {
+    margin-top: 36px;
+    gap: 10px;
+  }
+
+  /* FAQ */
+  .faq__q {
+    font-size: 0.95rem;
+    padding: 18px 20px;
+  }
+
+  /* CTA */
+  .cta-banner {
+    padding: 72px 6vw;
+  }
+  .cta-banner h2 {
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+  }
+
+  /* Navbar */
   .navbar__links {
     display: none;
     flex-direction: column;
@@ -1833,9 +1823,17 @@ button {
   }
 }
 
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 640px  (MOBILE)
+═══════════════════════════════════════════════ */
 @media (max-width: 640px) {
+  :root {
+    --section-pad: 70px 5vw;
+  }
+
+  /* ── Hero ── */
   .sh {
-    padding: 100px 5vw 60px;
+    padding: 90px 5vw 56px;
   }
   .sh__title {
     font-size: clamp(2rem, 7vw, 2.6rem);
@@ -1844,20 +1842,30 @@ button {
   .sh__title-line2 {
     gap: 10px;
   }
+  .sh__desc {
+    font-size: 0.94rem;
+  }
   .sh__stats {
-    flex-wrap: wrap;
     border-radius: 16px;
+    margin-bottom: 36px;
   }
   .sh__stat {
-    min-width: 50%;
+    padding: 20px 12px;
   }
-  .sh__stat:nth-child(3)::before,
-  .sh__stat:nth-child(4)::before {
-    display: none;
+  .sh__stat strong {
+    font-size: 1.8rem;
+  }
+
+  /* Hero cards: 2-col */
+  .sh__cards {
+    gap: 10px;
   }
   .sh__card {
-    width: calc(50% - 7px);
+    width: calc(50% - 5px);
+    flex: 0 0 calc(50% - 5px);
   }
+
+  /* Scale rings */
   .sh__ring--lg {
     width: 520px;
     height: 520px;
@@ -1878,38 +1886,297 @@ button {
     width: 360px;
     height: 360px;
   }
-  .about-team__grid {
-    grid-template-columns: 1fr;
+
+  /* ── Ticker ── */
+  .ticker__item {
+    padding: 0 18px;
+    font-size: 0.72rem;
+    letter-spacing: 1.8px;
   }
+
+  /* ── Story ── */
+  .about-story__visual {
+    height: 280px;
+  }
+  .about-story__circle--1 {
+    width: 240px;
+    height: 240px;
+  }
+  .about-story__circle--2 {
+    width: 160px;
+    height: 160px;
+  }
+  .about-story__circle--3 {
+    width: 96px;
+    height: 96px;
+  }
+  .about-story__center {
+    width: 52px;
+    height: 52px;
+    font-size: 1.1rem;
+  }
+  /* Hide floating pins on small screens — they overflow */
   .about-story__pin {
     display: none;
   }
+
+  /* ── MVV ── */
+  .about-mvv__grid {
+    gap: 14px;
+  }
+  .mvv-card {
+    padding: 24px 20px;
+  }
+
+  /* ── Team: single col ── */
+  .about-team__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 36px;
+  }
+  .team-card {
+    padding: 22px 18px;
+  }
+  /* Horizontal team card layout on mobile */
+  .team-card__avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    margin-top: 36px;
+  }
+  .timeline__item {
+    margin-bottom: 20px;
+  }
+  .timeline__card {
+    padding: 16px 18px;
+  }
+  .timeline__card-desc {
+    font-size: 0.83rem;
+  }
+
+  /* ── Stack badges: tighter ── */
+  .about-stack__grid {
+    margin-top: 28px;
+    gap: 8px;
+  }
+  .stack-badge {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* ── Why ── */
+  .about-why__visual {
+    height: 260px;
+  }
+  .about-why__circle--1 {
+    width: 220px;
+    height: 220px;
+  }
+  .about-why__circle--2 {
+    width: 140px;
+    height: 140px;
+  }
+  .about-why__badge-card {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .about-why__badge-card > span {
+    font-size: 1.4rem;
+  }
+  .about-why__badge-card strong {
+    font-size: 0.85rem;
+  }
+  .about-why__badge-card p {
+    font-size: 0.78rem;
+  }
+
+  /* ── FAQ ── */
+  .faq__list {
+    gap: 8px;
+    margin-top: 36px;
+  }
+  .faq__q {
+    font-size: 0.9rem;
+    padding: 16px 18px;
+    gap: 12px;
+  }
+  .faq__a > p {
+    font-size: 0.88rem;
+    padding: 0 18px;
+  }
+  .faq__item--open .faq__a > p {
+    padding: 0 18px 18px;
+  }
+  .faq__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+
+  /* ── CTA Banner ── */
+  .cta-banner {
+    padding: 64px 5vw;
+  }
+  .cta-banner h2 {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+    letter-spacing: -0.3px;
+  }
+  .cta-banner p {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+  .cta-banner__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-banner__actions .btn,
+  .cta-banner__actions .sh__btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 52px 5vw 24px;
+  }
   .footer__top {
     grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .footer__brand p {
+    max-width: 100%;
+  }
+  .footer__col h4 {
+    margin-bottom: 12px;
   }
   .footer__bottom {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+    padding-top: 20px;
   }
-  .cta-banner__actions {
-    flex-direction: column;
-    align-items: center;
+
+  /* ── Section headers ── */
+  .section__title {
+    font-size: clamp(1.7rem, 5.5vw, 2.2rem);
   }
-  :root {
-    --section-pad: 70px 5vw;
+  .section__sub {
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+  }
+  .about-mvv__header,
+  .about-team__header,
+  .about-timeline__header,
+  .about-stack__header,
+  .faq__header {
+    padding: 0 4px;
   }
 }
 
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 420px  (SMALL MOBILE)
+═══════════════════════════════════════════════ */
 @media (max-width: 420px) {
+  /* Hero cards: single col */
   .sh__card {
     width: 100%;
+    flex: 0 0 100%;
   }
   .sh__title {
     font-size: clamp(1.8rem, 7vw, 2.2rem);
     letter-spacing: -0.5px;
   }
   .sh__stat strong {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  .sh__badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  /* Story visual: tighter */
+  .about-story__visual {
+    height: 240px;
+  }
+  .about-story__circle--1 {
+    width: 200px;
+    height: 200px;
+  }
+  .about-story__circle--2 {
+    width: 130px;
+    height: 130px;
+  }
+  .about-story__circle--3 {
+    width: 76px;
+    height: 76px;
+  }
+
+  /* Why visual: tighter */
+  .about-why__visual {
+    height: 230px;
+  }
+  .about-why__circle--1 {
+    width: 190px;
+    height: 190px;
+  }
+  .about-why__circle--2 {
+    width: 118px;
+    height: 118px;
+  }
+
+  /* Stack badges: full wrap */
+  .stack-badge {
+    padding: 7px 14px;
+    font-size: 0.78rem;
+  }
+
+  /* Buttons full width */
+  .sh__btn,
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Footer socials: bigger tap targets */
+  .footer__social {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   TOUCH DEVICES — disable sticky hover states
+═══════════════════════════════════════════════ */
+@media (hover: none) {
+  .mvv-card:hover,
+  .team-card:hover,
+  .sh__card:hover,
+  .timeline__card:hover,
+  .stack-badge:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .mvv-card:hover::before,
+  .team-card:hover::before {
+    transform: scaleX(0);
+  }
+  .sh__btn--primary:hover,
+  .sh__btn--ghost:hover,
+  .btn--primary:hover,
+  .btn--ghost:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .about-why__badge-card:hover,
+  .about-story__pin {
+    transform: none;
   }
 }

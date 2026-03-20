@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import GoogleAdsPage from "./pages/GoogleAds";
 import VideoEditingPage from "./pages/VideoEditing";
 import WebDevelopmentPage from "./pages/WebDevelopement";
-import DigitalMarketingPage from "./pages/DigitalMarketing";
+// import DigitalMarketingPage from "./pages/DigitalMarketing";
 import GraphicDesigningPage from "./pages/GrapicDesigning";
 import SocialMediaPage from "./pages/SocialMediaMarketing";
 import { HelmetProvider } from 'react-helmet-async';
@@ -21,29 +21,29 @@ function App() {
   return (
     <HelmetProvider>
 
-   
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        {/* //-----------------------Page-------------------------------// */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          {/* //-----------------------Page-------------------------------// */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
-        {/* //-----------------------DropDown---------------------------// */}
-        <Route path="/seo" element={<SEOPage />} />
-        <Route path="/google" element={<GoogleAdsPage />} />
-        <Route path="/video" element={<VideoEditingPage />} />
-        <Route path="/web" element={<WebDevelopmentPage />} />
-        <Route path="/social" element={<SocialMediaPage />} />
-        <Route path="/graphic" element={<GraphicDesigningPage />} />
-        <Route path="/marketing" element={<DigitalMarketingPage />} />
-        {/* <Route path="/form" element={<ContactForm/>} /> */}
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+          {/* //-----------------------DropDown---------------------------// */}
+          <Route path="/search-engine-optimization" element={<SEOPage />} />
+          <Route path="/google-ads" element={<GoogleAdsPage />} />
+          <Route path="/video-editing" element={<VideoEditingPage />} />
+          <Route path="/web-developement" element={<WebDevelopmentPage />} />
+          <Route path="/social-media-marketing" element={<SocialMediaPage />} />
+          <Route path="/graphic-designing" element={<GraphicDesigningPage />} />
+          {/* <Route path="/marketing" element={<DigitalMarketingPage />} /> */}
+          {/* <Route path="/form" element={<ContactForm/>} /> */}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </HelmetProvider>
   );
 }

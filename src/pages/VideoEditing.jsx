@@ -193,9 +193,9 @@ export default function VideoEditingPage() {
 
     <>
       <SEOptimization
-        title="Video Editing Services in India | Reels, Ads & YouTube Editing | Arbaj Technology"
-        description="Arbaj Technology provides professional video editing services including Instagram Reels, YouTube videos, ads, motion graphics, and color grading to grow your brand with engaging content."
-        keywords="video editing services India, reels editing, YouTube video editor, ad video editing, motion graphics India, color grading services, Arbaj Technology"
+        title="Professional Video Editing Services | Creative Experts"
+        description="Get high-quality video editing services for YouTube, reels, ads, and social media. We create engaging, professional videos to grow your brand."
+        keywords="Video Editing, video editing services India, reels editing, YouTube video editor, ad video editing, motion graphics India, color grading services, Arbaj Technology"
         url="https://arbajtechnologypvtltd.com/video"
         image="https://arbajtechnologypvtltd.com/og-video.jpg"
       />

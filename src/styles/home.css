@@ -1,32 +1,12 @@
 /* ═══════════════════════════════════════════════
    ARBAJ TECHNOLOGY — home.css
    Brand Theme: Deep Teal / Mint Green / Aqua Blue
-   Primary Font : Big Noodles Titling (headings)
-   Secondary Font: Calibri (body & UI)
-   Palette:
-     --teal  #048C8C  (primary)
-     --mint  #6DC497  (accent / success)
-     --aqua  #17ABBC  (links / interactive)
-     --black #000000
 ═══════════════════════════════════════════════ */
 
-/* ── Big Noodles Titling: not on Google Fonts.
-   Place the .woff2 in /public/fonts/ and uncomment: ──
-@font-face {
-  font-family: 'Big Noodles Titling';
-  src: url('/fonts/BigNoodleTitling.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
-
-
-/* Nunito = closest free Google Fonts match for body fallback */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800;900&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* ─────────────── CSS VARIABLES ─────────────── */
 :root {
-  /* ── Arbaj Brand Colors ── */
   --teal:       #048C8C;
   --teal-dark:  #036666;
   --teal-glow:  rgba(4,140,140,0.35);
@@ -39,37 +19,30 @@
   --aqua-glow:  rgba(23,171,188,0.35);
   --aqua-soft:  rgba(23,171,188,0.10);
 
-  /* ── Legacy aliases (used by service pages & components) ── */
   --blue:       #17ABBC;
   --blue-glow:  rgba(23,171,188,0.35);
   --blue-soft:  rgba(23,171,188,0.10);
-  --gold:       #6DC497;   /* mint replaces gold accent */
+  --gold:       #6DC497;
 
-  /* ── Backgrounds — deep dark teal-black ── */
-  --bg:         #030e0d;   /* near-black with teal tint */
+  --bg:         #030e0d;
   --bg-2:       #061613;
   --bg-card:    #0a1f1d;
   --bg-card-2:  #0e2826;
 
-  /* ── Borders ── */
   --border:     rgba(4,140,140,0.15);
   --border-2:   rgba(23,171,188,0.12);
 
-  /* ── Text ── */
   --white:      #e4f7f5;
   --muted:      #6fa8a4;
 
-  /* ── Fonts ── */
   --font-display: 'Big Noodles Titling', 'Exo 2', sans-serif;
   --font-body:    Calibri, 'Nunito', sans-serif;
 
-  /* ── Spacing / Shape ── */
   --radius-sm:  8px;
   --radius-md:  14px;
   --radius-lg:  22px;
   --radius-xl:  32px;
 
-  /* ── Shadows ── */
   --shadow-card: 0 4px 30px rgba(0,0,0,0.5);
   --shadow-glow: 0 0 40px var(--teal-glow);
 
@@ -92,55 +65,6 @@ body {
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-/* ─────────────── NAVBAR ─────────────── */
-/* .navbar {css)
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 0 6vw;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(3,14,13,0.88);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-.navbar__logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.5px;
-}
-.navbar__logo span { color: var(--aqua); }
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  list-style: none;
-}
-.navbar__links a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.navbar__links a:hover { color: var(--white); }
-.navbar__burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 4px;
-}
-.navbar__burger span {
-  display: block;
-  width: 22px; height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: var(--transition);
-} */
 
 /* ─────────────── SCROLL REVEAL ─────────────── */
 .section {
@@ -220,7 +144,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.15;
   color: var(--white);
   margin-bottom: 18px;
-  letter-spacing: 0.5px;  /* Big Noodles looks best with slight tracking */
+  letter-spacing: 0.5px;
 }
 .section__title span {
   background: linear-gradient(90deg, var(--teal) 0%, var(--aqua) 50%, var(--mint) 100%);
@@ -250,7 +174,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 40px;
 }
 
-/* ── dot grid ── */
 .hero__grid {
   position: absolute;
   inset: 0;
@@ -270,13 +193,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero__grid-dot:nth-child(odd)  { animation-delay: 1.5s; }
 .hero__grid-dot:nth-child(3n)   { background: rgba(23,171,188,0.20); }
 .hero__grid-dot:nth-child(5n)   { background: rgba(109,196,151,0.18); }
-
 @keyframes dotPulse {
   0%,100% { opacity: 0.2; }
   50%      { opacity: 0.7; }
 }
 
-/* ── ambient orbs ── */
 .hero__orb {
   position: absolute;
   border-radius: 50%;
@@ -302,13 +223,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   top: 40%; right: 20%;
   animation: orbFloat 13s ease-in-out infinite;
 }
-
 @keyframes orbFloat {
   0%,100% { transform: translate(0,0); }
   50%      { transform: translate(28px,-28px); }
 }
 
-/* ── hero content ── */
 .hero__content {
   position: relative;
   z-index: 1;
@@ -320,7 +239,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── badge ── */
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -344,7 +262,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
 
-/* ── title ── */
 .hero__title {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 5.5vw, 4.2rem);
@@ -380,7 +297,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 52px;
 }
 
-/* ── stats ── */
 .hero__stats {
   display: flex;
   gap: 40px;
@@ -403,7 +319,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
 }
 
-/* ── floating card ── */
 .hero__card-wrap {
   position: relative;
   z-index: 1;
@@ -447,7 +362,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 500;
 }
 
-/* chart bars */
 .hero__chart {
   display: flex;
   align-items: flex-end;
@@ -553,7 +467,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-top: 56px;
 }
 
-/* ── service card ── */
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -574,7 +487,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform-origin: left;
   transition: transform 0.4s ease;
 }
-/* subtle teal glow in top-left corner */
 .service-card::after {
   content: '';
   position: absolute;
@@ -610,7 +522,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .service-card:hover .service-card__icon { transform: scale(1.1) rotate(-5deg); }
 .service-card__icon svg { width: 100%; height: 100%; }
-
 .service-card__title {
   font-family: var(--font-display);
   font-size: 1.1rem;
@@ -844,7 +755,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translate(-50%,-50%);
   pointer-events: none;
 }
-/* second subtle orb */
 .cta-banner__orb-2 {
   position: absolute;
   width: 300px; height: 300px;
@@ -929,7 +839,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-color: var(--teal);
   box-shadow: 0 4px 16px var(--teal-glow);
 }
-
 .footer__col h4 {
   font-size: 0.82rem;
   font-weight: 700;
@@ -942,13 +851,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer__col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer__col ul li a { color: var(--muted); font-size: 0.88rem; transition: color 0.2s; }
 .footer__col ul li a:hover { color: var(--aqua); }
-
 .footer__contact { list-style: none !important; display: flex; flex-direction: column; gap: 14px; }
 .footer__contact li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.86rem; color: var(--muted); }
 .footer__contact li span:first-child { flex-shrink: 0; font-size: 1rem; }
 .footer__contact a { color: var(--muted); transition: color 0.2s; }
 .footer__contact a:hover { color: var(--aqua); }
-
 .footer__bottom {
   border-top: 1px solid var(--border);
   padding-top: 24px;
@@ -960,7 +867,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════
-   PROCESS STEPS (shared — used by service pages)
+   PROCESS STEPS
 ═══════════════════════════════════════════════ */
 .ve-process {
   display: grid;
@@ -1036,7 +943,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .ve-process__desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
 
 /* ═══════════════════════════════════════════════
-   TOOLS BADGES (shared)
+   TOOLS BADGES
 ═══════════════════════════════════════════════ */
 .ve-tools {
   display: flex;
@@ -1073,7 +980,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════════════════════
-   STATS STRIP (shared — used by service pages)
+   STATS STRIP
 ═══════════════════════════════════════════════ */
 .ve-stats__grid {
   display: grid;
@@ -1118,46 +1025,250 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;          /* sits behind grid dots & orbs */
+  z-index: 0;
   pointer-events: none;
   display: block;
 }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — 1100px
 ═══════════════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .services__grid   { grid-template-columns: repeat(2, 1fr); }
-  .footer__top      { grid-template-columns: 1fr 1fr; }
-  .ve-stats__grid   { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  /* Hero: tighten side padding */
+  .hero {
+    padding: 120px 8vw 80px;
+    gap: 32px;
+  }
+
+  /* Services: 2-col */
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Stats strip: 2×2 */
+  .ve-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  /* Footer: 2-col */
+  .footer__top { grid-template-columns: 1fr 1fr; }
 }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 960px
+═══════════════════════════════════════════════ */
 @media (max-width: 960px) {
+  /* Process: 2-col, hide connectors */
   .ve-process { grid-template-columns: repeat(2, 1fr); gap: 32px; }
   .ve-process__connector { display: none; }
 }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 900px  (TABLET)
+═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
+  /* Hero: stack content above card */
   .hero {
     flex-direction: column;
     padding: 110px 6vw 60px;
     text-align: center;
     min-height: auto;
+    gap: 48px;
   }
   .hero__content   { max-width: 100%; }
   .hero__desc      { margin: 0 auto 36px; }
   .hero__actions   { justify-content: center; }
-  .hero__stats     { justify-content: center; }
+  .hero__stats     { justify-content: center; gap: 28px; }
   .hero__card-wrap { width: 100%; display: flex; justify-content: center; }
-  .about__inner    { grid-template-columns: 1fr; }
-  .about__visual   { height: 320px; }
+
+  /* About: single col, visual on top */
+  .about__inner    { grid-template-columns: 1fr; gap: 48px; }
+  .about__visual   { height: 320px; order: -1; }
+
+  /* FAQ */
+  .faq__q { font-size: 0.95rem; padding: 18px 20px; }
+
+  /* CTA */
+  .cta-banner { padding: 72px 6vw; }
+  .cta-banner h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+
+  /* Footer */
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__brand p { max-width: 100%; }
 }
-@media (max-width: 600px) {
-  .services__grid   { grid-template-columns: 1fr; }
-  .ve-process       { grid-template-columns: 1fr; gap: 24px; }
-  .ve-stats__grid   { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .hero__stats      { gap: 24px; flex-wrap: wrap; justify-content: center; }
-  .footer__top      { grid-template-columns: 1fr; }
-  .footer__bottom   { flex-direction: column; gap: 8px; text-align: center; }
-  .cta-banner__actions { flex-direction: column; align-items: center; }
-  .hero__card       { width: 280px; }
-  :root             { --section-pad: 70px 5vw; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 640px  (MOBILE)
+═══════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  :root { --section-pad: 70px 5vw; }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 90px 5vw 56px;
+    gap: 40px;
+  }
+  .hero__title {
+    font-size: clamp(2rem, 7.5vw, 2.8rem);
+    letter-spacing: 0.5px;
+  }
+  .hero__desc { font-size: 0.97rem; }
+
+  /* Stack hero buttons vertically */
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* Hero stats: wrap & center */
+  .hero__stats {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 24px;
+  }
+  .hero__stat strong { font-size: 1.7rem; }
+
+  /* Hero card: slightly narrower */
+  .hero__card { width: 100%; max-width: 280px; }
+
+  /* ── Ticker ── */
+  .ticker__item {
+    padding: 0 18px;
+    font-size: 0.74rem;
+    letter-spacing: 1.6px;
+  }
+
+  /* ── Services: single col ── */
+  .services__grid {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+    gap: 16px;
+  }
+  .service-card { padding: 24px 20px; }
+
+  /* ── About visual ── */
+  .about__visual { height: 280px; }
+  .about__circle--1 { width: 240px; height: 240px; }
+  .about__circle--2 { width: 155px; height: 155px; }
+  .about__badge-card { padding: 14px 16px; gap: 10px; }
+  .about__badge-card > span { font-size: 1.4rem; }
+  .about__badge-card strong { font-size: 0.85rem; }
+  .about__badge-card p { font-size: 0.78rem; }
+
+  /* ── Process: single col ── */
+  .ve-process {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ve-process__connector { display: none; }
+  .ve-process__card { padding: 18px 14px; }
+
+  /* ── Stats strip: 2×2 (already set, just tighten) ── */
+  .ve-stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .ve-stats__metric { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+
+  /* ── Tools badges ── */
+  .ve-tools { gap: 8px; }
+  .ve-tool-badge { padding: 8px 16px; font-size: 0.82rem; }
+
+  /* ── FAQ ── */
+  .faq__list { gap: 8px; }
+  .faq__q { font-size: 0.9rem; padding: 16px 18px; gap: 12px; }
+  .faq__a > p { font-size: 0.88rem; padding: 0 18px; }
+  .faq__item--open .faq__a > p { padding: 0 18px 18px; }
+  .faq__icon { width: 24px; height: 24px; font-size: 1rem; }
+
+  /* ── CTA ── */
+  .cta-banner { padding: 60px 5vw; }
+  .cta-banner h2 { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .cta-banner p { font-size: 0.95rem; margin-bottom: 28px; }
+  .cta-banner__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .cta-banner__actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  /* ── Footer ── */
+  .footer { padding: 52px 5vw 24px; }
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+  .footer__brand p { max-width: 100%; }
+  .footer__col h4 { margin-bottom: 12px; }
+  .footer__bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  /* ── Section titles ── */
+  .section__title { font-size: clamp(1.7rem, 5.5vw, 2.2rem); }
+  .section__sub { font-size: 0.95rem; margin-bottom: 36px; }
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — 420px  (SMALL MOBILE)
+═══════════════════════════════════════════════ */
+@media (max-width: 420px) {
+  .hero__title { font-size: clamp(1.8rem, 7vw, 2.2rem); }
+  .hero__stat strong { font-size: 1.5rem; }
+  .hero__card { max-width: 100%; }
+
+  /* About visual: tighter */
+  .about__visual { height: 240px; }
+  .about__circle--1 { width: 196px; height: 196px; }
+  .about__circle--2 { width: 124px; height: 124px; }
+
+  /* Process card tighter */
+  .ve-process__node { width: 48px; height: 48px; }
+  .ve-process__card { padding: 14px 12px; }
+
+  /* Badges smaller */
+  .ve-tool-badge { padding: 7px 13px; font-size: 0.78rem; }
+
+  /* Buttons: always full width */
+  .btn { width: 100%; justify-content: center; }
+
+  /* Footer socials: bigger tap targets */
+  .footer__social { width: 38px; height: 38px; }
+}
+
+/* ═══════════════════════════════════════════════
+   TOUCH DEVICES — disable sticky hover states
+═══════════════════════════════════════════════ */
+@media (hover: none) {
+  .service-card:hover,
+  .ve-process__item:hover .ve-process__card,
+  .ve-tool-badge:hover,
+  .about__badge-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .service-card:hover::before { transform: scaleX(0); }
+  .service-card:hover::after  { opacity: 0; }
+  .ve-process__item:hover .ve-process__node {
+    transform: none;
+    box-shadow: none;
+  }
+  .btn--primary:hover,
+  .btn--ghost:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }

@@ -290,9 +290,9 @@ export default function GraphicDesigningPage() {
 
 
         <SEOptimization
-          title="Graphic Designing Services in India | Logo, Branding & Social Media Design | Arbaj Technology"
-          description="Arbaj Technology offers professional graphic designing services including logo design, brand identity, social media creatives, brochures, and packaging design to make your brand stand out."
-          keywords="graphic designing services India, logo design company, branding agency India, social media post design, brochure design, packaging design, Arbaj Technology"
+          title="Best Graphic Design Services | Creative Branding Experts"
+          description="Professional graphic design services for logos, banners, social media creatives, and branding to grow your business and attract more customers."
+          keywords="Graphic Design, graphic designing services India, logo design company, branding agency India, social media post design, brochure design, packaging design, Arbaj Technology"
           url="https://arbajtechnologypvtltd.com/graphic"
           image="https://arbajtechnologypvtltd.com/og-graphic.jpg"
 

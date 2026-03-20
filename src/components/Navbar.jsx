@@ -6,7 +6,7 @@ import Logo from '../assets/A-lg.webp'
 const SERVICE_LINKS = [
   {
     label: "Web Development",
-    path: "/web",
+    path: "/web-developement",
     icon: (
       <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
         <rect x="2" y="3" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -19,7 +19,7 @@ const SERVICE_LINKS = [
   },
   {
     label: "Graphic Designing",
-    path: "/graphic",
+    path: "/graphic-designing",
     icon: (
       <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
         <circle cx="7" cy="7" r="4" stroke="currentColor" strokeWidth="1.5" />
@@ -32,7 +32,7 @@ const SERVICE_LINKS = [
   },
   {
     label: "Video Editing",
-    path: "/video",
+    path: "/video-editing",
     icon: (
       <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
         <rect x="1" y="4" width="14" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -42,21 +42,21 @@ const SERVICE_LINKS = [
     desc: "Reels, Ads, Brand Films",
     accent: "#ff3b5c",
   },
-  {
-    label: "Digital Marketing",
-    path: "/marketing",
-    icon: (
-      <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
-        <path d="M2 14l4-5 4 3 4-6 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="16" cy="5" r="2.5" fill="currentColor" opacity=".4" />
-      </svg>
-    ),
-    desc: "SEO, Google Ads, Social",
-    accent: "#22c55e",
-  },
+  // {
+  //   label: "Digital Marketing",
+  //   path: "/marketing",
+  //   icon: (
+  //     <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
+  //       <path d="M2 14l4-5 4 3 4-6 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+  //       <circle cx="16" cy="5" r="2.5" fill="currentColor" opacity=".4" />
+  //     </svg>
+  //   ),
+  //   desc: "SEO, Google Ads, Social",
+  //   accent: "#22c55e",
+  // },
   {
     label: "Search Engine Optimization",
-    path: "/seo",
+    path: "/search-engine-optimization",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="11" cy="11" r="8" />
@@ -69,7 +69,7 @@ const SERVICE_LINKS = [
   },
   {
     label: "Social Media Marketing",
-    path: "/social",
+    path: "/social-media-marketing",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="18" cy="5" r="3" />
@@ -84,7 +84,7 @@ const SERVICE_LINKS = [
   },
   {
     label: "Google Ads",
-    path: "/google",
+    path: "/google-ads",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />

@@ -11,21 +11,20 @@ import { POSTS } from "../components/Post/Post";
    NEWSLETTER
 ───────────────────────────────────────── */
 function Newsletter() {
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
-  const [focused, setFocused] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [sent, setSent] = useState(false);
+  // const [focused, setFocused] = useState(false);
 
   return (
     <>
       <SEOptimization
-        title="Digital Marketing Blog | SEO, Google Ads, Social Media Tips | Arbaj Technology"
-        description="Read the latest digital marketing insights on SEO, Google Ads, social media, content marketing and growth strategies by Arbaj Technology."
-        keywords="digital marketing blog India, SEO tips, Google Ads strategies, social media marketing tips, content marketing blog, Arbaj Technology blog"
+        title="Digital Marketing Blog | SEO, Ads & Growth Tips"
+        description="Learn SEO, Google Ads, and social media strategies with our expert blog. Get practical tips to increase traffic, leads, and online business growth."
         url="https://arbajtechnologypvtltd.com/blog"
         image="https://arbajtechnologypvtltd.com/og-blog.jpg"
       />
 
-      <div className="bl-nl">
+      {/* <div className="bl-nl">
         <div className="bl-nl__bg" aria-hidden />
         <div className="bl-nl__content">
           <span className="bl-nl__eyebrow">Stay Ahead</span>
@@ -64,7 +63,7 @@ function Newsletter() {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
@@ -156,14 +155,14 @@ export default function Blog() {
         </div>
 
         {/* stats strip */}
-        <div className="bl-hero__stats" aria-hidden>
+        {/* <div className="bl-hero__stats" aria-hidden>
           {[["9+", "Articles"], ["5", "Topics"], ["Free", "Always"]].map(([n, l]) => (
             <div className="bl-hero__stat" key={l}>
               <span className="bl-hero__stat-n">{n}</span>
               <span className="bl-hero__stat-l">{l}</span>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* ── MAIN ── */}
@@ -188,7 +187,7 @@ export default function Blog() {
               <div className="bl-featured__footer">
                 <div />
                 <Link to={`/blog/${featured.id}`} className="bl-featured__cta">
-                  Read Article
+                  Read More
                   <svg viewBox="0 0 12 12" fill="none" width="12">
                     <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

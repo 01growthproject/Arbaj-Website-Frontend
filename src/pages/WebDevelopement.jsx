@@ -349,9 +349,9 @@ export default function WebDevelopmentPage() {
       <main>
 
         <SEOptimization
-          title="Web Development Company in India | Custom Websites & E-commerce | Arbaj Technology"
-          description="Arbaj Technology offers professional web development services including custom websites, e-commerce, React apps, and SEO-friendly fast-loading websites to grow your business online."
-          keywords="web development company India, custom website development, ecommerce website development, React web development, SEO friendly websites, Arbaj Technology"
+          title="Best Website Development Company for Business Growth"
+          description="Looking for the best website development company? We create fast, responsive, SEO-friendly websites that help grow your business online. Contact us today."
+          keywords="best Website development  company, web development company India, custom website development, ecommerce website development, React web development, SEO friendly websites, Arbaj Technology"
           url="https://arbajtechnologypvtltd.com/web"
           image="https://arbajtechnologypvtltd.com/og-web.jpg"
         />

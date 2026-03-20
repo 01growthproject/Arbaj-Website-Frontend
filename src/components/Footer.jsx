@@ -47,16 +47,17 @@ const quickLinks = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
   { label: "About", path: "/about" },
+  { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];
 
 const services = [
-  { label: "Website Design & Development", path: "/web" },
-  { label: "Search Engine Optimization (SEO)", path: "/seo" },
-  { label: "Social Media Marketing (SMM)", path: "/social" },
-  { label: "Meta Ads & Google Ads", path: "/ads" },
-  { label: "Graphic Design", path: "/graphic" },
-  { label: "Video Editing & Promotional Videos", path: "/video" },
+  { label: "Web Development", path: "/web-developement" },
+  { label: "Graphic Designing", path: "/graphic-designing" },
+  { label: "Video Editing", path: "/video-editing" },
+  { label: "Search Engine Optimization (SEO)", path: "/search-engine-optimization" },
+  { label: "Social Media Marketing (SMM)", path: "/social-media-marketing" },
+  { label: " Google Ads", path: "/google-ads" },
 ];
 
 export default function Footer() {

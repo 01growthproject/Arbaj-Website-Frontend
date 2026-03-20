@@ -291,9 +291,9 @@ export default function SocialMediaPage() {
 
     <>
       <SEOptimization
-        title="Social Media Marketing Agency in India | Instagram, Facebook Ads | Arbaj Technology"
-        description="Grow your brand with Arbaj Technology’s social media marketing services. We manage Instagram, Facebook, LinkedIn & YouTube to boost engagement, followers, and sales."
-        keywords="social media marketing India, Instagram marketing agency, Facebook ads service, social media management India, SMM services, Arbaj Technology"
+        title="Best Social Media Marketing Agency | Arbaj Technology"
+        description="Boost your business with expert social media marketing services. Increase engagement, followers, and leads on Facebook, Instagram, and more."
+        keywords="Social Media Marketing, social media marketing India, Instagram marketing agency, Facebook ads service, social media management India, SMM services, Arbaj Technology"
         url="https://arbajtechnologypvtltd.com/social-media-marketing"
         image="https://arbajtechnologypvtltd.com/og-smm.jpg"
       />

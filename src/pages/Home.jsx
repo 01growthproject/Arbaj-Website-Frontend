@@ -479,8 +479,8 @@ export default function HomePage() {
   return (
     <>
         <SEOptimization
-          title="Best Digital Marketing Company in India | SEO & Web Development | Arbaj Technology"
-          description="Arbaj Technology is the best digital marketing company in India offering SEO services, web development, Google Ads and social media marketing to grow your business online."
+        title="Best Digital Marketing Company in India | Arbaj Technology"
+        description="Arbaj Technology is the best digital marketing company in India offering SEO, PPC, and social media services to grow your business online."
 
           keywords="digital marketing company, SEO services India, web development company, Google Ads expert, social media marketing India, Arbaj Technology"
 

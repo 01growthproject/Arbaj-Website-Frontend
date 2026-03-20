@@ -279,9 +279,9 @@ export default function GoogleAdsPage() {
 
     <>
       <SEOptimization
-        title="Google Ads Agency in India | PPC Services | Arbaj Technology"
-        description="Boost your business with high-converting Google Ads campaigns. Arbaj Technology offers expert PPC management, search ads, display ads, and YouTube ads services."
-        keywords="Google Ads agency India, PPC services India, Google Ads management, search ads, display ads, YouTube ads, Arbaj Technology"
+        title="Best Google Ads Agency | PPC & Paid Marketing Experts"
+        description="Professional Google Ads services for search, display, and remarketing campaigns to increase visibility, leads, and conversions effectively."
+        keywords="Google Ad, Google Ads agency India, PPC services India, Google Ads management, search ads, display ads, YouTube ads, Arbaj Technology"
         url="https://arbajtechnologypvtltd.com/google-ads"
         image="https://arbajtechnologypvtltd.com/og-google-ads.jpg"
       />
