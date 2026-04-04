@@ -119,13 +119,13 @@ export default function Blog() {
             Digital Marketing Blog
           </div>
           <h1 className="bl-hero__title">
-            Marketing Strategies<br />
-            <span className="bl-hero__title-grad">That Drive Results</span>
+            Ultimate Guide to<br />
+            <span className="bl-hero__title-grad">Digital Marketing Services</span>
           </h1>
-          <p className="bl-hero__sub">
+          {/* <p className="bl-hero__sub">
             SEO, social media, Google Ads, content and email marketing —
             actionable insights from the Arbaj Technology team.
-          </p>
+          </p> */}
 
           {/* search */}
           <div className={`bl-search${search ? " bl-search--val" : ""}`}>

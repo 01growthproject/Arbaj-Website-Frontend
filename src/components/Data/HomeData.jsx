@@ -2,7 +2,7 @@ export const SERVICES = [
   {
     id: 1,
     tag: "SEO",
-    title: "SEO Services in India",
+    title: "SEO Services",
     desc: "Improve your internet site’s Google ranking and attain your target marketplace with our a success search engine optimization answers. We offer keyword optimization, on-web page and rancid-web page optimization, technical search engine optimization, and exceptional one-way links to increase your site visitors.",
     link: "/seo-services-india",
     icon: (
@@ -18,7 +18,7 @@ export const SERVICES = [
   {
     id: 2,
     tag: "PPC",
-    title: "Google Ads Agency in India",
+    title: "Google Ads ",
     desc: "Seek instant exposure with our Google Ads answers. We lay out and manipulate powerful ad campaigns that attract real clients to your enterprise – helping you grow faster with tangible results",
     link: "/google-ads-agency-india", 
     icon: (
@@ -33,7 +33,7 @@ export const SERVICES = [
   {
     id: 3,
     tag: "SMM",
-    title: "Social Media Marketing Services",
+    title: "Social Media Marketing ",
     link: "/social-media-marketing", 
     desc: "Engage with your target audience and establish your logo on social media platforms along with Facebook, Instagram, LinkedIn, and YouTube. Our social media experts layout innovative content material and execute centered ad campaigns to growth your followers and engagement.",
     icon: (
@@ -49,7 +49,7 @@ export const SERVICES = [
   {
     id: 4,
     tag: "WEB",
-    title: "Web Development Company India",
+    title: "Web Development ",
     desc: "Your internet site is your on-line id. We design and develop quick, modern, and cellular responsive internet sites that reflect your id flawlessly. Be it a commercial internet site or an e-commerce internet site, we design consumer-friendly internet sites for you.",
     link: "/web-development-company-india", 
     icon: (
@@ -105,18 +105,18 @@ export const STATS = [
 export const FAQS = [
   {
     q: "How do I get started with your agency?",
-    a: "Simply reach out to us and tell us about your business. Our team will understand your goals and create an easy, effective plan to grow your business online — step by step.",
+    a: "To get started, just contact us and tell us about your business. Our team will understand your goals and create an easy, effective plan to grow your business online.",
   },
   {
-    q: "What digital marketing services does Arbaj Technology offer in India?",
-    a: "We offer SEO, Google Ads (PPC), Social Media Marketing, Website Development, Graphic Design, and Video Editing — everything your business needs to build a powerful online presence.",
+    q: "WHAT SERVICES DOES YOUR AGENCY OFFER?",
+    a: "We offer SEO, Google Ads, social media marketing, website design, website development, graphic design, and video editing services to help your business grow and build a strong online presence.",
   },
   {
-    q: "Why is Arbaj Technology the best choice for me?",
-    a: "Because we focus on real, measurable results. We use proven marketing strategies and provide dedicated personal support to help your business grow faster online.",
+    q: "Why is ARBAJ TECHNOLOGY the best digital marketing company for me?",
+    a: "ARBAJ TECHNOLOGY is the best choice because we focus on real results, use proven marketing strategies, and give personal support to help your business grow faster online.",
   },
   {
-    q: "How long does it take to see results?",
-    a: "SEO typically shows strong results in 3–6 months. Google Ads can drive results almost immediately. Timelines vary by industry and competition — we stay fully transparent throughout.",
+    q: "How do I get started with your agency?",
+    a: " Getting started is easy! Reach out to ARBAJ TECHNOLOGY PVT.LTD, and our experts will guide you step- by - step to boost your online growth.",
   },
 ];

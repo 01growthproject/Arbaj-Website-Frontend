@@ -1,3 +1,12 @@
+
+import image1 from "../../../public/team/image1.png"
+import image2 from "../../../public/team/image2.png"
+import image3 from '../../../public/team/image3.png'
+import image4 from '../../../public/team/image4.png'
+import image5 from '../../../public/team/image5.png'
+import image6 from '../../../public/team/image6.png'
+import image7 from '../../../public/team/image7.png'
+import image8 from '../../../public/team/image8.png'
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
@@ -94,78 +103,97 @@ export const MVV = [
 ];
 
 export const TEAM = [
+  // {
+  //   id: 1,
+  //   initials: "AB",
+  //   name: "Arjan Bajwa",
+  //   role: "Founder & CEO",
+  //   bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
+  //   // socials: ["Li", "Gh", "Tw"],
+  //   color: "#1d7afc",
+  // },
   {
     id: 1,
-    initials: "AB",
-    name: "Arjan Bajwa",
-    role: "Founder & CEO",
-    bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
+    initials: "sk",
+    name: "Shubham Kumar",
+    role: "Manager",
+    // bio: "A dedicated and result-driven Manager at Arbaj Technology.",
     // socials: ["Li", "Gh", "Tw"],
     color: "#1d7afc",
+    img:image1
   },
   {
     id: 2,
-    initials: "SK",
-    name: "Shubham Kumar",
-    role: "Manager",
-    bio: "A dedicated and result-driven Manager at Arbaj Technology.",
-    // socials: ["Li", "Gh", "Tw"],
-    color: "#1d7afc",
+    initials: "M",
+    name: "Monty Kumar",
+    role: "Team Leader",
+    // bio: "A team leader guides, motivates, manages tasks, ensures team success.",
+    // socials: ["Li", "Be", "Dr"],
+    color: "#f4a200",
+    img: image2
   },
   {
     id: 3,
-    initials: "MK",
-    name: "Monty Kumar",
-    role: "Lead Designer",
-    bio: "Always stays updated with the latest design trends and tools.",
-    // socials: ["Li", "Be", "Dr"],
-    color: "#f4a200",
+    initials: "AA",
+    name: "Anjali Aggri",
+    role: "Social Media Marketing Specialist",
+    // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
+    // socials: ["Li", "Tw"],
+    color: "#a855f7",
+    img:image3
   },
   {
     id: 4,
     initials: "RK",
     name: "Ritesh Kumar ",
-    role: "Word Press & Mern Stack Developer",
-    bio: "A skilled WordPress & MERN Stack Developer with a passion for building modern web solutions.",
+    role: "Web Developer",
+    // bio: "A skilled WordPress & MERN Stack Developer with a passion for building modern web solutions.",
     // socials: ["Li", "Gh"],
     color: "#22c55e",
+    img: image4
   },
   {
     id: 5,
-    initials: "MS",
-    name: "Mohit Sharma ",
-    role: " Mern Stack Developer",
-    bio: "A passionate MERN Stack Developer, specializing in modern web application development.",
-    // socials: ["Li", "Gh"],
-    color: "#22c55e",
+    initials: "CT",
+    name: "Chiranjeet Thakur",
+    role: "Video Editor",
+    // bio: "A creative Video Editor, passionate about turning raw footage into engaging visual stories.",
+    // socials: ["Li", "Tw"],
+    color: "#a855f7",
+    img: image5
   },
   {
     id: 6,
     initials: "RB",
     name: "Ritik Banyal ",
     role: " SEO Specialist",
-    bio: "A dedicated SEO Specialist, focused on improving website visibility and online growth..",
+    // bio: "A dedicated SEO Specialist, focused on improving website visibility and online growth..",
     // socials: ["Li", "Gh"],
     color: "#22c55e",
+    img: image6
   },
- 
   {
     id: 7,
-    initials: "CT",
-    name: "Chiranjeet Thakur",
-    role: "Video Editor",
-    bio: "A creative Video Editor, passionate about turning raw footage into engaging visual stories.",
-    // socials: ["Li", "Tw"],
-    color: "#a855f7",
+    initials: "MS",
+    name: "Mohit Sharma ",
+    role: " MERN Stack Developer",
+    // bio: "A passionate MERN Stack Developer, specializing in modern web application development.",
+    // socials: ["Li", "Gh"],
+    color: "#22c55e",
+    img: image7
   },
+  
+ 
+ 
   {
     id: 8,
-    initials: "RK",
-    name: "Anjali Aggri",
-    role: "Digital Marketing Specialist",
-    bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
+    initials: "KG",
+    name: "Krishna Goswami",
+    role: "Junior Social Media Marketing",
+    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
     // socials: ["Li", "Tw"],
     color: "#a855f7",
+    img: image8
   },
 ];
 

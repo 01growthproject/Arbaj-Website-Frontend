@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import '../styles/navbar.css';
-import Logo from '../assets/A-lg.webp'
+import Logo from '../assets/Artboard lg.png'
 
 const SERVICE_LINKS = [
   {
@@ -72,7 +72,7 @@ const SERVICE_LINKS = [
   },
   {
     label: "Google Ads",
-    path: "/google-ads",
+    path: "/google-ads-agency",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />

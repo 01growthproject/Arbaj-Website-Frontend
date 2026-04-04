@@ -459,7 +459,7 @@ export default function ContactPage() {
 
 
         <ContactHero />
-        <Ticker />
+        {/* <Ticker /> */}
         <ContactCards />
         <WhyContact />
         <MapSection />

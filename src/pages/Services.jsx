@@ -105,12 +105,12 @@ function ServiceHero() {
       </p>
 
       <div className="sh__actions">
-        <Link to="/contact" className="sh__btn sh__btn--primary">
+        {/* <Link to="/contact" className="sh__btn sh__btn--primary">
           Get Free Consultation
           <svg viewBox="0 0 20 20" fill="currentColor" width="17" height="17">
             <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
           </svg>
-        </Link>
+        </Link> */}
         {/* <Link to="#services-grid" className="sh__btn sh__btn--ghost">Explore Services</Link> */}
       </div>
 
@@ -340,21 +340,21 @@ function WhyUs() {
               <span>📊</span>
               <div>
                 <strong>Data-Driven Results</strong>
-                <p>Every decision we make is backed by real data — no guesswork, only growth.</p>
+                <p>Employs analytical tools such as Google Analytics to measure performance, optimize marketing campaigns, enhance decision-making processes, and increase ROI for sustainable business growth.</p>
               </div>
             </div>
             <div className="svc-why__badge-card svc-why__badge-card--gold">
               <span>🤝</span>
               <div>
                 <strong>Dedicated Support</strong>
-                <p>Your dedicated account manager is always just a call or message away.</p>
+                <p>Offers constant support, prompt response, periodic updates, and individualized advice to facilitate effective communication and ensure continued client satisfaction.</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="svc-why__text">
-          <div className="section__label">— Why Choose Us</div>
+          <div className="section__label_">— Why Choose Us</div>
           <h2 className="section__title">
             Why Businesses Trust<br />
             <span>Arbaj Technology</span>
@@ -475,7 +475,7 @@ export default function ServicePage() {
 
         
         <ServiceHero />
-        <Ticker />
+        {/* <Ticker /> */}
         <ServicesMini />
         <ServicesGrid />
         <Process />

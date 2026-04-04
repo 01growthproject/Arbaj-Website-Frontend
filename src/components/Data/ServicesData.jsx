@@ -10,8 +10,8 @@ export const SERVICES = [
     id: 1,
     tag: "SEO",
     title: "Search Engine Optimization",
-    link: "/seo-services-india",
-    desc: "We create and edit expert videos to engage with your target audience. If it is a promotional video, social media video, or YouTube video, we offer excellent visual quality to leave a long-lasting impression.",
+    link: "/seo-services",
+    desc: "Search engine optimization (SEO) is the practice of optimizing your website for search engines such as Google Search. This involves conducting keyword research, performing on-page optimization, making technical changes, and acquiring backlinks. The primary aim of SEO is to achieve high search engine rankings and drive organic traffic to your site.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -27,8 +27,8 @@ export const SERVICES = [
     id: 2,
     tag: "PPC",
     title: "Google Ads (PPC)",
-    link: "/google-ads-agency-india", 
-    desc: "Boost your sales immediately with targeted Google Ads campaigns. We create, manage, and optimize commercials that deliver real results – more clicks, more leads, and higher ROI for your business.",
+    link: "/google-ads-agency", 
+    desc: "Paid Advertising or PPC(Pay Per Click) enables a business to place advertisements on platforms such as Google Ads.The business will be charged only when the advertisement receives a click.This is considered one of the quickest means of attracting leads and making sales.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -45,7 +45,7 @@ export const SERVICES = [
     tag: "SMM",
     title: "Social Media Marketing",
     link: "/social-media-marketing", 
-    desc: "Our layout team will come up with appealing pics to tell your emblem tale. Whether you want a logo, banner, brochure, or social media publish, we will make sure that your business looks professional and appealing.",
+    desc: "Social Media Marketing aims to advertise a company using social media sites such as Instagram and Facebook. This marketing process encompasses developing content, posting it, engaging with the target audience, and launching advertisements.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -62,8 +62,8 @@ export const SERVICES = [
     id: 4,
     tag: "WEB",
     title: "Website Development",
-    link: "/web-development-company-india", 
-    desc: "We expand rapid, steady, and smooth-to-cope with websites using the modern technology. Our improvement ensures clean capability, and your enterprise will grow and reach more customers on-line.",
+    link: "/web-development-company", 
+    desc: "Website Development entails designing a professional and efficient website for organizations. The proper design of a website ensures that the user experience is improved while aiding in search engine optimization and marketing.",
     
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
@@ -82,7 +82,7 @@ export const SERVICES = [
     tag: "DESIGN",
     title: "Graphic Design",
     link: "/graphic-designing", 
-    desc: "Our design team creates attractive pix that inform your emblem story. Whether it’s a emblem, banner, brochure, or social media update, we ensure your business seems expert and attractive.",
+    desc: "Graphic designing is the visual foundation of digital marketing. It includes the design of social media posts, banners, advertising creatives, logos, thumbnails, and other branding elements. Professional-looking designs draw the attention of the audience, while branding ensures the identity of the business, which helps increase engagement and conversions.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -100,7 +100,7 @@ export const SERVICES = [
     tag: "VIDEO",
     title: "Video Editing",
     link: "/video-editing", 
-    desc: "We produce and edit expert videos that engage your target audience. Whether it’s a promotional video, social media video, or YouTube video, we offer high-quality visual content that leaves a lasting impact.",
+    desc: "Video Editing has become one of the most powerful aspects of marketing, especially for reels and ads. Raw footage is edited to create captivating videos such as Instagram Reels, YouTube videos, creative ads, transitions, effects, subtitles, and sound design. The better the editing quality of videos, the more they attract audiences and make their content go viral.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -143,19 +143,23 @@ export const PROCESS = [
 
 export const FAQS = [
   {
-    q: "How do I know which service is right for my business?",
-    a: "Book a free consultation and our experts will analyze your business, competition, and goals to recommend the most effective services for your specific situation.",
+    q: "How long does it take to see results from SEO?",
+    a: "SEO results usually start appearing within 3–6 months, depending on your industry, competition, and the keywords targeted. Continuous optimization ensures long-term growth.",
   },
   {
-    q: "Do you offer packages that combine multiple services?",
-    a: "Yes! We offer bundled packages that combine SEO, Google Ads, Social Media, and Web services at discounted rates. Contact us to get a custom quote.",
+    q: "Do you offer customized service packages?",
+    a: "Yes! All our services, including SEO, website development, and digital marketing, are tailored to your business goals and budget.",
   },
   {
-    q: "How long before I see results from your services?",
-    a: "Google Ads can deliver results within days. SEO typically shows strong improvements in 3–6 months. Social Media growth usually takes 1–3 months of consistent effort.",
+    q: "Can you redesign my existing website?",
+    a: "Absolutely. We can modernize your website, improve its design, speed, and user experience while keeping it SEO-friendly and mobile-responsive.",
   },
   {
-    q: "Will I get reports on how my campaigns are performing?",
-    a: "Absolutely. Every client gets a dedicated account manager and detailed monthly reports covering traffic, leads, conversions, and ROI for full transparency.",
+    q: "Will I get reports on my digital marketing campaigns?",
+    a: "Yes. We provide regular reports for all services, including SEO, Google Ads, and social media campaigns, so you can track progress and ROI.",
+  },
+  {
+    q: "Do you offer support after the project is completed?",
+    a: "Yes. We provide ongoing maintenance, updates, and technical support for websites and marketing campaigns to ensure your business keeps performing well online.",
   },
 ];

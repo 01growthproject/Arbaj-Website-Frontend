@@ -3,6 +3,7 @@ import '../styles/about.css';
 import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta'
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
+
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -19,16 +20,11 @@ function useReveal() {
   return [ref, visible];
 }
 
-/* ─────────────────────────────────────────────
-   ABOUT HERO — Centered sh__* style (matches Services)
-   Flip words cycle, NO underline on flip word
-───────────────────────────────────────────── */
 const FLIP_WORDS = ["Since 2019.", "50+ Clients.", "Real Results.", "Always Growing."];
 
 const ABOUT_METRICS = [
   { icon: "🏆", tag: "Clients", value: "50+", label: "Happy Clients", accent: "#17ABBC", bar: "82%" },
   { icon: "📅", tag: "Experience", value: "5+", label: "Years in Industry", accent: "#048C8C", bar: "75%" },
-  // { icon: "✅", tag: "Projects", value: "1200+", label: "Projects Delivered", accent: "#6DC497", bar: "90%" },
   { icon: "😊", tag: "Retention", value: "98%", label: "Client Retention", accent: "#a855f7", bar: "98%" },
 ];
 
@@ -37,7 +33,6 @@ function AboutHero() {
   const [flipping, setFlipping] = useState(false);
   const particleRef = useRef(null);
 
-  /* word flip interval */
   useEffect(() => {
     const id = setInterval(() => {
       setFlipping(true);
@@ -49,7 +44,6 @@ function AboutHero() {
     return () => clearInterval(id);
   }, []);
 
-  /* floating particles — same as services */
   useEffect(() => {
     const container = particleRef.current;
     if (!container) return;
@@ -72,7 +66,6 @@ function AboutHero() {
 
   return (
     <section className="sh">
-      {/* ── Background (identical to ServiceHero) ── */}
       <div className="sh__bg">
         <div className="sh__bg-mesh" />
         <div className="sh__bg-lines" />
@@ -84,13 +77,11 @@ function AboutHero() {
         <div ref={particleRef} className="sh__particles" />
       </div>
 
-      {/* ── Badge ── */}
       <div className="sh__badge">
         <span className="sh__badge-dot" />
         Who We Are — Arbaj Technology
       </div>
 
-      {/* ── Title with flip word (NO underline) ── */}
       <h1 className="sh__title">
         Building the Future of
         <br />
@@ -102,14 +93,12 @@ function AboutHero() {
         </span>
       </h1>
 
-      {/* ── Description ── */}
       <p className="sh__desc">
         SEO · Google Ads · Social Media · Web Development · Graphic Design · Video Editing
         <br />
         <span>A passionate team in Zirakpur, Punjab — building real results for 50+ businesses across India.</span>
       </p>
 
-      {/* ── CTA ── */}
       <div className="sh__actions">
         <Link to="/contact" className="sh__btn sh__btn--primary">
           Work With Us
@@ -120,10 +109,8 @@ function AboutHero() {
         <a href="#story" className="sh__btn sh__btn--ghost">Our Story</a>
       </div>
 
-      {/* ── Divider ── */}
       <div className="sh__divider" />
 
-      {/* ── Stats bar ── */}
       <div className="sh__stats">
         {STATS.map((s, i) => (
           <div className="sh__stat" key={i}>
@@ -136,7 +123,6 @@ function AboutHero() {
         ))}
       </div>
 
-      {/* ── Metric cards ── */}
       <div className="sh__cards">
         {ABOUT_METRICS.map((m, i) => (
           <div
@@ -160,27 +146,6 @@ function AboutHero() {
   );
 }
 
-
-function Ticker() {
-  const items = [
-    "Innovation", "Digital Marketing", "SEO", "Google Ads",
-    "Social Media", "Web Development", "Graphic Design", "Video Editing",
-  ];
-  const all = [...items, ...items];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {all.map((item, i) => (
-          <span key={i} className="ticker__item">
-            {item} <span className="ticker__sep">✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-
 function WhoWeAre() {
   const [ref, visible] = useReveal();
   return (
@@ -201,7 +166,7 @@ function WhoWeAre() {
           </div>
           <div className="about-story__pin about-story__pin--2">
             <span className="about-story__pin-dot about-story__pin-dot--mint" />
-            Est. 2019
+            Est. 2021
           </div>
           <div className="about-story__pin about-story__pin--3">
             <span className="about-story__pin-dot about-story__pin-dot--green" />
@@ -210,10 +175,10 @@ function WhoWeAre() {
         </div>
 
         <div className="about-story__text">
-          <div className="section__label">— Who We Are</div>
+          <div className="section__label_">— Who We Are</div>
           <h2 className="section__title">
-            Your Trusted<br />
-            <span>Digital Growth Partner</span>
+            Driven by Results,<br />
+            <span>Powered by Strategy</span>
           </h2>
           <p className="about-story__para">
             Arbaj Technology was born from a simple belief — that great digital marketing
@@ -250,7 +215,6 @@ function WhoWeAre() {
   );
 }
 
-
 function MissionVisionValues() {
   const [ref, visible] = useReveal();
   return (
@@ -286,7 +250,9 @@ function MissionVisionValues() {
   );
 }
 
-
+/* ─────────────────────────────────────────────
+   TEAM — Fully responsive with proper image handling
+───────────────────────────────────────────── */
 function Team() {
   const [ref, visible] = useReveal();
   return (
@@ -295,7 +261,7 @@ function Team() {
       ref={ref}
     >
       <div className="about-team__header">
-        <div className="section__label">— Our People</div>
+        <div className="section__label_">— Our People</div>
         <h2 className="section__title">
           Meet the <span>Team</span>
         </h2>
@@ -310,19 +276,18 @@ function Team() {
             key={member.id}
             style={{ "--i": i, "--color": member.color }}
           >
-            <div
-              className="team-card__avatar"
-              style={{ background: `linear-gradient(135deg, ${member.color} 0%, ${member.color}aa 100%)` }}
-            >
-              {member.initials}
+            <div className="team-card__avatar-wrap">
+              <img
+                src={member.img}
+                alt={member.name}
+                className="team-card__img"
+                loading="lazy"
+              />
             </div>
-            <h3 className="team-card__name">{member.name}</h3>
-            <p className="team-card__role">{member.role}</p>
-            <p className="team-card__bio">{member.bio}</p>
-            <div className="team-card__socials">
-              {/* {member.socials.map((s) => (
-                <a key={s} href="#" className="team-card__social">{s}</a>
-              ))} */}
+            <div className="team-card__body">
+              <h3 className="team-card__name">{member.name}</h3>
+              <p className="team-card__role">{member.role}</p>
+              <p className="team-card__bio">{member.bio}</p>
             </div>
           </div>
         ))}
@@ -330,7 +295,6 @@ function Team() {
     </section>
   );
 }
-
 
 function Timeline() {
   const [ref, visible] = useReveal();
@@ -379,7 +343,6 @@ function Timeline() {
   );
 }
 
-
 function ToolsStack() {
   const [ref, visible] = useReveal();
   return (
@@ -407,7 +370,6 @@ function ToolsStack() {
     </section>
   );
 }
-
 
 function FAQ() {
   const [open, setOpen] = useState(null);
@@ -447,7 +409,6 @@ function FAQ() {
   );
 }
 
-
 function CTABanner() {
   const [ref, visible] = useReveal();
   return (
@@ -475,22 +436,18 @@ function CTABanner() {
   );
 }
 
-
 export default function AboutPage() {
   return (
     <>
-        <SEOptimization
-          title="About Us | Arbaj Technology – Digital Growth Partner"
-          description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 50+ businesses grow with SEO, ads, and web development."
-          keywords="Arbaj Technology, digital marketing agency Zirakpur, SEO company India, web development, social media marketing"
-          url="https://arbajtechnologypvtltd.com/about"
-          image="https://arbajtechnologypvtltd.com/og-image.jpg"
-        />
+      <SEOptimization
+        title="About Us | Arbaj Technology – Digital Growth Partner"
+        description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 50+ businesses grow with SEO, ads, and web development."
+        keywords="Arbaj Technology, digital marketing agency Zirakpur, SEO company India, web development, social media marketing"
+        url="https://arbajtechnologypvtltd.com/about"
+        image="https://arbajtechnologypvtltd.com/og-image.jpg"
+      />
       <main>
-
-
         <AboutHero />
-        <Ticker />
         <WhoWeAre />
         <MissionVisionValues />
         <Team />
