@@ -52,12 +52,12 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Web Development", path: "/web-development-company-india" },
+  { label: "Web Development", path: "/web-development" },
   { label: "Graphic Designing", path: "/graphic-designing" },
   { label: "Video Editing", path: "/video-editing" },
-  { label: "Search Engine Optimization (SEO)", path: "/seo-services-india" },
+  { label: "Search Engine Optimization (SEO)", path: "/search-engine-optimization" },
   { label: "Social Media Marketing (SMM)", path: "/social-media-marketing" },
-  { label: " Google Ads", path: "/google-ads-agency-india" },
+  { label: " Google Ads", path: "/google-ads-agency" },
 ];
 
 export default function Footer() {

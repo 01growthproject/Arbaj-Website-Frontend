@@ -807,6 +807,8 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .team-card__name {
   font-family: var(--font-display);
@@ -1012,7 +1014,7 @@ button {
 ═══════════════════════════════════════════════ */
 @media (max-width: 1200px) {
   .about-team__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 0.5r);
   }
 }
 
