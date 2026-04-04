@@ -1,5 +1,5 @@
 export const STATS = [
-  { number: "500+", label: "Happy Clients" },
+  { number: "50+", label: "Happy Clients" },
   { number: "6+", label: "Services Offered" },
   { number: "98%", label: "Success Rate" },
   { number: "5+", label: "Years Experience" },
@@ -10,7 +10,8 @@ export const SERVICES = [
     id: 1,
     tag: "SEO",
     title: "Search Engine Optimization",
-    desc: "Rank #1 on Google and reach your target audience with powerful SEO — keyword research, on-page optimization, technical SEO & premium backlinks.",
+    link: "/seo-services-india",
+    desc: "We create and edit expert videos to engage with your target audience. If it is a promotional video, social media video, or YouTube video, we offer excellent visual quality to leave a long-lasting impression.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -26,7 +27,8 @@ export const SERVICES = [
     id: 2,
     tag: "PPC",
     title: "Google Ads (PPC)",
-    desc: "Get instant visibility with high-converting Google Ad campaigns. We design and manage targeted ads that attract real customers and maximize your ROI.",
+    link: "/google-ads-agency-india", 
+    desc: "Boost your sales immediately with targeted Google Ads campaigns. We create, manage, and optimize commercials that deliver real results – more clicks, more leads, and higher ROI for your business.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -42,7 +44,8 @@ export const SERVICES = [
     id: 3,
     tag: "SMM",
     title: "Social Media Marketing",
-    desc: "Build brand authority on Facebook, Instagram, LinkedIn & YouTube. Creative content and data-driven campaigns to grow followers and drive real engagement.",
+    link: "/social-media-marketing", 
+    desc: "Our layout team will come up with appealing pics to tell your emblem tale. Whether you want a logo, banner, brochure, or social media publish, we will make sure that your business looks professional and appealing.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -59,7 +62,9 @@ export const SERVICES = [
     id: 4,
     tag: "WEB",
     title: "Website Development",
-    desc: "Fast, modern, and mobile-first websites that convert visitors into paying customers. From business sites to e-commerce — built to represent your brand perfectly.",
+    link: "/web-development-company-india", 
+    desc: "We expand rapid, steady, and smooth-to-cope with websites using the modern technology. Our improvement ensures clean capability, and your enterprise will grow and reach more customers on-line.",
+    
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -76,7 +81,8 @@ export const SERVICES = [
     id: 5,
     tag: "DESIGN",
     title: "Graphic Design",
-    desc: "Stunning visuals that make your brand unforgettable. Logos, banners, brochures, business cards & social media graphics crafted to make you stand out.",
+    link: "/graphic-designing", 
+    desc: "Our design team creates attractive pix that inform your emblem story. Whether it’s a emblem, banner, brochure, or social media update, we ensure your business seems expert and attractive.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -93,7 +99,8 @@ export const SERVICES = [
     id: 6,
     tag: "VIDEO",
     title: "Video Editing",
-    desc: "High-quality promotional videos, reels and ad films that tell your brand story in a clear, engaging and visually stunning way — built for maximum impact.",
+    link: "/video-editing", 
+    desc: "We produce and edit expert videos that engage your target audience. Whether it’s a promotional video, social media video, or YouTube video, we offer high-quality visual content that leaves a lasting impact.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />

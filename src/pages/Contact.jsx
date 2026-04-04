@@ -297,7 +297,7 @@ function ContactCards() {
 
   return (
     <section className={`contact-cards section ${visible ? "section--visible" : ""}`} ref={ref}>
-      <div className="section__label">— Get In Touch</div>
+      <div className="section__label_">— Get In Touch</div>
       <h2 className="section__title">Multiple Ways to <span>Reach Us</span></h2>
       <p className="section__sub">Choose the channel that works best for you — we're available across all of them.</p>
 
@@ -349,12 +349,10 @@ function WhyContact() {
           <div className="section__label">— Why Reach Out</div>
           <h2 className="section__title">We're Here to Help <span>Your Business Grow</span></h2>
           <p className="contact-why__para">
-            Getting started is simple. Share your goals with us and our certified digital marketing
-            experts will create a personalised strategy that fits your business, industry and budget.
+            The beginning couldn’t be easier! Tell us your objectives and our qualified specialists in digital marketing will design a tailor-made approach for you, your company and budget.
           </p>
           <p className="contact-why__para">
-            No jargon, no pressure, no lock-in contracts. Just honest advice and real results —
-            backed by 5+ years of experience and 500+ happy clients.
+            No need to worry about complicated terminology, no sales talk and no binding agreements. We guarantee our expertise based on more than five years of practice and hundreds of satisfied customers.
           </p>
           <ul className="contact-why__features">
             {["Free 30-min Strategy Consultation", "Custom Plan for Your Business", "Certified Google & Meta Experts", "Transparent Pricing — No Hidden Fees", "Dedicated Account Manager"].map((f) => (

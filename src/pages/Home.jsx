@@ -11,6 +11,7 @@ function ParticleCanvas() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -55,7 +56,7 @@ function ParticleCanvas() {
 
     function init() {
       resize();
-      particles = Array.from({ length: 60 }, mkParticle);
+      particles = Array.from({ length: 30 }, mkParticle);
     }
 
     function tick() {
@@ -187,25 +188,25 @@ function Hero() {
 
         <h1 className="hero__title">
           Best Digital Marketing Company<br />
-          <span className="hero__title-highlight">in India to Grow </span><br />
-          Your Business
+          <span className="hero__title-highlight">in India   </span>
         </h1>
 
         <p className="hero__desc">
-          Searching for the best digital marketing partner? We deliver powerful, result-oriented
-          solutions — SEO, Google Ads, Social Media & Web Development — that help your brand
-          shine above the competition.
+          Looking for a first-class virtual advertising and marketing corporation that may offer correct growth? You’re at the proper location. We offer robust and result-orientated virtual advertising and marketing answers that may assist your commercial enterprise shine above all others. We are the first-class virtual advertising Company, and we focus on successful strategies that may produce extra site visitors, leads, and income for your commercial enterprise.
         </p>
 
         <div className="hero__actions">
-          <Link to="/contact" className="btn btn--primary">
+          {/* <Link to="/contact" className="btn btn--primary">
             Get Free Consultation
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
-          </Link>
+          </Link> */}
           <Link to="/services" className="btn btn--ghost">
             Explore Digital Marketing Services
+          </Link>
+          <Link to="/blog" className="btn btn--ghost">
+            Read Our Blog
           </Link>
         </div>
 
@@ -284,16 +285,16 @@ function Services() {
       ref={ref}
       id="services"
     >
-      <div className="section__label">— Our Services</div>
-      <h2 className="section__title">
-        Everything You Need<br />
-        <span>To Win Online</span>
+      <div className="section__label_">—
+        Top Notch Digital Marketing Company</div>
+      <h2 className="section__title_">
+        Our<br />
+        <span>Services</span>
       </h2>
       <p className="section__sub">
-        Complete digital marketing solutions under one roof — from strategy and design
-        to execution and growth. As a leading digital marketing company, we offer
-        result-driven SEO services in Punjab to improve your online visibility,
-        increase traffic, and grow your business faster.
+        Our services include SEO services in India, Google Ads campaigns, social media
+        marketing, and website development. We focus on data-driven strategies that
+        deliver measurable results and long-term business growth.
       </p>
 
       <div className="services__grid">
@@ -307,8 +308,8 @@ function Services() {
             <div className="service-card__icon">{s.icon}</div>
             <h3 className="service-card__title">{s.title}</h3>
             <p className="service-card__desc">{s.desc}</p>
-            <Link to="./services" className="service-card__link">
-              Learn More
+            <Link to={s.link} className="service-card__link">
+              Learn More About {s.title}
               <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -341,9 +342,7 @@ function About() {
               <div>
                 <strong>Our Mission</strong>
                 <p>
-                  To empower businesses with innovative digital solutions that fuel growth, visibility,
-                  and lasting success. As a trusted Google Ads expert in Zirakpur, we create
-                  high-converting ad campaigns that drive targeted traffic and boost your ROI.
+                  To enable businesses with innovative virtual answers that could result in boom, visibility, and fulfillment. We strive to offer amazing marketing, layout, and improvement providers which could help our clients build a robust online presence.
                 </p>
               </div>
             </div>
@@ -351,32 +350,28 @@ function About() {
               <span>🌟</span>
               <div>
                 <strong>Our Vision</strong>
-                <p>To become a globally recognized digital marketing company known for creativity, results, and trustworthiness.</p>
+                <p>To be one of the leading global virtual marketing agencies diagnosed for our creativity, consequences, and trustworthiness – supporting each commercial enterprise, from start-united states of americato companies, free up their online potential via clever generation and powerful virtual techniques</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="about__text">
-          <div className="section__label">— About Arbaj Technology</div>
+          <div className="section__label_">— About Arbaj Technology</div>
           <h2 className="section__title">
             Your Trusted<br />
             <span>Digital Growth Partner</span>
           </h2>
           <p className="about__para">
-            We are a passionate team dedicated to helping businesses grow online. Our experts use
-            innovative strategies, progressive tools, and creative approaches to build a solid
-            online foundation for your brand.
+            We are a team of passionate individuals dedicated to assisting businesses with growth online. Our team of experts employs innovative strategies, progressive tools, and creative solutions to ensure a solid foundation for your business online.
           </p>
           <p className="about__para">
-            Whether you're a startup or an established entrepreneur, we develop customized strategies
-            that meet your specific objectives. With a strong emphasis on quality and performance,
-            we are fully committed to your success.
+            Whether you are a startup entrepreneur or a well-established entrepreneur, we ensure that we develop a strategy that suits your specific goals. With a high emphasis on quality and performance, we are completely dedicated to your success.
           </p>
 
           <ul className="about__features">
             {[
-              "500+ Happy Clients Across India",
+              "50+ Happy Clients Across India",
               "5+ Years of Industry Experience",
               "Certified Digital Marketing Experts",
               "Transparent Monthly Reporting",
@@ -480,14 +475,14 @@ export default function HomePage() {
     <>
         <SEOptimization
         title="Best Digital Marketing Company in India | Arbaj Technology"
-        description="Arbaj Technology is the best digital marketing company in India offering SEO, PPC, and social media services to grow your business online."
+        description="Arbaj Technology is a leading digital marketing company in India offering SEO services, Google Ads management, social media marketing, and web development to grow your business online and increase ROI."
 
-          keywords="digital marketing company, SEO services India, web development company, Google Ads expert, social media marketing India, Arbaj Technology"
+        keywords="digital marketing company, Digital marketing company in Haryana, SEO services India,SEO company in India,  web development company, Google Ads expert, social media marketing India, Arbaj Technology, Google Ads agency in Zirakpur"
 
           url="https://arbajtechnologypvtltd.com/"
 
           image="https://arbajtechnologypvtltd.com/preview.jpg"
-
+        faqs={FAQS}  
         />
       <main>
 

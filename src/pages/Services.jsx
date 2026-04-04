@@ -21,7 +21,7 @@ function useReveal() {
 /* ─────────────────────────────────────────────
    SERVICE HERO — NEW CENTERED LAYOUT (sh__*)
 ───────────────────────────────────────────── */
-const FLIP_WORDS = ["Win Online.", "Grow Fast.", "Dominate.", "Get Results."];
+const FLIP_WORDS = ["SEO", "Google Ads", "Web Development"];
 
 const HERO_METRICS = [
   { icon: "🔍", tag: "SEO", value: "300%", label: "Organic Traffic", accent: "#17ABBC" },
@@ -48,20 +48,24 @@ function ServiceHero() {
 
   useEffect(() => {
     const container = particleRef.current;
-    if (!container) return;
+    if (!container || window.innerWidth < 768) return;
+
+    container.innerHTML = ""; // 🔥 important (duplicate remove)
+
     const colors = ["#048C8C", "#17ABBC", "#6DC497", "#a855f7"];
+
     for (let i = 0; i < 24; i++) {
       const p = document.createElement("span");
       p.className = "sh-particle";
       p.style.cssText = `
-        left:${Math.random() * 100}%;
-        top:${Math.random() * 100}%;
-        width:${2 + Math.random() * 3}px;
-        height:${2 + Math.random() * 3}px;
-        background:${colors[i % colors.length]};
-        animation-duration:${6 + Math.random() * 6}s;
-        animation-delay:${Math.random() * 7}s;
-      `;
+      left:${Math.random() * 100}%;
+      top:${Math.random() * 100}%;
+      width:${2 + Math.random() * 3}px;
+      height:${2 + Math.random() * 3}px;
+      background:${colors[i % colors.length]};
+      animation-duration:${6 + Math.random() * 6}s;
+      animation-delay:${Math.random() * 7}s;
+    `;
       container.appendChild(p);
     }
   }, []);
@@ -85,10 +89,9 @@ function ServiceHero() {
       </div>
 
       <h1 className="sh__title">
-        Every Service You Need To
-        <br />
+       
         <span className="sh__title-line2">
-          <span className="sh__title-gradient">Grow &amp;&nbsp;</span>
+          <span className="sh__title-gradient">Grow Your Business with &nbsp;</span>
           <span className={`sh__title-flip${flipping ? " sh__title-flip--out" : ""}`}>
             {FLIP_WORDS[wordIdx]}
           </span>
@@ -98,7 +101,7 @@ function ServiceHero() {
       <p className="sh__desc">
         SEO · Google Ads · Social Media · Web Development · Graphic Design · Video Editing
         <br />
-        <span>Result-oriented digital marketing that grows your business — under one roof.</span>
+        <span>Result-oriented digital marketing services in India that help you rank on Google, generate leads and grow your business faster.</span>
       </p>
 
       <div className="sh__actions">
@@ -145,6 +148,7 @@ function ServiceHero() {
         ))}
       </div>
     </section>
+    
   );
 }
 
@@ -169,6 +173,49 @@ function Ticker() {
 }
 
 
+function ServicesMini() {
+  const [ref, visible] = useReveal();
+  return (
+    <section
+      className={`services-mini section ${visible ? "section--visible" : ""}`}
+      ref={ref}
+    >
+      <div className="section__label_">— Quick Overview</div>
+      <h2 className="section__title">
+        Complete Digital Marketing <br />
+        <span>Services</span>
+      </h2>
+      <p className="section__sub">
+        At Arbaj Technology, we specialize in result-driven digital solutions that aim to help businesses grow online. We have customized strategies for startups, small businesses, and even established companies to increase their visibility, generate more leads, and increase their revenues. We use creativity, technology, and marketing expertise to help our clients attain measurable results.
+      </p>
+
+      <div className="services__grid">
+        {SERVICES.map((s, i) => (
+          <div
+            className="service-card"
+            key={s.id}
+            style={{ "--accent": s.accent, "--i": i }}
+          >
+            <div className="service-card__tag">{s.tag}</div>
+            <div className="service-card__icon">{s.icon}</div>
+            <h3 className="service-card__title">{s.title}</h3>
+            <p className="service-card__desc">{s.desc}</p>
+
+            <Link to={s.link} className="service-card__link">
+              Explore  {s.title} Services
+              <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+
+          </div>
+
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function ServicesGrid() {
   const [ref, visible] = useReveal();
   const [active, setActive] = useState(null);
@@ -179,9 +226,9 @@ function ServicesGrid() {
       ref={ref}
       id="services-grid"
     >
-      <div className="section__label">— What We Offer</div>
+      <div className="section__label_">— What We Offer</div>
       <h2 className="section__title">
-        All Services<br />
+        Digital Marketing Services in India<br />
         <span>In Detail</span>
       </h2>
       <p className="section__sub">
@@ -242,45 +289,6 @@ function ServicesGrid() {
 }
 
 
-function ServicesMini() {
-  const [ref, visible] = useReveal();
-  return (
-    <section
-      className={`services-mini section ${visible ? "section--visible" : ""}`}
-      ref={ref}
-    >
-      <div className="section__label">— Quick Overview</div>
-      <h2 className="section__title">
-        Everything You Need<br />
-        <span>To Win Online</span>
-      </h2>
-      <p className="section__sub">
-        Complete digital marketing solutions under one roof — strategy, design, execution and growth.
-      </p>
-
-      <div className="services__grid">
-        {SERVICES.map((s, i) => (
-          <div
-            className="service-card"
-            key={s.id}
-            style={{ "--accent": s.accent, "--i": i }}
-          >
-            <div className="service-card__tag">{s.tag}</div>
-            <div className="service-card__icon">{s.icon}</div>
-            <h3 className="service-card__title">{s.title}</h3>
-            <p className="service-card__desc">{s.desc}</p>
-            <a href="#services-grid" className="service-card__link">
-              Learn More
-              <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 
 function Process() {
@@ -352,12 +360,10 @@ function WhyUs() {
             <span>Arbaj Technology</span>
           </h2>
           <p className="svc-why__para">
-            With 5+ years of experience and 500+ happy clients, we've built our reputation on one
-            thing: real, measurable results. No vanity metrics — just growth you can see and feel.
+            With 5+ years of experience and 50+ happy clients, we've earned our reputation on one thing: real, measurable results. No vanity metrics. Just growth you can see. And feel.
           </p>
           <p className="svc-why__para">
-            Every service we offer is backed by a proven strategy, expert execution, and complete
-            transparency. We treat your business like our own.
+            All of our services are backed by a proven strategy, expert execution, and complete transparency. We treat your business like our own.
           </p>
 
           <ul className="svc-why__features">
@@ -456,17 +462,14 @@ function CTABanner() {
 export default function ServicePage() {
   return (
     <>
-    <SEOptimization
-      title="Digital Marketing Company in India | SEO, Google Ads & Web Development"
-
-      description="Arbaj Technology is a leading digital marketing company in India offering SEO services, Google Ads, social media marketing and web development solutions to grow your business online and increase leads."
-
-      keywords="digital marketing company India, SEO services India, Google Ads agency India, social media marketing company, web development company India"
-
-      url="https://arbajtechnologypvtltd.com/services"
-
-      image="https://arbajtechnologypvtltd.com/preview.jpg"
-    />
+      <SEOptimization
+        title="Digital Marketing Company in India | SEO, Google Ads & Web Development"
+        description="Looking for the best digital marketing services in India? Arbaj Technology offers SEO, Google Ads, social media marketing & web development to increase traffic, leads and sales."
+        keywords="digital marketing services India, SEO services India, Google Ads agency India, social media marketing services, website development company India, PPC services India"
+        url="https://arbajtechnologypvtltd.com/services"
+        image="https://arbajtechnologypvtltd.com/preview.jpg"
+        faqs={FAQS}
+      />
       <main>
 
 

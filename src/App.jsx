@@ -33,10 +33,10 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           {/* //-----------------------DropDown---------------------------// */}
-          <Route path="/search-engine-optimization" element={<SEOPage />} />
-          <Route path="/google-ads" element={<GoogleAdsPage />} />
+          <Route path="/seo-services-india" element={<SEOPage />} />
+          <Route path="/google-ads-agency-india" element={<GoogleAdsPage />} />
           <Route path="/video-editing" element={<VideoEditingPage />} />
-          <Route path="/web-developement" element={<WebDevelopmentPage />} />
+          <Route path="/web-development-company-india" element={<WebDevelopmentPage />} />
           <Route path="/social-media-marketing" element={<SocialMediaPage />} />
           <Route path="/graphic-designing" element={<GraphicDesigningPage />} />
           {/* <Route path="/marketing" element={<DigitalMarketingPage />} /> */}

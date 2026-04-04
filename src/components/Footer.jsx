@@ -52,12 +52,12 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: "Web Development", path: "/web-developement" },
+  { label: "Web Development", path: "/web-development-company-india" },
   { label: "Graphic Designing", path: "/graphic-designing" },
   { label: "Video Editing", path: "/video-editing" },
-  { label: "Search Engine Optimization (SEO)", path: "/search-engine-optimization" },
+  { label: "Search Engine Optimization (SEO)", path: "/seo-services-india" },
   { label: "Social Media Marketing (SMM)", path: "/social-media-marketing" },
-  { label: " Google Ads", path: "/google-ads" },
+  { label: " Google Ads", path: "/google-ads-agency-india" },
 ];
 
 export default function Footer() {
@@ -114,6 +114,7 @@ export default function Footer() {
               <small className="small">Pvt. Ltd.</small>
             </span>
           </Link>
+          
 
           <p className="footer__tagline-badge">Digital Growth Agency</p>
 
@@ -121,6 +122,9 @@ export default function Footer() {
             Helping businesses build a strong digital presence and achieve
             sustainable growth through reliable digital solutions.
           </p>
+          <Link to="/blog" className="btn btn--ghost">
+            Read Our Blog
+          </Link>
 
           <div className="footer__socials">
             {socials.map((s, i) => (

@@ -2,8 +2,9 @@ export const SERVICES = [
   {
     id: 1,
     tag: "SEO",
-    title: "Search Engine Optimization",
-    desc: "Rank #1 on Google and reach your target audience with our powerful SEO solutions — keyword research, on-page optimization, technical SEO & premium backlinks.",
+    title: "SEO Services in India",
+    desc: "Improve your internet site’s Google ranking and attain your target marketplace with our a success search engine optimization answers. We offer keyword optimization, on-web page and rancid-web page optimization, technical search engine optimization, and exceptional one-way links to increase your site visitors.",
+    link: "/seo-services-india",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -12,12 +13,14 @@ export const SERVICES = [
       </svg>
     ),
     accent: "#00d4ff",
+    
   },
   {
     id: 2,
     tag: "PPC",
-    title: "Google Ads (PPC)",
-    desc: "Get instant visibility with high-converting Google Ad campaigns. We design and manage targeted ads that attract real customers and maximize your ROI.",
+    title: "Google Ads Agency in India",
+    desc: "Seek instant exposure with our Google Ads answers. We lay out and manipulate powerful ad campaigns that attract real clients to your enterprise – helping you grow faster with tangible results",
+    link: "/google-ads-agency-india", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -30,8 +33,9 @@ export const SERVICES = [
   {
     id: 3,
     tag: "SMM",
-    title: "Social Media Marketing",
-    desc: "Build your brand authority on Facebook, Instagram, LinkedIn & YouTube. Creative content and data-driven campaigns to grow your followers and drive real engagement.",
+    title: "Social Media Marketing Services",
+    link: "/social-media-marketing", 
+    desc: "Engage with your target audience and establish your logo on social media platforms along with Facebook, Instagram, LinkedIn, and YouTube. Our social media experts layout innovative content material and execute centered ad campaigns to growth your followers and engagement.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -45,8 +49,9 @@ export const SERVICES = [
   {
     id: 4,
     tag: "WEB",
-    title: "Website Development",
-    desc: "Fast, modern, and mobile-first websites that convert visitors into paying customers. From business sites to e-commerce — built to represent your brand perfectly.",
+    title: "Web Development Company India",
+    desc: "Your internet site is your on-line id. We design and develop quick, modern, and cellular responsive internet sites that reflect your id flawlessly. Be it a commercial internet site or an e-commerce internet site, we design consumer-friendly internet sites for you.",
+    link: "/web-development-company-india", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -61,7 +66,8 @@ export const SERVICES = [
     id: 5,
     tag: "DESIGN",
     title: "Graphic Design",
-    desc: "Stunning visuals that make your brand unforgettable. Logos, banners, brochures, business cards and social media graphics crafted to make you stand out.",
+    desc: " Our creative designers make your ideas come to life in terms of truth through our beautiful visuals. We offer emblems, banners, brochures, business cards, and social media pix that make your logo stand out and appearance expert.",
+    link: "/graphic-designing", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -76,7 +82,8 @@ export const SERVICES = [
     id: 6,
     tag: "VIDEO",
     title: "Video Editing",
-    desc: "High-quality promotional videos, reels and ad films that tell your brand story in a clear, engaging and visually stunning way — built for maximum impact.",
+    desc: "We make fantastic films for promotions, advertisements, and social media content. Our video modifying team will make sure that your logo tale is told in a clean, engaging, and aesthetically pleasing fashion.",
+    link: "/video-editing", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -89,10 +96,10 @@ export const SERVICES = [
 ];
 
 export const STATS = [
-  { number: "500+", label: "Happy Clients" },
+  { number: "50+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
   { number: "98%", label: "Success Rate" },
-  { number: "50+", label: "Team Experts" },
+  { number: "15+", label: "Team Experts" },
 ];
 
 export const FAQS = [
@@ -101,7 +108,7 @@ export const FAQS = [
     a: "Simply reach out to us and tell us about your business. Our team will understand your goals and create an easy, effective plan to grow your business online — step by step.",
   },
   {
-    q: "What services does Arbaj Technology offer?",
+    q: "What digital marketing services does Arbaj Technology offer in India?",
     a: "We offer SEO, Google Ads (PPC), Social Media Marketing, Website Development, Graphic Design, and Video Editing — everything your business needs to build a powerful online presence.",
   },
   {

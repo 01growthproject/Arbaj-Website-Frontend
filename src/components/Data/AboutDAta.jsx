@@ -1,8 +1,8 @@
 export const STATS = [
-  { number: "500+", label: "Happy Clients" },
+  { number: "50+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
   { number: "98%", label: "Success Rate" },
-  { number: "50+", label: "Team Experts" },
+  { number: "15+", label: "Team Experts" },
 ];
 
 export const MVV = [
@@ -171,40 +171,40 @@ export const TEAM = [
 
 export const TIMELINE = [
   {
-    year: "2019",
+    year: "2021",
     title: "Founded in Zirakpur, Punjab",
     desc: "Arbaj Technology was started as a boutique digital studio with one goal: build things that matter.",
   },
   {
-    year: "2020",
+    year: "2023",
     title: "First 50 Clients Onboarded",
     desc: "Despite global challenges, we scaled our team and delivered 80+ campaigns across SEO and Google Ads.",
   },
   {
-    year: "2022",
+    year: "2025",
     title: "Expanded to Web & Design",
     desc: "Launched full-service web development and graphic design verticals, becoming a true one-stop agency.",
   },
   {
-    year: "2024",
-    title: "500+ Happy Clients",
+    year: "2026",
+    title: "50+ Happy Clients",
     desc: "Now a full-service digital marketing agency trusted by 500+ clients across India — and growing fast.",
   },
 ];
 
 export const STACK = [
   { label: "Google Ads", dot: "#ff9900" },
-  { label: "Meta Ads", dot: "#1877f2" },
-  { label: "SEMrush", dot: "#ff6b35" },
-  { label: "Ahrefs", dot: "#f59e0b" },
+  { label: "Facebook Ads", dot: "#ff0000" },
+  { label: "Video Editing", dot: "#1877f2" },
+  { label: "Graphic Designing", dot: "#ff6b35" },
   { label: "WordPress", dot: "#21759b" },
   { label: "React", dot: "#61dafb" },
-  { label: "Figma", dot: "#a259ff" },
-  { label: "Adobe Suite", dot: "#ff0000" },
-  { label: "YouTube Ads", dot: "#ff0000" },
-  { label: "Analytics", dot: "#e37400" },
+  { label: "Node.js", dot: "#f59e0b" },
+  { label: "SEO", dot: "#a259ff" },
+  // { label: "YouTube Ads", dot: "#ff0000" },
+  // { label: "Analytics", dot: "#e37400" },
   { label: "Canva", dot: "#00c4cc" },
-  { label: "Mailchimp", dot: "#ffe01b" },
+  // { label: "Mailchimp", dot: "#ffe01b" },
 ];
 
 export const FAQS = [

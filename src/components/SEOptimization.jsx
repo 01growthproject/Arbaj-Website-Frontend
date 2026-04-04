@@ -1,62 +1,66 @@
 import { Helmet } from "react-helmet-async";
 
-const SEOptimization = ({
+export default function SEOptimization({
   title,
   description,
-  keywords = "",
-  url = "https://arbajtechnologypvtltd.com/",
-  image = "https://arbajtechnologypvtltd.com/arbaj-logo.png",
-}) => {
+  keywords,
+  url,
+  image,
+  faqs
+}) {
+  const schemaFAQ =
+    Array.isArray(faqs) && faqs.length > 0
+      ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs
+          .filter(f => f.q && f.a)
+          .map(f => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.a
+            }
+          }))
+      }
+      : null;
+
   return (
     <Helmet>
-      {/* Basic SEO */}
+      {/* BASIC SEO */}
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-
-      {/* Canonical */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="canonical" href={url} />
 
-      {/* Open Graph */}
+      {/* OPEN GRAPH */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      {image && <meta property="og:image" content={image} />}
 
-      {/* Twitter */}
+      {/* TWITTER */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      {image && <meta name="twitter:image" content={image} />}
 
-      {/* Robots */}
+      {/* EXTRA */}
       <meta name="robots" content="index, follow" />
+      <meta name="author" content="Arbaj Technology" />
 
-      {/* Schema */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "Arbaj Technology",
-          url: "https://arbajtechnologypvtltd.com/",
-          logo: "https://arbajtechnologypvtltd.com/arbaj-logo.png",
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+91-7973611226",
-            contactType: "customer service",
-            areaServed: "IN",
-            availableLanguage: ["English", "Hindi"],
-          },
-          sameAs: [
-            "https://www.facebook.com/p/Arbaj-Technology-PvtLtd-61579390061534/",
-            "https://www.instagram.com/arbaj_technology/",
-            "https://in.linkedin.com/company/arbaj-technology-pvt-ltd"
-          ],
-        })}
-      </script>
+      {/* FAQ SCHEMA */}
+      {schemaFAQ && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schemaFAQ)
+          }}
+        />
+      )}
     </Helmet>
   );
-};
-
-export default SEOptimization;
+}

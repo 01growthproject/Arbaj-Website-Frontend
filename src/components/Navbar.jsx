@@ -6,7 +6,7 @@ import Logo from '../assets/A-lg.webp'
 const SERVICE_LINKS = [
   {
     label: "Web Development",
-    path: "/web-developement",
+    path: "/web-development",
     icon: (
       <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
         <rect x="2" y="3" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -42,18 +42,6 @@ const SERVICE_LINKS = [
     desc: "Reels, Ads, Brand Films",
     accent: "#ff3b5c",
   },
-  // {
-  //   label: "Digital Marketing",
-  //   path: "/marketing",
-  //   icon: (
-  //     <svg viewBox="0 0 20 20" fill="none" width="18" height="18">
-  //       <path d="M2 14l4-5 4 3 4-6 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  //       <circle cx="16" cy="5" r="2.5" fill="currentColor" opacity=".4" />
-  //     </svg>
-  //   ),
-  //   desc: "SEO, Google Ads, Social",
-  //   accent: "#22c55e",
-  // },
   {
     label: "Search Engine Optimization",
     path: "/search-engine-optimization",
@@ -328,15 +316,15 @@ export default function Navbar() {
 
 
             {/* CTA inside mobile drawer */}
-            <li className="navbar__links-cta">
+            {/* <li className="navbar__links-cta">
               <Link to="/contact" className="navbar__cta">Get Free Consultation</Link>
-            </li>
+            </li> */}
           </ul>
 
           {/* Desktop CTA */}
-          <Link to="/contact" className="navbar__cta navbar__cta--desktop">
+          {/* <Link to="/contact" className="navbar__cta navbar__cta--desktop">
             Get Free Consultation
-          </Link>
+          </Link> */}
 
           {/* Burger */}
           <button

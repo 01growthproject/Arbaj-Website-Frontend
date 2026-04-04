@@ -1,6 +1,9 @@
 import image1 from '../../assets/best Digital  Marketing.webp'
 
 export const POSTS = [
+
+
+  //blog posts ------1
   {
     id: 1,
     date: "19 March 2026",

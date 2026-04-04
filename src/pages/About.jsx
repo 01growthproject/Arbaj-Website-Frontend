@@ -23,12 +23,12 @@ function useReveal() {
    ABOUT HERO — Centered sh__* style (matches Services)
    Flip words cycle, NO underline on flip word
 ───────────────────────────────────────────── */
-const FLIP_WORDS = ["Since 2019.", "500+ Clients.", "Real Results.", "Always Growing."];
+const FLIP_WORDS = ["Since 2019.", "50+ Clients.", "Real Results.", "Always Growing."];
 
 const ABOUT_METRICS = [
-  { icon: "🏆", tag: "Clients", value: "500+", label: "Happy Clients", accent: "#17ABBC", bar: "82%" },
+  { icon: "🏆", tag: "Clients", value: "50+", label: "Happy Clients", accent: "#17ABBC", bar: "82%" },
   { icon: "📅", tag: "Experience", value: "5+", label: "Years in Industry", accent: "#048C8C", bar: "75%" },
-  { icon: "✅", tag: "Projects", value: "1200+", label: "Projects Delivered", accent: "#6DC497", bar: "90%" },
+  // { icon: "✅", tag: "Projects", value: "1200+", label: "Projects Delivered", accent: "#6DC497", bar: "90%" },
   { icon: "😊", tag: "Retention", value: "98%", label: "Client Retention", accent: "#a855f7", bar: "98%" },
 ];
 
@@ -106,7 +106,7 @@ function AboutHero() {
       <p className="sh__desc">
         SEO · Google Ads · Social Media · Web Development · Graphic Design · Video Editing
         <br />
-        <span>A passionate team in Zirakpur, Punjab — building real results for 500+ businesses across India.</span>
+        <span>A passionate team in Zirakpur, Punjab — building real results for 50+ businesses across India.</span>
       </p>
 
       {/* ── CTA ── */}
@@ -197,7 +197,7 @@ function WhoWeAre() {
           <div className="about-story__center">AT</div>
           <div className="about-story__pin about-story__pin--1">
             <span className="about-story__pin-dot about-story__pin-dot--teal" />
-            500+ Clients
+            50+ Clients
           </div>
           <div className="about-story__pin about-story__pin--2">
             <span className="about-story__pin-dot about-story__pin-dot--mint" />
@@ -218,7 +218,7 @@ function WhoWeAre() {
           <p className="about-story__para">
             Arbaj Technology was born from a simple belief — that great digital marketing
             should solve real problems. Founded in 2019 in Zirakpur, Punjab, we've grown
-            from a small studio into a full-service agency trusted by 500+ businesses.
+            from a small studio into a full-service agency trusted by 50+ businesses.
           </p>
           <p className="about-story__para">
             We combine cutting-edge marketing with thoughtful design and transparent
@@ -226,7 +226,7 @@ function WhoWeAre() {
           </p>
           <ul className="about-story__features">
             {[
-              "500+ Happy Clients Across India",
+              "50+ Happy Clients Across India",
               "5+ Years of Industry Experience",
               "Certified Digital Marketing Experts",
               "Transparent Monthly Reporting",
@@ -340,7 +340,7 @@ function Timeline() {
       ref={ref}
     >
       <div className="about-timeline__header">
-        <div className="section__label">— Our Journey</div>
+        <div className="section__label_">— Our Journey</div>
         <h2 className="section__title">
           How We <span>Got Here</span>
         </h2>
@@ -388,7 +388,7 @@ function ToolsStack() {
       ref={ref}
     >
       <div className="about-stack__header">
-        <div className="section__label">— Tools We Use</div>
+        <div className="section__label_">— Tools We Use</div>
         <h2 className="section__title">
           Platforms We <span>Master</span>
         </h2>
@@ -418,7 +418,7 @@ function FAQ() {
       ref={ref}
     >
       <div className="faq__header">
-        <div className="section__label">— FAQ</div>
+        <div className="section__label_">— FAQ</div>
         <h2 className="section__title">
           Questions You<br />
           <span>Probably Have</span>
@@ -481,7 +481,7 @@ export default function AboutPage() {
     <>
         <SEOptimization
           title="About Us | Arbaj Technology – Digital Growth Partner"
-          description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 500+ businesses grow with SEO, ads, and web development."
+          description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 50+ businesses grow with SEO, ads, and web development."
           keywords="Arbaj Technology, digital marketing agency Zirakpur, SEO company India, web development, social media marketing"
           url="https://arbajtechnologypvtltd.com/about"
           image="https://arbajtechnologypvtltd.com/og-image.jpg"

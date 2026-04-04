@@ -129,8 +129,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn--sm { padding: 9px 20px; font-size: 0.85rem; }
 
 /* ─────────────── SECTION LABELS / TITLES ─────────────── */
-.section__label {
-  font-size: 0.8rem;
+.section__label_ {
+  font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -138,7 +138,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 14px;
   font-family: var(--font-body);
 }
-.section__title {
+.section__title_ {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.15;
