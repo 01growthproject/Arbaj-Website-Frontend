@@ -34,7 +34,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
           {/* //-----------------------DropDown---------------------------// */}
           <Route path="/search-engine-optimization" element={<SEOPage />} />
-          <Route path="/google-ads-agency" element={<GoogleAdsPage />} />
+          <Route path="/google-ads" element={<GoogleAdsPage />} />
           <Route path="/video-editing" element={<VideoEditingPage />} />
           <Route path="/web-development" element={<WebDevelopmentPage />} />
           <Route path="/social-media-marketing" element={<SocialMediaPage />} />

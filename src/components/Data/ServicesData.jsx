@@ -10,7 +10,7 @@ export const SERVICES = [
     id: 1,
     tag: "SEO",
     title: "Search Engine Optimization",
-    link: "/seo-services",
+    link: "/search-engine-optimization",
     desc: "Search engine optimization (SEO) is the practice of optimizing your website for search engines such as Google Search. This involves conducting keyword research, performing on-page optimization, making technical changes, and acquiring backlinks. The primary aim of SEO is to achieve high search engine rankings and drive organic traffic to your site.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
@@ -27,7 +27,7 @@ export const SERVICES = [
     id: 2,
     tag: "PPC",
     title: "Google Ads (PPC)",
-    link: "/google-ads-agency", 
+    link: "/google-ads", 
     desc: "Paid Advertising or PPC(Pay Per Click) enables a business to place advertisements on platforms such as Google Ads.The business will be charged only when the advertisement receives a click.This is considered one of the quickest means of attracting leads and making sales.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
@@ -62,7 +62,7 @@ export const SERVICES = [
     id: 4,
     tag: "WEB",
     title: "Website Development",
-    link: "/web-development-company", 
+    link: "/web-development", 
     desc: "Website Development entails designing a professional and efficient website for organizations. The proper design of a website ensures that the user experience is improved while aiding in search engine optimization and marketing.",
     
     icon: (

@@ -4,7 +4,7 @@ export const SERVICES = [
     tag: "SEO",
     title: "SEO Services",
     desc: "Improve your internet site’s Google ranking and attain your target marketplace with our a success search engine optimization answers. We offer keyword optimization, on-web page and rancid-web page optimization, technical search engine optimization, and exceptional one-way links to increase your site visitors.",
-    link: "/seo-services-india",
+    link: "/search-engine-optimization",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -20,7 +20,7 @@ export const SERVICES = [
     tag: "PPC",
     title: "Google Ads ",
     desc: "Seek instant exposure with our Google Ads answers. We lay out and manipulate powerful ad campaigns that attract real clients to your enterprise – helping you grow faster with tangible results",
-    link: "/google-ads-agency-india", 
+    link: "/google-ads", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -51,7 +51,7 @@ export const SERVICES = [
     tag: "WEB",
     title: "Web Development ",
     desc: "Your internet site is your on-line id. We design and develop quick, modern, and cellular responsive internet sites that reflect your id flawlessly. Be it a commercial internet site or an e-commerce internet site, we design consumer-friendly internet sites for you.",
-    link: "/web-development-company-india", 
+    link: "/web-development", 
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />

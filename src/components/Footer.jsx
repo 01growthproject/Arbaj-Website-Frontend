@@ -57,7 +57,7 @@ const services = [
   { label: "Video Editing", path: "/video-editing" },
   { label: "Search Engine Optimization (SEO)", path: "/search-engine-optimization" },
   { label: "Social Media Marketing (SMM)", path: "/social-media-marketing" },
-  { label: " Google Ads", path: "/google-ads-agency" },
+  { label: " Google Ads", path: "/google-ads" },
 ];
 
 export default function Footer() {
