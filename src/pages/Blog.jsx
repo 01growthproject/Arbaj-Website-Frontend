@@ -186,7 +186,7 @@ export default function Blog() {
               <p className="bl-featured__excerpt">{featured.excerpt}</p>
               <div className="bl-featured__footer">
                 <div />
-                <Link to={`/blog/${featured.id}`} className="bl-featured__cta">
+                <Link to={`/blog/${featured.title}`} className="bl-featured__cta">
                   Read More
                   <svg viewBox="0 0 12 12" fill="none" width="12">
                     <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -232,7 +232,9 @@ export default function Blog() {
                   <p className="bl-card__excerpt">{post.excerpt}</p>
                   <div className="bl-card__footer">
                     <div />
-                    <Link to={`/blog/${post.id}`} className="bl-card__link">
+
+                    
+                    <Link to={`/blog/${post.title}`} className="bl-card__link">
                       Read
                       <svg viewBox="0 0 12 12" fill="none" width="10">
                         <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

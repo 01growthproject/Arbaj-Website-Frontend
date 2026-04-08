@@ -136,62 +136,64 @@ In the aggressive on-line global, making the right choice can prove to be the di
 
     `,
   },
-//   {
-//     id: 2,
-//     date: "3 Jun 2025",
-//     // readTime: "6 min read",
-//     title: "Meta Ads vs Google Ads: Where to Put Your Budget in 2025",
-//     excerpt:
-//       "We ran Rs 5L across both platforms for 90 days. Here's the honest, data-backed breakdown by industry, audience type, and campaign goal.",
-//     img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80",
-//     featured: false,
-//     content: `
-// We spent Rs 5,00,000 split across Meta and Google Ads over 90 days across five client verticals. Here's what the data actually showed.
+ 
 
-// ## The Short Answer
+  {
+    id: 2,
+    date: "3 Jun 2025",
+    // readTime: "6 min read",
+    title: "Meta Ads vs Google Ads: Where to Put Your Budget in 2025",
+    excerpt:
+      "We ran Rs 5L across both platforms for 90 days. Here's the honest, data-backed breakdown by industry, audience type, and campaign goal.",
+    img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&q=80",
+    featured: false,
+    content: `
+We spent Rs 5,00,000 split across Meta and Google Ads over 90 days across five client verticals. Here's what the data actually showed.
 
-// Neither platform "wins." The right choice depends entirely on where your customer is in their buying journey.
+## The Short Answer
 
-// ## Google Ads: High Intent, Higher CPC
+Neither platform "wins." The right choice depends entirely on where your customer is in their buying journey.
 
-// Google captures **demand that already exists**. Someone searching "best CA firm in Mumbai" is ready to act. The downside: CPCs in competitive B2B categories ran Rs 180–320 per click in our tests.
+## Google Ads: High Intent, Higher CPC
 
-// **Best for:**
-// - Services with clear search intent (legal, medical, education, software)
-// - E-commerce with branded or category-specific searches
-// - Local businesses targeting near-me queries
+Google captures **demand that already exists**. Someone searching "best CA firm in Mumbai" is ready to act. The downside: CPCs in competitive B2B categories ran Rs 180–320 per click in our tests.
 
-// **Average ROAS in our test:** 4.2x
+**Best for:**
+- Services with clear search intent (legal, medical, education, software)
+- E-commerce with branded or category-specific searches
+- Local businesses targeting near-me queries
 
-// ## Meta Ads: Low Intent, Lower CPC, Longer Funnel
+**Average ROAS in our test:** 4.2x
 
-// Meta is an **interruption platform**. You're reaching people who weren't thinking about your product. This means cheaper clicks but longer nurture cycles.
+## Meta Ads: Low Intent, Lower CPC, Longer Funnel
 
-// **Best for:**
-// - D2C products with visual appeal (fashion, food, home decor)
-// - Brand awareness for new businesses
-// - Retargeting warm audiences
+Meta is an **interruption platform**. You're reaching people who weren't thinking about your product. This means cheaper clicks but longer nurture cycles.
 
-// **Average ROAS in our test:** 2.8x (but 5.1x for retargeting campaigns)
+**Best for:**
+- D2C products with visual appeal (fashion, food, home decor)
+- Brand awareness for new businesses
+- Retargeting warm audiences
 
-// ## The Real Winner: Using Both Together
+**Average ROAS in our test:** 2.8x (but 5.1x for retargeting campaigns)
 
-// Our highest-performing setup was:
-// 1. **Meta** for top-of-funnel awareness and video views
-// 2. **Google** to capture the search intent Meta creates
-// 3. **Meta retargeting** to close people who visited but didn't convert
+## The Real Winner: Using Both Together
 
-// Clients running this combined approach saw a blended ROAS of 6.3x — significantly higher than either platform alone.
+Our highest-performing setup was:
+1. **Meta** for top-of-funnel awareness and video views
+2. **Google** to capture the search intent Meta creates
+3. **Meta retargeting** to close people who visited but didn't convert
 
-// ## Budget Recommendation
+Clients running this combined approach saw a blended ROAS of 6.3x — significantly higher than either platform alone.
 
-// - Under Rs 50k/month → Start with Google (capture existing demand first)
-// - Rs 50k–2L/month → Split 60% Google, 40% Meta
-// - Above Rs 2L/month → Full funnel: awareness on Meta, conversion on Google
+## Budget Recommendation
 
-// The biggest mistake we see is businesses treating these as competitors. They're complementary.
-//     `,
-//   },
+- Under Rs 50k/month → Start with Google (capture existing demand first)
+- Rs 50k–2L/month → Split 60% Google, 40% Meta
+- Above Rs 2L/month → Full funnel: awareness on Meta, conversion on Google
+
+The biggest mistake we see is businesses treating these as competitors. They're complementary.
+    `,
+  },
 //   {
 //     id: 3,
 //     date: "26 May 2025",
