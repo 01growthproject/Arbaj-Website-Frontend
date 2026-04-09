@@ -12,14 +12,14 @@ import WebDevelopmentPage from "./pages/WebDevelopement";
 // import DigitalMarketingPage from "./pages/DigitalMarketing";
 import GraphicDesigningPage from "./pages/GrapicDesigning";
 import SocialMediaPage from "./pages/SocialMediaMarketing";
-import { HelmetProvider } from 'react-helmet-async';
+
 // import ContactForm from "./components/Form";
 import Blog from './pages/Blog';
 import BlogPost from "./pages/Blogpost";
 
 function App() {
   return (
-    <HelmetProvider>
+    
 
 
       <BrowserRouter>
@@ -31,7 +31,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* //-----------------------DropDown---------------------------// */}
           <Route path="/search-engine-optimization" element={<SEOPage />} />
           <Route path="/google-ads" element={<GoogleAdsPage />} />
@@ -44,7 +44,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </HelmetProvider>
+    
   );
 }
 

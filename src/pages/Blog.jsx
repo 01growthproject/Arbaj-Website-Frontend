@@ -122,10 +122,6 @@ export default function Blog() {
             Ultimate Guide to<br />
             <span className="bl-hero__title-grad">Digital Marketing Services</span>
           </h1>
-          {/* <p className="bl-hero__sub">
-            SEO, social media, Google Ads, content and email marketing —
-            actionable insights from the Arbaj Technology team.
-          </p> */}
 
           {/* search */}
           <div className={`bl-search${search ? " bl-search--val" : ""}`}>
@@ -153,16 +149,6 @@ export default function Blog() {
             )}
           </div>
         </div>
-
-        {/* stats strip */}
-        {/* <div className="bl-hero__stats" aria-hidden>
-          {[["9+", "Articles"], ["5", "Topics"], ["Free", "Always"]].map(([n, l]) => (
-            <div className="bl-hero__stat" key={l}>
-              <span className="bl-hero__stat-n">{n}</span>
-              <span className="bl-hero__stat-l">{l}</span>
-            </div>
-          ))}
-        </div> */}
       </section>
 
       {/* ── MAIN ── */}
@@ -186,7 +172,10 @@ export default function Blog() {
               <p className="bl-featured__excerpt">{featured.excerpt}</p>
               <div className="bl-featured__footer">
                 <div />
-                <Link to={`/blog/${featured.title}`} className="bl-featured__cta">
+                <Link to={`/blog/${featured.title
+                  .toLowerCase()
+                  .replace(/[^a-z0-9 ]/g, "")
+                  .replace(/\s+/g, "-")}`} className="bl-featured__cta">
                   Read More
                   <svg viewBox="0 0 12 12" fill="none" width="12">
                     <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -232,12 +221,22 @@ export default function Blog() {
                   <p className="bl-card__excerpt">{post.excerpt}</p>
                   <div className="bl-card__footer">
                     <div />
-
-                    
-                    <Link to={`/blog/${post.title}`} className="bl-card__link">
+                    <Link
+                      to={`/blog/${post.title
+                        .toLowerCase()
+                        .replace(/[^a-z0-9 ]/g, "")
+                        .replace(/\s+/g, "-")}`}
+                      className="bl-card__link"
+                    >
                       Read
                       <svg viewBox="0 0 12 12" fill="none" width="10">
-                        <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M2 6h8M7 3l3 3-3 3"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </Link>
                   </div>

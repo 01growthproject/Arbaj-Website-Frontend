@@ -3,6 +3,14 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { POSTS } from "./Blog";
 import "../styles/Blogpost.css";
 
+/* ── helpers ── */
+function toSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, "")
+    .replace(/\s+/g, "-");
+}
+
 function parseInline(text) {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
   return parts.map((part, i) => {
@@ -11,7 +19,11 @@ function parseInline(text) {
     }
     const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (linkMatch) {
-      return <a key={i} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className="bp-content__link">{linkMatch[1]}</a>;
+      return (
+        <a key={i} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className="bp-content__link">
+          {linkMatch[1]}
+        </a>
+      );
     }
     return part;
   });
@@ -27,7 +39,11 @@ function renderContent(raw) {
     if (line.startsWith("## ")) {
       elements.push(<h2 key={key++} className="bp-content__h2">{line.slice(3)}</h2>);
     } else if (line.startsWith("**") && line.endsWith("**") && line.length > 4) {
-      elements.push(<p key={key++} className="bp-content__bold-line"><strong>{line.slice(2, -2)}</strong></p>);
+      elements.push(
+        <p key={key++} className="bp-content__bold-line">
+          <strong>{line.slice(2, -2)}</strong>
+        </p>
+      );
     } else {
       elements.push(<p key={key++} className="bp-content__p">{parseInline(line)}</p>);
     }
@@ -36,13 +52,14 @@ function renderContent(raw) {
 }
 
 export default function BlogPost() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
-  const post = POSTS.find(p => String(p.id) === String(id));
+
+  const post = POSTS.find(p => toSlug(p.title) === slug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   if (!post) {
     return (
@@ -89,7 +106,7 @@ export default function BlogPost() {
             <h3 className="bp-related__heading">More Articles</h3>
             <div className="bp-related__grid">
               {related.map(r => (
-                <Link to={`/blog/${r.id}`} key={r.id} className="bp-related__card">
+                <Link to={`/blog/${toSlug(r.title)}`} key={r.id} className="bp-related__card">
                   <div className="bp-related__img-wrap">
                     <img src={r.img} alt={r.title} className="bp-related__img" loading="lazy" />
                   </div>
