@@ -29,8 +29,66 @@ function parseInline(text) {
   });
 }
 
-function renderContent(raw) {
-  const lines = raw.trim().split("\n");
+// ✅ UPDATED: ab array format ko handle karta hai
+function renderContent(content) {
+
+  // ── Array format (new) ──
+  if (Array.isArray(content)) {
+    return content.map((block, blockIndex) => {
+
+      // ✅ Image block
+      if (block.type === "image") {
+        return (
+          <figure key={`img-${blockIndex}`} className="bp-content__figure">
+            <img
+              src={block.src}
+              alt={block.alt || ""}
+              className="bp-content__img"
+              loading="lazy"
+            />
+          </figure>
+        );
+      }
+
+      // ✅ Text block — purana logic same
+      if (block.type === "text") {
+        const lines = block.value.trim().split("\n");
+        const elements = [];
+        let key = 0;
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (!line) continue;
+
+          if (line.startsWith("## ")) {
+            elements.push(
+              <h2 key={`${blockIndex}-${key++}`} className="bp-content__h2">
+                {line.slice(3)}
+              </h2>
+            );
+          } else if (line.startsWith("**") && line.endsWith("**") && line.length > 4) {
+            elements.push(
+              <p key={`${blockIndex}-${key++}`} className="bp-content__bold-line">
+                <strong>{line.slice(2, -2)}</strong>
+              </p>
+            );
+          } else {
+            elements.push(
+              <p key={`${blockIndex}-${key++}`} className="bp-content__p">
+                {parseInline(line)}
+              </p>
+            );
+          }
+        }
+        return elements;
+      }
+
+      return null;
+    });
+  }
+
+  // ── String format (old fallback) ──
+  const lines = content.trim().split("\n");
   const elements = [];
   let key = 0;
   for (let i = 0; i < lines.length; i++) {
@@ -98,6 +156,7 @@ export default function BlogPost() {
 
       <main className="bp-main">
         <article className="bp-content">
+          {/* ✅ UPDATED: renderContent ab array handle karta hai */}
           {renderContent(post.content)}
         </article>
 
