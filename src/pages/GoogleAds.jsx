@@ -59,7 +59,7 @@ function Hero() {
             { number: "50+", label: "Campaigns Run" },
             { number: "48h", label: "Go-Live Time" },
             { number: "40%", label: "Lower CPA" },
-            \+963
+            
           ].map((s) => (
             <div className="hero__stat" key={s.label}>
               <strong>{s.number}</strong>
