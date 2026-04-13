@@ -105,7 +105,7 @@ export const WHY_US = [
 
 export const RESULTS = [
   { metric: "5×", label: "Avg. Follower Growth", color: "#048C8C" },
-  { metric: "200+", label: "Brands Managed", color: "#17ABBC" },
+  { metric: "30+", label: "Brands Managed", color: "#17ABBC" },
   { metric: "40%", label: "Avg. Engagement Increase", color: "#6DC497" },
   { metric: "30+", label: "Posts Per Month", color: "#048C8C" },
 ];

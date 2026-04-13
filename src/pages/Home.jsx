@@ -183,7 +183,7 @@ function Hero() {
       <div className="hero__content">
         <div className="hero__badge">
           <span className="hero__badge-dot" />
-          #1 Digital Marketing Company — Zirakpur, Punjab
+          #1 Digital Marketing Company — In India
         </div>
 
         <h1 className="hero__title">
@@ -192,7 +192,9 @@ function Hero() {
         </h1>
 
         <p className="hero__desc">
-          Looking for a first-class virtual advertising and marketing corporation that may offer correct growth? You’re at the proper location. We offer robust and result-orientated virtual advertising and marketing answers that may assist your commercial enterprise shine above all others. We are the first-class virtual advertising Company, and we focus on successful strategies that may produce extra site visitors, leads, and income for your commercial enterprise.
+         As one of the leading digital marketing businesses in India, Arbaj Technology gives a wealth of enjoy in offering boom answers for corporations. Being a renowned digital advertising business enterprise, the primary priority lies in creating a solid on-line presence for the client, in addition to making sure that they get more visible and grow consistently.
+
+
         </p>
 
         <div className="hero__actions">
@@ -342,7 +344,7 @@ function About() {
               <div>
                 <strong>Our Mission</strong>
                 <p>
-                  To enable businesses with innovative virtual answers that could result in boom, visibility, and fulfillment. We strive to offer amazing marketing, layout, and improvement providers which could help our clients build a robust online presence.
+                  Empower your business with progressive answers so one can propel your brand to fulfillment and growth within the virtual world. Our challenge is to help agencies in creating a strong presence on-line, gaining visibility, and attaining out to their target audience through revolutionary digital marketing strategies.
                 </p>
               </div>
             </div>
@@ -350,7 +352,7 @@ function About() {
               <span>🌟</span>
               <div>
                 <strong>Our Vision</strong>
-                <p>To be one of the leading global virtual marketing agencies diagnosed for our creativity, consequences, and trustworthiness – supporting each commercial enterprise, from start-united states of americato companies, free up their online potential via clever generation and powerful virtual techniques</p>
+                <p>Becoming a pacesetter in digital advertising and marketing services that gives revolutionary, straightforward, and efficient solutions worldwide. We are dedicated to supplying modern techniques to help special corporations unleash their maximum capacity on line.</p>
               </div>
             </div>
           </div>
@@ -359,23 +361,24 @@ function About() {
         <div className="about__text">
           <div className="section__label_">— About Arbaj Technology</div>
           <h2 className="section__title">
-            Your Trusted<br />
+
+            Your Reliable <br />
             <span>Digital Growth Partner</span>
           </h2>
           <p className="about__para">
-            We are a team of passionate individuals dedicated to assisting businesses with growth online. Our team of experts employs innovative strategies, progressive tools, and creative solutions to ensure a solid foundation for your business online.
+            Our team of experienced virtual entrepreneurs is prepared to assist you in developing on line with modern answers and strategies designed to create a successful destiny.
           </p>
           <p className="about__para">
-            Whether you are a startup entrepreneur or a well-established entrepreneur, we ensure that we develop a strategy that suits your specific goals. With a high emphasis on quality and performance, we are completely dedicated to your success.
+            Every challenge may be tailored to in shape the objectives of our customers irrespective of whether the business enterprise is new to the enterprise or an already set up brand. We provide most effective top notch virtual advertising and marketing answers and work tough to deliver measurable results.
           </p>
 
           <ul className="about__features">
             {[
-              "50+ Happy Clients Across India",
+              "Over 10 Successful Projects Completed",
               "5+ Years of Industry Experience",
-              "Certified Digital Marketing Experts",
-              "Transparent Monthly Reporting",
-              "Dedicated Account Manager",
+              "Digital Marketing Certification",
+              "Transparent Reports & Results",
+              "Personal Support & Account Management",
             ].map((f) => (
               <li key={f}>
                 <span className="about__check">✓</span>

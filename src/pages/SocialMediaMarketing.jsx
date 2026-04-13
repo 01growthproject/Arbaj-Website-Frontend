@@ -56,7 +56,7 @@ function Hero() {
         </div>
         <div className="hero__stats">
           {[
-            { number: "200+", label: "Brands Managed" },
+            { number: "30+", label: "Brands Managed" },
             { number: "5×", label: "Avg. Growth" },
             { number: "30+", label: "Posts/Month" },
             { number: "98%", label: "Client Retention" },

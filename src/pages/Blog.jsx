@@ -119,8 +119,8 @@ export default function Blog() {
             Digital Marketing Blog
           </div>
           <h1 className="bl-hero__title">
-            Ultimate Guide to<br />
-            <span className="bl-hero__title-grad">Digital Marketing Services</span>
+            Digital Marketing Blog: <br />
+            <span className="bl-hero__title-grad"> Tips, Trends & Strategies</span>
           </h1>
 
           {/* search */}

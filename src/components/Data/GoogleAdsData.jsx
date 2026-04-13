@@ -105,7 +105,7 @@ export const WHY_US = [
 export const RESULTS = [
   { metric: "4.8×", label: "Average ROAS", color: "#048C8C" },
   { metric: "40%", label: "Lower Cost Per Lead", color: "#17ABBC" },
-  { metric: "500+", label: "Campaigns Managed", color: "#6DC497" },
+  { metric: "50+", label: "Campaigns Managed", color: "#6DC497" },
   { metric: "48h", label: "Go-Live Time", color: "#048C8C" },
 ];
 

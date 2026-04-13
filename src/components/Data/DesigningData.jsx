@@ -96,22 +96,22 @@ export const PROCESS = [
 ];
 
 export const TOOLS = [
-  { label: "Adobe Illustrator", dot: "#ff9a00" },
+  // { label: "Adobe Illustrator", dot: "#ff9a00" },
   { label: "Adobe Photoshop", dot: "#30a8ff" },
   { label: "Adobe InDesign", dot: "#ff2c7e" },
-  { label: "Figma", dot: "#f24e1e" },
+  // { label: "Figma", dot: "#f24e1e" },
   { label: "Canva Pro", dot: "#00c4cc" },
-  { label: "Adobe XD", dot: "#ff26be" },
-  { label: "Procreate", dot: "#fff" },
+  // { label: "Adobe XD", dot: "#ff26be" },
+  // { label: "Procreate", dot: "#fff" },
   { label: "CorelDRAW", dot: "#00a344" },
   { label: "Adobe After Effects", dot: "#9b9bff" },
-  { label: "Midjourney AI", dot: "#fff" },
-  { label: "Blender (3D)", dot: "#f4792b" },
-  { label: "Notion", dot: "#fff" },
+  // { label: "Midjourney AI", dot: "#fff" },
+  // { label: "Blender (3D)", dot: "#f4792b" },
+  // { label: "Notion", dot: "#fff" },
 ];
 
 export const STATS = [
-  { metric: "500+", label: "Designs Created", color: "#ff6b6b" },
+  { metric: "50+", label: "Designs Created", color: "#ff6b6b" },
   { metric: "24h", label: "First Concept", color: "#f59e0b" },
   { metric: "4.9★", label: "Client Rating", color: "#10b981" },
   { metric: "100%", label: "Brand Consistency", color: "#8b5cf6" },

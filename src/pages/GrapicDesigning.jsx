@@ -70,7 +70,7 @@ function Hero() {
 
         <div className="hero__stats">
           {[
-            { number: "500+", label: "Designs Created" },
+            { number: "50+", label: "Designs Created" },
             { number: "24h", label: "First Concept" },
             { number: "4.9★", label: "Client Rating" },
             { number: "100%", label: "Satisfaction" },

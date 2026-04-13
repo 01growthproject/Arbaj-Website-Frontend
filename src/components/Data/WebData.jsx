@@ -100,17 +100,21 @@ export const PROCESS = [
 ];
 
 export const TECH_STACK = [
+  { label: "HTML", dot: "#8ba81f" },
+  { label: "CSS", dot: "#70e97a" },
   { label: "React.js", dot: "#61dafb" },
-  { label: "Node.js", dot: "#68a063" },
+  { label: "JavaScript", dot: "#6DC497" },
   { label: "WordPress", dot: "#17ABBC" },
-  // { label: "Shopify", dot: "#6DC497" },
-  // { label: "WooCommerce", dot: "#7ab8b4" },
+  { label: "Node.js", dot: "#68a063" },
+  { label: "Express.js", dot: "#7ab8b4" },
   { label: "MongoDB", dot: "#47a248" },
   { label: "Tailwind CSS", dot: "#06b6d4" },
-  // { label: "Figma", dot: "#a259ff" },
-  { label: "MySQL", dot: "#4479a1" },
-  // { label: "Firebase", dot: "#ffca28" },
+  // { label: "Netlify", dot: "#a259ff" },
+  // { label: "Render", dot: "#4479a1" },
+  { label: "Firebase", dot: "#ffca28" },
+  { label: "BootStrap", dot: "#796a3d" },
   { label: "Vercel", dot: "#e8f8f5" },
+  // { label: "Hostinger", dot: "#96b8ff" },
   // { label: "cPanel", dot: "#048C8C" },
 ];
 
@@ -212,7 +216,7 @@ export const FAQS = [
 ];
 
 export const STATS = [
-  { number: "200+", label: "Websites Delivered" },
+  { number: "40+", label: "Websites Delivered" },
   { number: "100%", label: "Mobile Responsive" },
   { number: "< 2s", label: "Avg Load Time" },
   { number: "5★", label: "Client Rating" },

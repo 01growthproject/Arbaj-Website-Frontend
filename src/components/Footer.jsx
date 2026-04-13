@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import '../styles/footer.css';
-import Logo from '../assets/A-lg.webp';
+import Logo from '../assets/Artboard lg.png';
 
 const socials = [
   {
@@ -111,7 +111,7 @@ export default function Footer() {
             <span className="footer__logo-icon">AT</span>
             <span className="footer__logo-name">
               <img src={Logo} alt="Arbaj Technology" className="logo" />
-              <small className="small">Pvt. Ltd.</small>
+              {/* <small className="small">Pvt. Ltd.</small> */}
             </span>
           </Link>
           

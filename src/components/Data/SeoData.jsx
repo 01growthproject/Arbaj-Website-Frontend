@@ -53,15 +53,15 @@ export const PROCESS = [
 
 export const TOOLS = [
   { label: "SEMrush", dot: "#ff6b35" },
-  { label: "Ahrefs", dot: "#f59e0b" },
+  // { label: "Ahrefs", dot: "#f59e0b" },
   { label: "Google Search Console", dot: "#4285f4" },
   { label: "Google Analytics 4", dot: "#e37400" },
   { label: "Screaming Frog", dot: "#ff5722" },
-  { label: "Moz Pro", dot: "#00b4e0" },
+  // { label: "Moz Pro", dot: "#00b4e0" },
   { label: "Surfer SEO", dot: "#10b981" },
   { label: "Schema Markup", dot: "#6DC497" },
   { label: "PageSpeed Insights", dot: "#17ABBC" },
-  { label: "Yoast SEO", dot: "#a21caf" },
+  { label: "Rank Math", dot: "#a21caf" },
 ];
 
 export const WHY_US = [

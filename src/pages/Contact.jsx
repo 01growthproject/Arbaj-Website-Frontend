@@ -138,10 +138,10 @@ function ContactHero() {
 
         {/* ──── LEFT ──── */}
         <div className="contact-hero__left">
-          <div className="contact-hero__badge">
+          {/* <div className="contact-hero__badge">
             <span className="contact-hero__badge-dot" />
             Free Consultation — No Commitment
-          </div>
+          </div> */}
 
           <h1 className="contact-hero__title">
             Let's Grow Your<br />
@@ -331,15 +331,17 @@ function WhyContact() {
             <div className="contact-why__badge-card contact-why__badge-card--blue">
               <span>⚡</span>
               <div>
-                <strong>Fast Response</strong>
-                <p>We respond to every inquiry within 2–4 hours during business days.</p>
+                <strong>Immediate Help</strong>
+                <p>Our expert group can react speedy and deal with all of your questions without wasting time.
+</p>
               </div>
             </div>
             <div className="contact-why__badge-card contact-why__badge-card--gold">
               <span>🎯</span>
               <div>
-                <strong>Free Strategy Session</strong>
-                <p>Get a custom digital marketing roadmap — completely free, no strings attached.</p>
+                <strong>
+                  FREE Business Growth Plan</strong>
+                <p>Get a complete plan that consists of everything you want for the achievement of your brand – free of charge.</p>
               </div>
             </div>
           </div>
@@ -347,21 +349,23 @@ function WhyContact() {
 
         <div className="contact-why__text">
           <div className="section__label">— Why Reach Out</div>
-          <h2 className="section__title">We're Here to Help <span>Your Business Grow</span></h2>
+          <h2 className="section__title">Let’s Scale Up <span>Your Business</span></h2>
           <p className="contact-why__para">
-            The beginning couldn’t be easier! Tell us your objectives and our qualified specialists in digital marketing will design a tailor-made approach for you, your company and budget.
+            We streamline the technique. You proportion your dreams, we create a prevailing virtual advertising and marketing plan primarily based on them.
           </p>
           <p className="contact-why__para">
-            No need to worry about complicated terminology, no sales talk and no binding agreements. We guarantee our expertise based on more than five years of practice and hundreds of satisfied customers.
+
+            Nothing complex, not anything obscure – simply straightforward collaboration and powerful outcomes.
+
           </p>
           <ul className="contact-why__features">
-            {["Free 30-min Strategy Consultation", "Custom Plan for Your Business", "Certified Google & Meta Experts", "Transparent Pricing — No Hidden Fees", "Dedicated Account Manager"].map((f) => (
+            {["Free 30 Minute Consultation", "Personalized Marketing Strategy", "Certified Google and Meta Experts", "100% Transparent Pricing", "Assigned Account Manager"].map((f) => (
               <li key={f}><span className="contact-why__check">✓</span>{f}</li>
             ))}
           </ul>
           <Link to="tel:917973611226" className="btn btn--primary">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
-            Call Us Now
+            Let's Grow Your Business
           </Link>
         </div>
       </div>
@@ -380,13 +384,18 @@ function MapSection() {
 
       <div className="contact-map__wrap">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.3!2d76.8!3d30.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDM5JzAwLjAiTiA3NsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.445313565068!2d76.82016207633792!3d30.649586489645014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f95e047b300e3%3A0x3b2f6db977f15214!2sARBAJ%20TECHNOLOGY%20PVT.%20LTD!5e0!3m2!1sen!2sin!4v1775884244256!5m2!1sen!2sin"
           width="100%" height="420" style={{ border: 0 }}
           allowFullScreen="" loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Arbaj Technology Office"
           className="contact-map__iframe"
         />
+
+
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.445313565068!2d76.82016207633792!3d30.649586489645014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f95e047b300e3%3A0x3b2f6db977f15214!2sARBAJ%20TECHNOLOGY%20PVT.%20LTD!5e0!3m2!1sen!2sin!4v1775884244256!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
+
+        
         <div className="contact-map__pin-card">
           <span>📍</span>
           <div>
@@ -400,27 +409,6 @@ function MapSection() {
 }
 
 
-function FAQ() {
-  const [open, setOpen] = useState(null);
-  const [ref, visible] = useReveal();
-  return (
-    <section className={`faq section ${visible ? "section--visible" : ""}`} ref={ref}>
-      <div className="section__label">— FAQ</div>
-      <h2 className="section__title">Common Questions<br /><span>About Contacting Us</span></h2>
-      <div className="faq__list">
-        {FAQS.map((item, i) => (
-          <div key={i} className={`faq__item ${open === i ? "faq__item--open" : ""}`}>
-            <button className="faq__q" onClick={() => setOpen(open === i ? null : i)}>
-              <span>{item.q}</span>
-              <span className="faq__icon">{open === i ? "−" : "+"}</span>
-            </button>
-            <div className="faq__a"><p>{item.a}</p></div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 
 function CTABanner() {
@@ -463,7 +451,7 @@ export default function ContactPage() {
         <ContactCards />
         <WhyContact />
         <MapSection />
-        <FAQ />
+        {/* <FAQ /> */}
         <CTABanner />
       </main>
     </>
