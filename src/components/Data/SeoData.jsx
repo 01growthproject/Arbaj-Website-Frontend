@@ -55,7 +55,7 @@ export const TOOLS = [
   { label: "SEMrush", dot: "#ff6b35" },
   // { label: "Ahrefs", dot: "#f59e0b" },
   { label: "Google Search Console", dot: "#4285f4" },
-  { label: "Google Analytics 4", dot: "#e37400" },
+  { label: "Google Analytics ", dot: "#e37400" },
   { label: "Screaming Frog", dot: "#ff5722" },
   // { label: "Moz Pro", dot: "#00b4e0" },
   { label: "Surfer SEO", dot: "#10b981" },
