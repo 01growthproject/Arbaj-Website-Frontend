@@ -106,21 +106,21 @@ function Hero() {
   );
 }
 
-function Ticker() {
-  const items = ["React.js", "WordPress", "Shopify", "Node.js", "WooCommerce", "Figma", "Mobile-First", "Fast Loading", "SEO-Ready", "Secure"];
-  const all = [...items, ...items];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {all.map((item, i) => (
-          <span key={i} className="ticker__item">
-            {item} <span className="ticker__sep">✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
+// function Ticker() {
+//   const items = ["React.js", "WordPress", "Shopify", "Node.js", "WooCommerce", "Figma", "Mobile-First", "Fast Loading", "SEO-Ready", "Secure"];
+//   const all = [...items, ...items];
+//   return (
+//     <div className="ticker">
+//       <div className="ticker__track">
+//         {all.map((item, i) => (
+//           <span key={i} className="ticker__item">
+//             {item} <span className="ticker__sep">✦</span>
+//           </span>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 
 function WebServices() {
@@ -358,7 +358,7 @@ export default function WebDevelopmentPage() {
 
 
         <Hero />
-        <Ticker />
+        {/* <Ticker /> */}
         <WebServices />
         <Process />
         <TechStack />

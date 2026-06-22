@@ -1,149 +1,61 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/home.css';
 import { SERVICES, STATS, FAQS } from '../components/Data/HomeData';
-// import {Helmet} from 'react-helmet-async'
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
-/* ═══════════════════════════════════════════════
-   PARTICLE CANVAS — floats in Hero background
-═══════════════════════════════════════════════ */
-function ParticleCanvas() {
-  const canvasRef = useRef(null);
+import GoogleReviews from "../components/Googlereviews";
+import '../styles/Googlereviews.css';
+
+
+const FLIP_WORDS = ["SEO", "Google Ads", "Web Development", "Meta Ads", "Video Editing", "Graphic Designing"];
+
+function FlipWord() {
+  const innerRef = useRef(null);
+  const idxRef = useRef(0);
 
   useEffect(() => {
-    if (window.innerWidth < 768) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const inner = innerRef.current;
+    if (!inner) return;
 
-    const COLORS = ["#048C8C", "#6DC497", "#17ABBC"];
-    let W, H, particles, animId;
+    const id = setInterval(() => {
+      const next = FLIP_WORDS[(idxRef.current + 1) % FLIP_WORDS.length];
 
-    function resize() {
-      W = canvas.width = canvas.offsetWidth;
-      H = canvas.height = canvas.offsetHeight;
-    }
+      const nextEl = document.createElement('span');
+      nextEl.className = 'flipword__word';
+      nextEl.textContent = next;
+      inner.appendChild(nextEl);
 
-    function rand(min, max) { return Math.random() * (max - min) + min; }
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          inner.style.transform = 'translateY(-1.2em)';
 
-    function mkParticle() {
-      const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-      const shape = Math.random() > 0.55 ? "circle" : "diamond";
-      return {
-        x: rand(0, W),
-        y: rand(0, H),
-        r: rand(1.5, 4.2),
-        dx: rand(-0.22, 0.22),
-        dy: rand(-0.45, -0.06),
-        alpha: rand(0.06, 0.40),
-        dAlpha: rand(0.0005, 0.0018),
-        fade: Math.random() > 0.5,
-        color,
-        shape,
-        angle: rand(0, Math.PI * 2),
-        dAngle: rand(-0.007, 0.007),
-      };
-    }
+          setTimeout(() => {
+            inner.removeChild(inner.firstChild);
+            inner.style.transition = 'none';
+            inner.style.transform = 'translateY(0)';
 
-    function drawDiamond(x, y, r) {
-      ctx.beginPath();
-      ctx.moveTo(x, y - r);
-      ctx.lineTo(x + r, y);
-      ctx.lineTo(x, y + r);
-      ctx.lineTo(x - r, y);
-      ctx.closePath();
-    }
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                inner.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+              });
+            });
 
-    function init() {
-      resize();
-      particles = Array.from({ length: 30 }, mkParticle);
-    }
-
-    function tick() {
-      ctx.clearRect(0, 0, W, H);
-
-      /* connecting lines */
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const a = particles[i], b = particles[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < 100) {
-            ctx.save();
-            ctx.globalAlpha = (1 - d / 100) * 0.07;
-            ctx.strokeStyle = "#048C8C";
-            ctx.lineWidth = 0.7;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-            ctx.restore();
-          }
-        }
-      }
-
-      /* particles */
-      particles.forEach((p) => {
-        p.x += p.dx;
-        p.y += p.dy;
-        p.angle += p.dAngle;
-
-        /* breathe */
-        if (p.fade) { p.alpha -= p.dAlpha; if (p.alpha <= 0.04) p.fade = false; }
-        else { p.alpha += p.dAlpha; if (p.alpha >= 0.42) p.fade = true; }
-
-        /* wrap */
-        if (p.y < -10) p.y = H + 10;
-        if (p.x < -10) p.x = W + 10;
-        if (p.x > W + 10) p.x = -10;
-
-        ctx.save();
-        ctx.globalAlpha = p.alpha;
-        ctx.fillStyle = p.color;
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.angle);
-
-        if (p.shape === "circle") {
-          /* core */
-          ctx.beginPath();
-          ctx.arc(0, 0, p.r, 0, Math.PI * 2);
-          ctx.fill();
-          /* soft glow halo */
-          ctx.beginPath();
-          ctx.arc(0, 0, p.r * 3, 0, Math.PI * 2);
-          ctx.fillStyle = p.color;
-          ctx.globalAlpha = p.alpha * 0.12;
-          ctx.fill();
-        } else {
-          drawDiamond(0, 0, p.r * 1.3);
-          ctx.fill();
-        }
-        ctx.restore();
+            idxRef.current = (idxRef.current + 1) % FLIP_WORDS.length;
+          }, 620);
+        });
       });
+    }, 2500);
 
-      animId = requestAnimationFrame(tick);
-    }
-
-    init();
-    tick();
-
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas);
-
-    /* pause when tab hidden */
-    const handleVis = () => {
-      if (document.hidden) cancelAnimationFrame(animId);
-      else { animId = requestAnimationFrame(tick); }
-    };
-    document.addEventListener("visibilitychange", handleVis);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      ro.disconnect();
-      document.removeEventListener("visibilitychange", handleVis);
-    };
+    return () => clearInterval(id);
   }, []);
 
-  return <canvas ref={canvasRef} className="hero__particles" aria-hidden="true" />;
+  return (
+    <span className="flipword">
+      <span className="flipword__inner" ref={innerRef}>
+        <span className="flipword__word">{FLIP_WORDS[0]}</span>
+      </span>
+    </span>
+  );
 }
 
 /* ═══════════════════════════════════════════════
@@ -154,7 +66,12 @@ function useReveal() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
       { threshold: 0.15 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -168,89 +85,120 @@ function useReveal() {
 ═══════════════════════════════════════════════ */
 function Hero() {
   return (
-    <section className="hero">
-      {/* particle canvas — sits behind everything */}
-      <ParticleCanvas />
-
-      <div className="hero__grid" aria-hidden="true">
-        {Array.from({ length: 80 }).map((_, i) => (
-          <span key={i} className="hero__grid-dot" />
-        ))}
-      </div>
-      <div className="hero__orb hero__orb--1" aria-hidden="true" />
-      <div className="hero__orb hero__orb--2" aria-hidden="true" />
-
-      <div className="hero__content">
-        <div className="hero__badge">
-          <span className="hero__badge-dot" />
-          #1 Digital Marketing Company — In India
+    <>
+      <section className="banner">
+        {/* signature growth-line animation, drawn on load */}
+        <div className="banner__chartline" aria-hidden="true">
+          <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
+            <path
+              className="chartline__fill"
+              d="M0,260 C150,250 250,210 380,220 C520,230 600,150 760,140 C900,130 1000,90 1200,80 L1200,400 L0,400 Z"
+              fill="#7FE6C4"
+              opacity="0.12"
+            />
+            <path
+              className="chartline__stroke"
+              d="M0,260 C150,250 250,210 380,220 C520,230 600,150 760,140 C900,130 1000,90 1200,80"
+            />
+            <circle className="chartline__dot" cx="1200" cy="80" r="9" fill="#FF6B5B" />
+          </svg>
         </div>
 
-        <h1 className="hero__title">
-          Best Digital Marketing Company<br />
-          <span className="hero__title-highlight">in India   </span>
-        </h1>
-
-        <p className="hero__desc">
-         As one of the leading digital marketing businesses in India, Arbaj Technology gives a wealth of enjoy in offering boom answers for corporations. Being a renowned digital advertising business enterprise, the primary priority lies in creating a solid on-line presence for the client, in addition to making sure that they get more visible and grow consistently.
-
-
-        </p>
-
-        <div className="hero__actions">
-          {/* <Link to="/contact" className="btn btn--primary">
-            Get Free Consultation
-            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-              <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
-            </svg>
-          </Link> */}
-          <Link to="/services" className="btn btn--ghost">
-            Explore Digital Marketing Services
-          </Link>
-          <Link to="/blog" className="btn btn--ghost">
-            Read Our Blog
-          </Link>
-        </div>
-
-        <div className="hero__stats">
-          {STATS.map((s) => (
-            <div className="hero__stat" key={s.label}>
-              <strong>{s.number}</strong>
-              <span>{s.label}</span>
+        <div className="banner__wrapper">
+          <div className="banner__copy">
+            <div className="banner__tag">
+              #1 Digital Marketing Company — In India
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Floating Dashboard Card */}
-      <div className="hero__card-wrap" aria-hidden="true">
-        <div className="hero__card">
-          <div className="hero__card-header">
-            <span className="hero__card-dot hero__card-dot--red" />
-            <span className="hero__card-dot hero__card-dot--yellow" />
-            <span className="hero__card-dot hero__card-dot--green" />
-            <span className="hero__card-title">Growth Dashboard</span>
+            {/* <h1 className="banner__heading">
+              <span className="text-row"><span>Best Digital Marketing</span></span>
+              <span className="text-row">
+                <span>
+                  Company <span className="highlight">
+                    in India
+                    <svg viewBox="0 0 200 20" preserveAspectRatio="none">
+                      <path d="M5,12 C50,4 150,4 195,12" />
+                    </svg>
+                  </span>
+                </span>
+              </span>
+            </h1> */}
+
+
+            <h1 className="banner__heading">
+              <span className="text-row"><span>Best Digital Marketing</span></span>
+              <span className="text-row">
+                <span>Company for <FlipWord /></span>
+              </span>
+            </h1>
+
+
+            <p className="banner__para">
+              As one of the leading digital marketing businesses in India, Arbaj Technology
+              brings a wealth of experience in delivering growth solutions for companies.
+              We focus on building a strong online presence, increasing visibility, and
+              driving consistent, measurable growth.
+            </p>
+
+            <div className="banner__btns">
+              <Link to="/services" className="cta cta--filled">
+                <span>Explore Our Services</span>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                  <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
+                </svg>
+              </Link>
+              <Link to="/blog" className="cta cta--outline">
+                Read Our Blog
+              </Link>
+            </div>
+
+            <div className="banner__metrics">
+              {STATS.map((s) => (
+                <div className="banner__metric" key={s.label}>
+                  <strong>{s.number}</strong>
+                  <span>{s.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="hero__chart">
-            {[40, 65, 52, 80, 68, 90, 75, 95].map((h, i) => (
-              <div key={i} className="hero__bar-wrap">
-                <div
-                  className="hero__bar"
-                  style={{ "--bar-h": `${h}%`, "--delay": `${i * 0.08}s` }}
-                />
+
+          {/* Floating Dashboard Card */}
+          <div className="dashboard-card" aria-hidden="true">
+            <div className="dashboard-card__header">
+              <div>
+                <div className="dashboard-card__title">Organic Traffic</div>
+                <div className="dashboard-card__value">↑ 284%</div>
               </div>
-            ))}
-          </div>
-          <div className="hero__card-metric">
-            <span>Organic Traffic</span>
-            <strong className="hero__card-up">↑ 284%</strong>
-          </div>
-          <div className="hero__card-tags">
-            <span>SEO</span><span>Ads</span><span>SMM</span>
+              <div className="dashboard-card__pill">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
+                  <path d="M8 1l1.5 1.5L5 7h6v2H5l4.5 4.5L8 15 1 8z" transform="rotate(90 8 8)" />
+                </svg>
+                Growing
+              </div>
+            </div>
+
+            <div className="dashboard-card__bars">
+              {[40, 65, 52, 80, 68, 90, 75, 95].map((h, i) => (
+                <div
+                  key={i}
+                  className="dashboard-card__bar"
+                  style={{ height: `${h}%`, "--d": `${0.5 + i * 0.08}s` }}
+                />
+              ))}
+            </div>
+
+            <div className="dashboard-card__labels">
+              <span>SEO</span>
+              <span>Google Ads</span>
+              <span>Social Media</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ✅ FIX: Ticker banner ke BAHAR hai ab — overflow clip nahi hoga */}
+      <Ticker />
+    </>
   );
 }
 
@@ -264,11 +212,11 @@ function Ticker() {
   ];
   const all = [...items, ...items];
   return (
-    <div className="ticker">
-      <div className="ticker__track">
+    <div className="marquee">
+      <div className="marquee__belt">
         {all.map((item, i) => (
-          <span key={i} className="ticker__item">
-            {item} <span className="ticker__sep">✦</span>
+          <span key={i} className="marquee__word">
+            {item} <span className="marquee__divider">✦</span>
           </span>
         ))}
       </div>
@@ -283,35 +231,37 @@ function Services() {
   const [ref, visible] = useReveal();
   return (
     <section
-      className={`services section ${visible ? "section--visible" : ""}`}
+      className={`offerings page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="services"
     >
-      <div className="section__label_">—
-        Top Notch Digital Marketing Company</div>
-      <h2 className="section__title_">
-        Our<br />
-        <span>Services</span>
-      </h2>
-      <p className="section__sub">
-        Our services include SEO services in India, Google Ads campaigns, social media
-        marketing, and website development. We focus on data-driven strategies that
-        deliver measurable results and long-term business growth.
-      </p>
+      <div className="offerings__top">
+        <div>
+          <div className="label-tag">What We Do</div>
+          <h2 className="block-title">
+            Our <em>Services</em>
+          </h2>
+        </div>
+        <p className="block-subtitle">
+          From SEO and Google Ads to social media and web development —
+          we build data-driven strategies that deliver measurable results
+          and long-term business growth.
+        </p>
+      </div>
 
-      <div className="services__grid">
+      <div className="offerings__grid">
         {SERVICES.map((s, i) => (
           <div
-            className="service-card"
+            className="offering-tile"
             key={s.id}
             style={{ "--accent": s.accent, "--i": i }}
           >
-            <div className="service-card__tag">{s.tag}</div>
-            <div className="service-card__icon">{s.icon}</div>
-            <h3 className="service-card__title">{s.title}</h3>
-            <p className="service-card__desc">{s.desc}</p>
-            <Link to={s.link} className="service-card__link">
-              Learn More About {s.title}
+            <div className="offering-tile__num">{String(i + 1).padStart(2, "0")}</div>
+            <div className="offering-tile__icon">{s.icon}</div>
+            <h3 className="offering-tile__name">{s.title}</h3>
+            <p className="offering-tile__info">{s.desc}</p>
+            <Link to={s.link} className="offering-tile__more">
+              Learn More
               <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -330,69 +280,75 @@ function About() {
   const [ref, visible] = useReveal();
   return (
     <section
-      className={`about section ${visible ? "section--visible" : ""}`}
+      className={`story page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="about"
     >
-      <div className="about__inner">
-        <div className="about__visual">
-          <div className="about__circle about__circle--1" />
-          <div className="about__circle about__circle--2" />
-          <div className="about__badge-stack">
-            <div className="about__badge-card about__badge-card--mission">
-              <span>🎯</span>
-              <div>
-                <strong>Our Mission</strong>
-                <p>
-                  Empower your business with progressive answers so one can propel your brand to fulfillment and growth within the virtual world. Our challenge is to help agencies in creating a strong presence on-line, gaining visibility, and attaining out to their target audience through revolutionary digital marketing strategies.
-                </p>
-              </div>
-            </div>
-            <div className="about__badge-card about__badge-card--vision">
-              <span>🌟</span>
-              <div>
-                <strong>Our Vision</strong>
-                <p>Becoming a pacesetter in digital advertising and marketing services that gives revolutionary, straightforward, and efficient solutions worldwide. We are dedicated to supplying modern techniques to help special corporations unleash their maximum capacity on line.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="about__text">
-          <div className="section__label_">— About Arbaj Technology</div>
-          <h2 className="section__title">
-
-            Your Reliable <br />
-            <span>Digital Growth Partner</span>
+      <div className="story__layout">
+        <div className="story__details">
+          <div className="label-tag">About Arbaj Technology</div>
+          <h2 className="block-title">
+            Your Reliable <em>Digital Growth Partner</em>
           </h2>
-          <p className="about__para">
-            Our team of experienced virtual entrepreneurs is prepared to assist you in developing on line with modern answers and strategies designed to create a successful destiny.
+          <p className="story__body">
+            Our team of experienced digital strategists helps you grow online
+            with modern solutions designed to create a successful future.
           </p>
-          <p className="about__para">
-            Every challenge may be tailored to in shape the objectives of our customers irrespective of whether the business enterprise is new to the enterprise or an already set up brand. We provide most effective top notch virtual advertising and marketing answers and work tough to deliver measurable results.
+          <p className="story__body">
+            Every project is tailored to fit our clients' goals — whether you're
+            a new business or an established brand. We deliver only top quality
+            digital marketing solutions and work hard for measurable results.
           </p>
 
-          <ul className="about__features">
+          <ul className="story__perks">
             {[
-              "Over 10 Successful Projects Completed",
+              "10+ Successful Projects Completed",
               "5+ Years of Industry Experience",
               "Digital Marketing Certification",
               "Transparent Reports & Results",
               "Personal Support & Account Management",
-            ].map((f) => (
-              <li key={f}>
-                <span className="about__check">✓</span>
+            ].map((f, i) => (
+              <li key={f} style={{ "--i": i }}>
+                <span className="story__tick">✓</span>
                 {f}
               </li>
             ))}
           </ul>
+        </div>
 
-          <Link to="/about" className="btn btn--primary">
-            Learn More About Us
-            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-              <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
+        <div className="story__graphic">
+          <div className="ring-widget">
+            <svg viewBox="0 0 220 220">
+              <circle className="ring-widget__track" cx="110" cy="110" r="100" />
+              <circle className="ring-widget__arc" cx="110" cy="110" r="100" />
             </svg>
-          </Link>
+            <div className="ring-widget__text">
+              <strong>98%</strong>
+              <span>Client Satisfaction</span>
+            </div>
+          </div>
+
+          <div className="info-block">
+            <span className="info-block__emoji">🎯</span>
+            <div>
+              <strong>Our Mission</strong>
+              <p>
+                Empower your business with progressive solutions that propel
+                your brand toward success and growth in the digital world.
+              </p>
+            </div>
+          </div>
+
+          <div className="info-block">
+            <span className="info-block__emoji">🌟</span>
+            <div>
+              <strong>Our Vision</strong>
+              <p>
+                To be a leader in digital marketing services, delivering
+                innovative, transparent, and efficient solutions worldwide.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -408,29 +364,32 @@ function FAQ() {
 
   return (
     <section
-      className={`faq section ${visible ? "section--visible" : ""}`}
+      className={`questions page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="faq"
     >
-      <div className="section__label">— FAQ</div>
-      <h2 className="section__title">
-        Questions You<br />
-        <span>Probably Have</span>
-      </h2>
-      <div className="faq__list">
+      <div className="questions__top">
+        <div className="label-tag">FAQ</div>
+        <h2 className="block-title">
+          Questions You <em>Probably Have</em>
+        </h2>
+      </div>
+      <div className="questions__list">
         {FAQS.map((item, i) => (
           <div
             key={i}
-            className={`faq__item ${open === i ? "faq__item--open" : ""}`}
+            className={`accordion-row ${open === i ? "accordion-row--open" : ""}`}
+            style={{ "--i": i }}
           >
             <button
-              className="faq__q"
+              className="accordion-row__trigger"
               onClick={() => setOpen(open === i ? null : i)}
+              aria-expanded={open === i}
             >
               <span>{item.q}</span>
-              <span className="faq__icon">{open === i ? "−" : "+"}</span>
+              <span className="accordion-row__symbol">+</span>
             </button>
-            <div className="faq__a">
+            <div className="accordion-row__body">
               <p>{item.a}</p>
             </div>
           </div>
@@ -440,6 +399,11 @@ function FAQ() {
   );
 }
 
+
+
+
+
+
 /* ═══════════════════════════════════════════════
    CTA BANNER
 ═══════════════════════════════════════════════ */
@@ -447,18 +411,21 @@ function CTABanner() {
   const [ref, visible] = useReveal();
   return (
     <section
-      className={`cta-banner ${visible ? "section--visible" : ""}`}
+      className={`promo-strip fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
     >
-      <div className="cta-banner__orb" aria-hidden="true" />
-      <div className="cta-banner__content">
-        <h2>Ready to Grow Your Business?</h2>
+      <div className="promo-strip__glow" aria-hidden="true" />
+      <div className="promo-strip__inner">
+        <h2>Ready to <em>Grow</em> Your Business?</h2>
         <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
-        <div className="cta-banner__actions">
-          <Link to="/contact" className="btn btn--primary">
-            Book Free Consultation
+        <div className="promo-strip__btns">
+          <Link to="/contact" className="cta cta--filled">
+            <span>Book Free Consultation</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+              <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
+            </svg>
           </Link>
-          <Link  to="tel:917973611226" className="btn btn--ghost btn--ghost-light">
+          <Link to="tel:917973611226" className="cta cta--outline">
             <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
@@ -476,28 +443,19 @@ function CTABanner() {
 export default function HomePage() {
   return (
     <>
-        <SEOptimization
+      <SEOptimization
         title="Best Digital Marketing Company in India | Arbaj Technology"
         description="Arbaj Technology is a leading digital marketing company in India offering SEO services, Google Ads management, social media marketing, and web development to grow your business online and increase ROI."
-
-        keywords="digital marketing company, Digital marketing company in Haryana, SEO services India,SEO company in India,  web development company, Google Ads expert, social media marketing India, Arbaj Technology, Google Ads agency in Zirakpur"
-
-          url="https://arbajtechnologypvtltd.com/"
-
-          image="https://arbajtechnologypvtltd.com/preview.jpg"
-        faqs={FAQS}  
-        />
+        keywords="digital marketing company, Digital marketing company in Haryana, SEO services India, SEO company in India, web development company, Google Ads expert, social media marketing India, Arbaj Technology, Google Ads agency in Zirakpur"
+        url="https://arbajtechnologypvtltd.com/"
+        image="https://arbajtechnologypvtltd.com/preview.jpg"
+        faqs={FAQS}
+      />
       <main>
-
-
-
-
-
-
         <Hero />
-        <Ticker />
         <Services />
         <About />
+        <GoogleReviews />
         <FAQ />
         <CTABanner />
       </main>

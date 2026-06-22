@@ -103,17 +103,17 @@ function Hero() {
   );
 }
 
-function Ticker() {
-  const items = ["Search Ads", "Display Network", "Shopping Ads", "YouTube Ads", "Remarketing", "PPC Management", "Conversion Tracking", "Smart Bidding", "Quality Score", "Google Analytics"];
-  const all = [...items, ...items];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
-      </div>
-    </div>
-  );
-}
+// function Ticker() {
+//   const items = ["Search Ads", "Display Network", "Shopping Ads", "YouTube Ads", "Remarketing", "PPC Management", "Conversion Tracking", "Smart Bidding", "Quality Score", "Google Analytics"];
+//   const all = [...items, ...items];
+//   return (
+//     <div className="ticker">
+//       <div className="ticker__track">
+//         {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
+//       </div>
+//     </div>
+//   );
+// }
 
 function Results() {
   const [ref, visible] = useReveal();
@@ -289,7 +289,7 @@ export default function GoogleAdsPage() {
     
     <main>
       <Hero />
-      <Ticker />
+      {/* <Ticker /> */}
       <Results />
       <GAServices />
       <Process />

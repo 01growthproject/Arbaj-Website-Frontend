@@ -141,20 +141,20 @@ function Hero() {
 }
 
 
-function Ticker() {
-  const items = ["Reels", "YouTube", "Brand Films", "Ad Videos", "Motion Graphics", "Color Grading", "Podcast Editing", "Shorts", "Subtitles", "Thumbnails"];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {[...items, ...items].map((item, i) => (
-          <span key={`${item}-${i}`} className="ticker__item">
-            {item} <span className="ticker__sep" style={{ color: "#ff3b5c" }}>✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
+// function Ticker() {
+//   const items = ["Reels", "YouTube", "Brand Films", "Ad Videos", "Motion Graphics", "Color Grading", "Podcast Editing", "Shorts", "Subtitles", "Thumbnails"];
+//   return (
+//     <div className="ticker">
+//       <div className="ticker__track">
+//         {[...items, ...items].map((item, i) => (
+//           <span key={`${item}-${i}`} className="ticker__item">
+//             {item} <span className="ticker__sep" style={{ color: "#ff3b5c" }}>✦</span>
+//           </span>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 
 function VEServices() {
@@ -203,7 +203,7 @@ export default function VideoEditingPage() {
 
 
       <Hero />
-      <Ticker />
+      {/* <Ticker /> */}
       <VEServices />
     </main>
     </>

@@ -115,17 +115,17 @@ function Hero() {
   );
 }
 
-function Ticker() {
-  const items = ["Instagram Marketing", "Facebook Ads", "Reels & Shorts", "LinkedIn B2B", "YouTube Growth", "Meta Ads", "Content Creation", "Community Management", "Brand Strategy", "Influencer Outreach"];
-  const all = [...items, ...items];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
-      </div>
-    </div>
-  );
-}
+// function Ticker() {
+//   const items = ["Instagram Marketing", "Facebook Ads", "Reels & Shorts", "LinkedIn B2B", "YouTube Growth", "Meta Ads", "Content Creation", "Community Management", "Brand Strategy", "Influencer Outreach"];
+//   const all = [...items, ...items];
+//   return (
+//     <div className="ticker">
+//       <div className="ticker__track">
+//         {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
+//       </div>
+//     </div>
+//   );
+// }
 
 function Results() {
   const [ref, visible] = useReveal();
@@ -299,7 +299,7 @@ export default function SocialMediaPage() {
       />
     <main>
       <Hero />
-      <Ticker />
+      {/* <Ticker /> */}
       <Results />
       <SMMServices />
       <Process />

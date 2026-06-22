@@ -9,11 +9,27 @@ import Navbar from "./components/Navbar";
 import GoogleAdsPage from "./pages/GoogleAds";
 import VideoEditingPage from "./pages/VideoEditing";
 import WebDevelopmentPage from "./pages/WebDevelopement";
-// import DigitalMarketingPage from "./pages/DigitalMarketing";
+
+
+
+// import DigitalMarketingPage from "./pages/DigitalMarketing"; --------
+
+
+
+
 import GraphicDesigningPage from "./pages/GrapicDesigning";
 import SocialMediaPage from "./pages/SocialMediaMarketing";
 
-// import ContactForm from "./components/Form";
+
+
+
+
+// import ContactForm from "./components/Form";-----
+
+
+
+
+
 import Blog from './pages/Blog';
 import BlogPost from "./pages/Blogpost";
 
@@ -39,6 +55,12 @@ function App() {
           <Route path="/web-development" element={<WebDevelopmentPage />} />
           <Route path="/social-media-marketing" element={<SocialMediaPage />} />
           <Route path="/graphic-designing" element={<GraphicDesigningPage />} />
+
+
+
+
+
+
           {/* <Route path="/marketing" element={<DigitalMarketingPage />} /> */}
           {/* <Route path="/form" element={<ContactForm/>} /> */}
         </Routes>

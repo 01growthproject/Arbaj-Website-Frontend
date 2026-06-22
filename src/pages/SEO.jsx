@@ -105,17 +105,17 @@ function Hero() {
 }
 
 
-function Ticker() {
-  const items = ["Technical SEO", "On-Page SEO", "Link Building", "Local SEO", "Keyword Research", "SEO Audit", "Content SEO", "E-Commerce SEO", "Schema Markup", "Core Web Vitals"];
-  const all = [...items, ...items];
-  return (
-    <div className="ticker">
-      <div className="ticker__track">
-        {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
-      </div>
-    </div>
-  );
-}
+// function Ticker() {
+//   const items = ["Technical SEO", "On-Page SEO", "Link Building", "Local SEO", "Keyword Research", "SEO Audit", "Content SEO", "E-Commerce SEO", "Schema Markup", "Core Web Vitals"];
+//   const all = [...items, ...items];
+//   return (
+//     <div className="ticker">
+//       <div className="ticker__track">
+//         {all.map((item, i) => <span key={i} className="ticker__item">{item} <span className="ticker__sep">✦</span></span>)}
+//       </div>
+//     </div>
+//   );
+// }
 
 
 function Results() {
@@ -296,7 +296,7 @@ export default function SEOPage() {
       />
     <main>
       <Hero />
-      <Ticker />
+      {/* <Ticker /> */}
       <Results />
       <SEOServices />
       <Process />

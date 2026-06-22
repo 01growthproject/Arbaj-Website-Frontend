@@ -3,10 +3,10 @@ import image1 from "../../../public/team/image1.png"
 import image2 from "../../../public/team/image2.png"
 import image3 from '../../../public/team/image3.png'
 import image4 from '../../../public/team/image4.png'
-import image5 from '../../../public/team/image5.png'
+// import image5 from '../../../public/team/image5.png'
 import image6 from '../../../public/team/image6.png'
 import image7 from '../../../public/team/image7.png'
-import image8 from '../../../public/team/image8.png'
+// import image8 from '../../../public/team/image8.png'
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
@@ -152,18 +152,18 @@ export const TEAM = [
     color: "#22c55e",
     img: image4
   },
+  // {
+  //   id: 5,
+  //   initials: "CT",
+  //   name: "Chiranjeet Thakur",
+  //   role: "Video Editor",
+  //   // bio: "A creative Video Editor, passionate about turning raw footage into engaging visual stories.",
+  //   // socials: ["Li", "Tw"],
+  //   color: "#a855f7",
+  //   img: image5
+  // },
   {
     id: 5,
-    initials: "CT",
-    name: "Chiranjeet Thakur",
-    role: "Video Editor",
-    // bio: "A creative Video Editor, passionate about turning raw footage into engaging visual stories.",
-    // socials: ["Li", "Tw"],
-    color: "#a855f7",
-    img: image5
-  },
-  {
-    id: 6,
     initials: "RB",
     name: "Ritik Banyal ",
     role: " SEO Specialist",
@@ -173,7 +173,7 @@ export const TEAM = [
     img: image6
   },
   {
-    id: 7,
+    id: 6,
     initials: "MS",
     name: "Mohit Sharma ",
     role: " MERN Stack Developer",
@@ -185,16 +185,16 @@ export const TEAM = [
   
  
  
-  {
-    id: 8,
-    initials: "KG",
-    name: "Krishna Goswami",
-    role: "Junior Social Media Marketing",
-    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
-    // socials: ["Li", "Tw"],
-    color: "#a855f7",
-    img: image8
-  },
+  // {
+  //   id: 8,
+  //   initials: "KG",
+  //   name: "Krishna Goswami",
+  //   role: "Junior Social Media Marketing",
+  //   // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
+  //   // socials: ["Li", "Tw"],
+  //   color: "#a855f7",
+  //   img: image8
+  // },
 ];
 
 export const TIMELINE = [

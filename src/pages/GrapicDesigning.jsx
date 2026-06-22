@@ -298,7 +298,7 @@ export default function GraphicDesigningPage() {
 
         />
         <Hero />
-        <Ticker />
+        {/* <Ticker /> */}
         <StatsStrip />
         <GDServices />
         <Process />
