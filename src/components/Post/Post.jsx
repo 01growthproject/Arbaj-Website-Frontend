@@ -1,10 +1,10 @@
 import image1 from '../../assets/best Digital  Marketing.webp'
-// import image2 from '../../assets/blog image 2.png'
-// import image3 from '../../assets/iblog6.jpg'
 import image4 from '../../assets/what-is-digital-marketing.webp'
-// import image5 from '../../assets/image3.jpeg'
+
 import image6 from '../../assets/img1.jpg'
 import image7 from '../../assets/img2.jpg'
+import image3 from '../../assets/post3.jpeg'
+import img3 from '../../assets/post-no3.jpeg'
 
 export const POSTS = [
 
@@ -156,6 +156,7 @@ In the aggressive on-line global, making the right choice can prove to be the di
 
   
   // ── Post 2 ──
+
   {
     id: 2,
     date: "12 June 2026",
@@ -354,5 +355,236 @@ Whether you're looking at search engine marketing or social media marketing, con
       },
     ],
   },
+
+  
+  
+  // ── Post 3 ──
+
+  {
+    id: 3,
+    date: "20 July 2026",
+    title: "10 Reasons to Hire a Digital Marketing Agency Zirakpur for Online Success",
+    excerpt:
+      "In the cutting-edge and fairly aggressive on-line marketplace environment, simply having a website isn’t enough to get customers into your business. A green virtual marketing plan wants to be implemented with the help of groups to make them look good and pressure suitable and good-looking leads. No matter whether you are going for a startup, a neighborhood business or a current professional venture or not, getting a virtual advertising enterprise Zirakpur will allow you to reach your business goals with more effectiveness. Industry understanding, good technology, and digital advertising techniques are some of the vital capabilities of an efficient virtual marketing corporation, which does not save easily for some time yet additionally delivers outstanding results.",
+    img: image3,
+    featured: false,
+
+    // ✅ CHANGED: content ab array hai
+    content: [
+      {
+        type: "text",
+        value: `
+## To Gain industry expertise
+
+Marketing in a virtual global space by no means stops changing. Algorithms are often found in search engines, social media updates, or even new functions in marketing networks.
+
+Professional advertising businesses constantly keep themselves updated on changes and introduce new strategies that will ensure competitiveness. If you now do not necessarily know a whole lot on your own, you can get the assistance of professionals with contemporary understanding.
+
+
+
+
+**Better search engine optimization:**
+
+One of the simplest ways to generate organic visitors is through search engine optimization. The [digital marketing agency Zirakpur](https://arbajtechnologypvtltd.com/) is aware of a way to optimize your website using techniques like keyword study, technical SEO, on-page optimization, and quality content creation.
+
+Services related to search engine marketing include:
+
+• Keyword research
+• Website optimization
+• Technical SEO audits
+• Local SEO
+• Content optimization
+• Link-building strategies
+
+This will ensure that the site will be placed well in search results and make it easy for prospective clients to locate the firm.
+
+
+
+
+## Inexpensive Methods of Marketing
+
+In order to have a marketing team working in-house, it will incur salaries, subscription fees, cost of training, and other expenses. When working with a firm, you get the advantage of different specialists without having to bear the cost of having a complete team internally.
+
+Some of the expertise gained in the process includes:
+
+• SEO
+• Google Ads
+• Social Media Marketing
+• Content Writing
+• Graphic Designing
+• Website Optimization
+Thus, digital marketing is made more cost-effective without compromising on the professional standards.
+
+
+##  Better Growth of Local Businesses
+
+Local businesses require local marketing strategies to cater to nearby customers. Local SEO works towards increasing visibility through local search engines, Google Business Profile, and local directories.
+
+Most businesses that seek the **best digital marketing agency in Zirakpur** would require professionals who have an understanding of the regional market and customer behavior. With a local marketing strategy, businesses can reach out to people who are seeking products and services in their locality.
+
+Local marketing can help in the following ways as well:
+
+• Visibility on Google Maps
+• Reviews from customers
+• Local Citations
+• Mobile searches
+
+## Professional Social Media Marketing
+
+Nowadays, social media is taken into consideration to be an integral part of any branding and engagement process. It isn't enough anymore just to post something on such networks.
+
+Professional social media marketing includes:
+
+• Content control
+• Visual design
+• Engagement
+• Advertising
+• Analysis
+
+The proper use of social media will assist you establish agreement with and enhance visitors for your internet site
+
+
+        `
+      },
+
+      // ✅ NEW: Image content ke andar
+      { type: "image", src: img3, alt: "Top Digital Marketing Agency in Chandigarh" },
+
+      {
+        type: "text",
+        value: `
+
+
+
+
+## Marketing Decision Making Based on Data
+
+
+
+One of the primary blessings of digital marketing is the availability of metrics for monitoring progress. Each marketing campaign gives useful insights that could enhance destiny's consequences.
+
+Marketing corporations track crucial metrics along with:
+
+• Number of website visits
+• Keyword ranking function
+• Conversion charge
+• Cost consistent with lead
+• CTR
+• Bounce fee
+• ROI
+
+Businesses can use these facts for choice making without assumptions.
+
+
+## Quality Content Marketing
+
+
+Quality content continues to be one of the high-quality determinants of visibility online. Valuable content material allows businesses to talk about important facts while ranking better in search engines like google.
+
+Content advertising and marketing can contain:
+
+• Blog posts
+• Service pages
+• Landing pages
+• Case studies
+• FAQ sections
+• Infographics
+• Video scripts
+
+An excellent content method ensures authority on your discipline and facilitates you to build long-term traffic online.
+
+
+## Successful Paid Advertising Campaigns
+
+
+The advantages of paid advertising encompass higher visibility as compared to organic advertising and marketing efforts. Google Ads and social media ads give companies an opportunity to reach a targeted target audience in line with their interests and demographics.
+
+Professional campaign control involves:
+
+• Keyword concentrated on
+• Audience studies
+• Budget optimization
+• Creation of ad reproduction
+• Improvement of landing pages
+• Conversion tracking
+
+Properly managed advertising campaigns help corporations in getting leads without blowing up their marketing finances.
+
+## Concentration on Core Business Activities
+
+Marketing online demands a lot of effort and time from one. Many business owners find it difficult to manage marketing and business operations simultaneously.
+
+Through marketing outsourcing, the company can focus on:
+
+• Customer services
+• Product development
+• Company growth
+• Sales
+• Operations
+
+##  Long-Term Growth within the Online Environment
+
+Effective virtual advertising does not entail speedy outcomes; its objective is to foster sustainable development. Effective search engine optimization, content advertising and marketing, social media interest, and advertisements all make contributions to the strengthening of the employer's on-line presence over the years.
+
+Many groups which are looking for the [top digital marketing agency Zirakpur](https://arbajtechnologypvtltd.com/) are inquisitive about adopting long-term strategies as opposed to short-time period answers. The following actions fall in the framework of sustainable marketing and might be beneficial for the company:
+
+• Continuous SEO enhancement
+• Content manufacturing
+• Website optimization
+• Reputation control
+• Customer engagement
+• Performance tracking
+
+All of those actions upload fees to the agency over time.
+
+**How to Select a Proper Digital Marketing Company:**
+
+There are a number of aspects that businesses should take into consideration prior to partnering up with a marketing company.
+
+They include:
+
+• Industry experience
+• Portfolio
+• Reviews from past clients
+• Digital marketing service package
+• Clear reporting
+• Communications
+• Ethical SEO approach
+• Tailored marketing solutions
+
+Stay away from companies offering you overnight rankings or unrealistic promises as digital marketing is an ongoing process.
+
+
+## Services to look for
+
+
+A professional virtual advertising company usually offers all-inclusive packages with regard to virtual advertising offers, which include:
+
+• Search Engine Optimization (Search Engine Marketing)
+• Local search engine optimization
+• Google Ads (PPC)
+• Web design and development
+• Content Marketing
+• Email marketing
+• Conversion rate optimization
+• Reputation Management online
+
+Getting such an organization guarantees that every single channel used for your advertising and marketing efforts paints coherently in the direction of achieving your advertising and marketing goals.
+
+
+## Concluding Remarks
+
+For any enterprise to establish an effective on-line presence, there's an awful lot greater to it than developing web sites or running ads every so often. There has to be a planned integration of seo, content material marketing, paid marketing, social media control, and performance analysis for organizations to live applicable.
+
+Through hiring a **digital marketing agency Zirakpur**, corporations may have access to professional understanding and advertising equipment so as to help them grow their online presence in a sustainable manner. No matter what targets a business enterprise might have in phrases of growing on line site visitors, first-class lead generation, local outreach, or logo building, some of these might be completed through virtual advertising.
+
+With an emphasis on moral advertising practices and data-driven choices, agencies might be capable of thriving inside the constantly evolving online market surroundings.
+
+
+`
+      },
+    ],
+  },
+
 
 ];
