@@ -502,7 +502,7 @@ export default function AboutPage() {
         <AboutHero />
         <WhoWeAre />
         <MissionVisionValues />
-        {/* <Team /> */}
+        <Team />
         <Timeline />
         <ToolsStack />
         <FAQ />
