@@ -1,3 +1,11 @@
+import image1 from "../../../public/clients/growth.jpg"
+import image2 from "../../../public/clients/famous.png"
+import image3 from "../../../public/clients/Ocean.png"
+import image4 from "../../../public/clients/jaguars.png"
+
+
+
+
 export const SERVICES = [
   {
     id: 1,
@@ -119,4 +127,13 @@ export const FAQS = [
     q: "How do I get started with your agency?",
     a: " Getting started is easy! Reach out to ARBAJ TECHNOLOGY PVT.LTD, and our experts will guide you step- by - step to boost your online growth.",
   },
+];
+
+export const CLIENTS = [
+  { id: 1, name: "", logo: image1 },
+  { id: 2, name: "", logo: image2},
+  { id: 3, name: "", logo: image3},
+  { id: 4, name: "", logo: image4},
+  
+  
 ];

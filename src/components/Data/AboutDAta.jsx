@@ -103,17 +103,17 @@ export const MVV = [
 ];
 
 export const TEAM = [
-  // {
-  //   id: 1,
-  //   initials: "AB",
-  //   name: "Arjan Bajwa",
-  //   role: "Founder & CEO",
-  //   bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
-  //   // socials: ["Li", "Gh", "Tw"],
-  //   color: "#1d7afc",
-  // },
   {
     id: 1,
+    initials: "AB",
+    name: "Arjan Bajwa",
+    role: "Founder & CEO",
+    // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
+    // socials: ["Li", "Gh", "Tw"],
+    color: "#1d7afc",
+  },
+  {
+    id: 2,
     initials: "sk",
     name: "Shubham Kumar",
     role: "Manager",
@@ -123,17 +123,17 @@ export const TEAM = [
     img:image1
   },
   {
-    id: 2,
+    id: 3,
     initials: "M",
     name: "Monty Kumar",
-    role: "Team Leader",
+    role: "Graphic Designer",
     // bio: "A team leader guides, motivates, manages tasks, ensures team success.",
     // socials: ["Li", "Be", "Dr"],
     color: "#f4a200",
     img: image2
   },
   {
-    id: 3,
+    id: 4,
     initials: "AA",
     name: "Anjali Aggri",
     role: "Social Media Marketing Specialist",
@@ -143,7 +143,7 @@ export const TEAM = [
     img:image3
   },
   {
-    id: 4,
+    id: 5,
     initials: "RK",
     name: "Ritesh Kumar ",
     role: "Web Developer",
@@ -163,7 +163,7 @@ export const TEAM = [
   //   img: image5
   // },
   {
-    id: 5,
+    id: 6,
     initials: "RB",
     name: "Ritik Banyal ",
     role: " SEO Specialist",
@@ -173,7 +173,7 @@ export const TEAM = [
     img: image6
   },
   {
-    id: 6,
+    id: 7,
     initials: "MS",
     name: "Mohit Sharma ",
     role: " MERN Stack Developer",
@@ -185,16 +185,16 @@ export const TEAM = [
   
  
  
-  // {
-  //   id: 8,
-  //   initials: "KG",
-  //   name: "Krishna Goswami",
-  //   role: "Junior Social Media Marketing",
-  //   // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
-  //   // socials: ["Li", "Tw"],
-  //   color: "#a855f7",
-  //   img: image8
-  // },
+  {
+    id: 8,
+    initials: "NR",
+    name: "Nikita Rani",
+    role: "Social Media Marketing",
+    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
+    // socials: ["Li", "Tw"],
+    color: "#a855f7",
+    // img: image8
+  },
 ];
 
 export const TIMELINE = [

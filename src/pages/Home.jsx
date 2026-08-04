@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/home.css';
-import { SERVICES, STATS, FAQS } from '../components/Data/HomeData';
+import { SERVICES, STATS, FAQS, CLIENTS } from '../components/Data/HomeData';
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
 import GoogleReviews from "../components/Googlereviews";
@@ -274,6 +274,40 @@ function Services() {
 }
 
 /* ═══════════════════════════════════════════════
+   CLIENTS
+═══════════════════════════════════════════════ */
+function Clients() {
+  const [ref, visible] = useReveal();
+  // 4x duplicate taaki chhoti list mein bhi loop seamless dikhe, kabhi khali gap na aaye
+  const allClients = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
+
+  return (
+    <section
+      className={`clients page-section fade-up ${visible ? "fade-up--show" : ""}`}
+      ref={ref}
+      id="clients"
+    >
+      <div className="clients__top">
+        <div className="label-tag">Our Clients</div>
+        <h2 className="block-title">
+          Brands That <em>Trust Us</em>
+        </h2>
+      </div>
+
+      <div className="clients__slider">
+        <div className="clients__track">
+          {allClients.map((c, i) => (
+            <div className="client-tile" key={`${c.id}-${i}`}>
+              <img src={c.logo} alt={c.name} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════
    ABOUT
 ═══════════════════════════════════════════════ */
 function About() {
@@ -454,6 +488,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Services />
+        <Clients />
         <About />
         <GoogleReviews />
         <FAQ />
