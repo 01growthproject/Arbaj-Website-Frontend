@@ -103,15 +103,15 @@ export const MVV = [
 ];
 
 export const TEAM = [
-  {
-    id: 1,
-    initials: "AB",
-    name: "Arjan Bajwa",
-    role: "Founder & CEO",
-    // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
-    // socials: ["Li", "Gh", "Tw"],
-    color: "#1d7afc",
-  },
+  // {
+  //   id: 1,
+  //   initials: "AB",
+  //   name: "Arjan Bajwa",
+  //   role: "Founder & CEO",
+  //   // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
+  //   // socials: ["Li", "Gh", "Tw"],
+  //   color: "#1d7afc",
+  // },
   {
     id: 2,
     initials: "sk",
@@ -185,16 +185,16 @@ export const TEAM = [
   
  
  
-  {
-    id: 8,
-    initials: "NR",
-    name: "Nikita Rani",
-    role: "Social Media Marketing",
-    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
-    // socials: ["Li", "Tw"],
-    color: "#a855f7",
-    // img: image8
-  },
+  // {
+  //   id: 8,
+  //   initials: "NR",
+  //   name: "Nikita Rani",
+  //   role: "Social Media Marketing",
+  //   // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
+  //   // socials: ["Li", "Tw"],
+  //   color: "#a855f7",
+  //   // img: image8
+  // },
 ];
 
 export const TIMELINE = [
