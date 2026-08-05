@@ -132,16 +132,16 @@ export const TEAM = [
     color: "#f4a200",
     img: image2
   },
-  {
-    id: 4,
-    initials: "AA",
-    name: "Anjali Aggri",
-    role: "Social Media Marketing Specialist",
-    // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
-    // socials: ["Li", "Tw"],
-    color: "#a855f7",
-    img:image3
-  },
+  // {
+  //   id: 4,
+  //   initials: "AA",
+  //   name: "Anjali Aggri",
+  //   role: "Social Media Marketing Specialist",
+  //   // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
+  //   // socials: ["Li", "Tw"],
+  //   color: "#a855f7",
+  //   img:image3
+  // },
   {
     id: 5,
     initials: "RK",
