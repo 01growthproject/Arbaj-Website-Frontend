@@ -337,11 +337,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #000000;           /* FIX: was #000000 — invisible on dark bg */
+  color: #000000;
 }
 .ab-hero__stat strong em {
   font-style: normal;
-  color: #000000;           /* FIX: was #000000 — accent color on dark */
+  color: #000000;
 }
 .ab-hero__stat span {
   display: block;
@@ -634,7 +634,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: #ffffff;
   border-radius: 32px;
   margin: 0 44px;
-  /* max-width: 1892px; */
   box-sizing: border-box;
   padding: 0 !important;
 }
@@ -830,7 +829,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: #ffffff;
   border-radius: 32px;
   margin: 0 24px;
-  /* max-width: 1892px; */
   box-sizing: border-box;
   padding: 0 !important;
 }
@@ -966,7 +964,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: #ffffff;
   border-radius: 32px;
   margin: 0 24px;
-  /* max-width: 1892px; */
   box-sizing: border-box;
   padding: 0 !important;
 }
@@ -1138,14 +1135,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .ab-hero__stat strong { font-size: 1.8rem; color: #ffffff; }
   .ab-hero__stat strong em { color: #7FE6C4; }
   .ab-hero__stat span { color: rgba(255,255,255,0.6); }
-  /* Chartline mobile par stats ke peeche */
   .ab-hero__chartline { height: 35%; z-index: 1; }
 
   /* Profile card */
   .ab-profile-card {
     padding: 22px;
     border-radius: 18px;
-    /* Disable float on mobile — saves battery & looks clean */
     animation: ab-cardIn 0.8s cubic-bezier(.22,1,.36,1) 0.6s forwards !important;
   }
 
@@ -1159,26 +1154,39 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .ab-mvv__grid { grid-template-columns: 1fr; gap: 14px; }
   .ab-mvv__head { margin-bottom: 36px; }
 
-  /* Team */
-  .ab-team__track { grid-template-columns: 1fr; gap: 12px; }
-  /* Horizontal card layout on mobile */
+  /* ── TEAM (mobile fix) ──
+     Photos are pre-cropped circles on a teal background.
+     Stack vertically, keep the box square, and use `contain`
+     so the full circle shows without being cropped at the top. */
+  .ab-team__track { grid-template-columns: 1fr; gap: 16px; }
+
   .ab-member-card {
-    flex-direction: row;
+    flex-direction: column;
     display: flex;
     align-items: stretch;
-    border-radius: 16px;
+    border-radius: 18px;
   }
   .ab-member-card__img-wrap {
-    width: 110px;
-    min-width: 110px;
-    aspect-ratio: unset;
+    width: 100%;
+    min-width: unset;
+    aspect-ratio: 1 / 1;
     height: auto;
     flex-shrink: 0;
-  }
-  .ab-member-card__img { min-height: 140px; height: 100%; }
-  .ab-member-card__body {
-    padding: 14px 14px 14px 16px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    background: #d5d7da;
+  }
+  .ab-member-card__img {
+    width: 100%;
+    height: 100%;
+    min-height: unset;
+    object-fit: contain;
+    object-position: center;
+  }
+  .ab-member-card__body {
+    padding: 16px 18px 20px;
+    justify-content: flex-start;
     display: flex;
     flex-direction: column;
   }
@@ -1215,10 +1223,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    RESPONSIVE — 480px (small mobile)
 ═══════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  /* Team card: switch back to vertical stacking on very small screens */
+  /* ── TEAM (mobile fix, small screens) ──
+     Same vertical layout as 640px — keep it consistent so
+     there's no jarring layout switch between 480–640px. */
   .ab-member-card { flex-direction: column; }
-  .ab-member-card__img-wrap { width: 100%; min-width: unset; aspect-ratio: 4/3; height: auto; }
-  .ab-member-card__img { min-height: unset; }
+  .ab-member-card__img-wrap {
+    width: 100%;
+    min-width: unset;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    background: #d5d7da;
+  }
+  .ab-member-card__img {
+    min-height: unset;
+    object-fit: contain;
+    object-position: center;
+  }
 
   /* Hero */
   .ab-hero__stats { flex-direction: column; gap: 16px; padding-bottom: 56px; z-index: 3; }

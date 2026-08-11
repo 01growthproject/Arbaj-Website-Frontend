@@ -305,20 +305,19 @@ function Team() {
         {TEAM.map((member, i) => (
           <div className="ab-member-card" key={member.id} style={{ "--i": i }}>
             <div className="ab-member-card__img-wrap">
-              <div className="ab-member-card__ring">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="ab-member-card__img"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+              <img
+                src={member.img}
+                alt={member.name}
+                className="ab-member-card__img"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="ab-member-card__body">
               <span className="ab-member-card__line" />
               <h3 className="ab-member-card__name">{member.name}</h3>
               <p className="ab-member-card__role">{member.role}</p>
+              <p className="ab-member-card__bio">{member.bio}</p>
             </div>
           </div>
         ))}
