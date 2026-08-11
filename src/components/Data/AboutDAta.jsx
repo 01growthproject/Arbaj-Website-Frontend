@@ -1,12 +1,22 @@
 
-import image1 from "../../../public/team/image1.png"
-import image2 from "../../../public/team/image2.png"
-import image3 from '../../../public/team/image3.png'
-import image4 from '../../../public/team/image4.png'
+// import image1 from "../../../public/team/image1.png"
+// import image2 from "../../../public/team/image2.png"
+// import image3 from '../../../public/team/image3.png'
+// import image4 from '../../../public/team/image4.png'
 // import image5 from '../../../public/team/image5.png'
-import image6 from '../../../public/team/image6.png'
-import image7 from '../../../public/team/image7.png'
+// import image6 from '../../../public/team/image6.png'
+// import image7 from '../../../public/team/image7.png'
 // import image8 from '../../../public/team/image8.png'
+// import SagarSir from '../../../public/team/Sagar-Sir.jpeg'
+import arjunSir from '../../../public/team/arjun-sir.png'
+import shubhamSir from '../../../public/team/shubham-sir.png'
+import montySir from '../../../public/team/monty-sir.png'
+import Ritesh from '../../../public/team/me.png'
+import RitikSir from '../../../public/team/ritik-sir.png'
+import MohitSir from '../../../public/team/mohit-sir.png'
+import Nikita from '../../../public/team/nikita-mam.png'
+
+
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
   { number: "5+", label: "Years Experience" },
@@ -103,15 +113,16 @@ export const MVV = [
 ];
 
 export const TEAM = [
-  // {
-  //   id: 1,
-  //   initials: "AB",
-  //   name: "Arjan Bajwa",
-  //   role: "Founder & CEO",
-  //   // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
-  //   // socials: ["Li", "Gh", "Tw"],
-  //   color: "#1d7afc",
-  // },
+  {
+    id: 1,
+    initials: "AB",
+    name: "Arjan Bajwa",
+    role: "Founder & CEO",
+    // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
+    // socials: ["Li", "Gh", "Tw"],
+    color: "#1d7afc",
+    img:arjunSir
+  },
   {
     id: 2,
     initials: "sk",
@@ -120,7 +131,7 @@ export const TEAM = [
     // bio: "A dedicated and result-driven Manager at Arbaj Technology.",
     // socials: ["Li", "Gh", "Tw"],
     color: "#1d7afc",
-    img:image1
+    img: shubhamSir
   },
   {
     id: 3,
@@ -130,7 +141,7 @@ export const TEAM = [
     // bio: "A team leader guides, motivates, manages tasks, ensures team success.",
     // socials: ["Li", "Be", "Dr"],
     color: "#f4a200",
-    img: image2
+    img: montySir
   },
   // {
   //   id: 4,
@@ -150,7 +161,7 @@ export const TEAM = [
     // bio: "A skilled WordPress & MERN Stack Developer with a passion for building modern web solutions.",
     // socials: ["Li", "Gh"],
     color: "#22c55e",
-    img: image4
+    img: Ritesh
   },
   // {
   //   id: 5,
@@ -166,11 +177,11 @@ export const TEAM = [
     id: 6,
     initials: "RB",
     name: "Ritik Banyal ",
-    role: " SEO Specialist",
+    role: " SEO EXECUTIVE",
     // bio: "A dedicated SEO Specialist, focused on improving website visibility and online growth..",
     // socials: ["Li", "Gh"],
     color: "#22c55e",
-    img: image6
+    img: RitikSir
   },
   {
     id: 7,
@@ -180,20 +191,30 @@ export const TEAM = [
     // bio: "A passionate MERN Stack Developer, specializing in modern web application development.",
     // socials: ["Li", "Gh"],
     color: "#22c55e",
-    img: image7
+    img: MohitSir
   },
   
  
  
+  {
+    id: 8,
+    initials: "NR",
+    name: "Nikita Rani",
+    role: "Social Media Marketing",
+    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
+    // socials: ["Li", "Tw"],
+    color: "#a855f7",
+    img: Nikita
+  },
   // {
   //   id: 8,
-  //   initials: "NR",
-  //   name: "Nikita Rani",
-  //   role: "Social Media Marketing",
-  //   // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
-  //   // socials: ["Li", "Tw"],
+  //   initials: "SR",
+  //   name: "Sagar Kumar",
+  //   role: "Meta Ads",
+  //   // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
+  //   socials: ["Li", "Tw"],
   //   color: "#a855f7",
-  //   // img: image8
+  //   // img: SagarSir
   // },
 ];
 
