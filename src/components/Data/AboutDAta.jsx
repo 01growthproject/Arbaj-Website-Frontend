@@ -1,10 +1,4 @@
-import arjunSir from '../../../public/team/arjun-sir.png'
-import shubhamSir from '../../../public/team/shubham-sir.png'
-import montySir from '../../../public/team/monty-sir.png'
-import Ritesh from '../../../public/team/me.png'
-import RitikSir from '../../../public/team/ritik-sir.png'
-import MohitSir from '../../../public/team/mohit-sir.png'
-import Nikita from '../../../public/team/nikita-mam.png'
+
 
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
