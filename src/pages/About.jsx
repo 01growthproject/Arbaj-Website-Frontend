@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/about.css';
-import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta';
+import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta.jsx';
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
+// import arjunSir from "../../../public/team/arjun-sir.png";
 
 /* ─── Scroll reveal hook ─── */
 function useReveal() {
