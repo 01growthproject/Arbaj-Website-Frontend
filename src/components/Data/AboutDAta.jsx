@@ -1,13 +1,3 @@
-
-// import image1 from "../../../public/team/image1.png"
-// import image2 from "../../../public/team/image2.png"
-// import image3 from '../../../public/team/image3.png'
-// import image4 from '../../../public/team/image4.png'
-// import image5 from '../../../public/team/image5.png'
-// import image6 from '../../../public/team/image6.png'
-// import image7 from '../../../public/team/image7.png'
-// import image8 from '../../../public/team/image8.png'
-// import SagarSir from '../../../public/team/Sagar-Sir.jpeg'
 import arjunSir from '../../../public/team/arjun-sir.png'
 import shubhamSir from '../../../public/team/shubham-sir.png'
 import montySir from '../../../public/team/monty-sir.png'
@@ -15,7 +5,6 @@ import Ritesh from '../../../public/team/me.png'
 import RitikSir from '../../../public/team/ritik-sir.png'
 import MohitSir from '../../../public/team/mohit-sir.png'
 import Nikita from '../../../public/team/nikita-mam.png'
-
 
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
@@ -118,104 +107,57 @@ export const TEAM = [
     initials: "AB",
     name: "Arjan Bajwa",
     role: "Founder & CEO",
-    // bio: "A passionate entrepreneur and technology enthusiast, serving as the Founder and CEO.",
-    // socials: ["Li", "Gh", "Tw"],
     color: "#1d7afc",
-    img:arjunSir
+    img: "/team/arjun-sir.png"
   },
   {
     id: 2,
     initials: "sk",
     name: "Shubham Kumar",
     role: "Manager",
-    // bio: "A dedicated and result-driven Manager at Arbaj Technology.",
-    // socials: ["Li", "Gh", "Tw"],
     color: "#1d7afc",
-    img: shubhamSir
+    img: "/team/shubham-sir.png"
   },
   {
     id: 3,
     initials: "M",
     name: "Monty Kumar",
     role: "Graphic Designer",
-    // bio: "A team leader guides, motivates, manages tasks, ensures team success.",
-    // socials: ["Li", "Be", "Dr"],
     color: "#f4a200",
-    img: montySir
+    img: "/team/monty-sir.png"
   },
-  // {
-  //   id: 4,
-  //   initials: "AA",
-  //   name: "Anjali Aggri",
-  //   role: "Social Media Marketing Specialist",
-  //   // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
-  //   // socials: ["Li", "Tw"],
-  //   color: "#a855f7",
-  //   img:image3
-  // },
   {
     id: 5,
     initials: "RK",
-    name: "Ritesh Kumar ",
+    name: "Ritesh Kumar",
     role: "Web Developer",
-    // bio: "A skilled WordPress & MERN Stack Developer with a passion for building modern web solutions.",
-    // socials: ["Li", "Gh"],
     color: "#22c55e",
-    img: Ritesh
+    img: "/team/me.png"
   },
-  // {
-  //   id: 5,
-  //   initials: "CT",
-  //   name: "Chiranjeet Thakur",
-  //   role: "Video Editor",
-  //   // bio: "A creative Video Editor, passionate about turning raw footage into engaging visual stories.",
-  //   // socials: ["Li", "Tw"],
-  //   color: "#a855f7",
-  //   img: image5
-  // },
   {
     id: 6,
     initials: "RB",
-    name: "Ritik Banyal ",
-    role: " SEO EXECUTIVE",
-    // bio: "A dedicated SEO Specialist, focused on improving website visibility and online growth..",
-    // socials: ["Li", "Gh"],
+    name: "Ritik Banyal",
+    role: "SEO EXECUTIVE",
     color: "#22c55e",
-    img: RitikSir
+    img: "/team/ritik-sir.png"
   },
   {
     id: 7,
     initials: "MS",
-    name: "Mohit Sharma ",
-    role: " MERN Stack Developer",
-    // bio: "A passionate MERN Stack Developer, specializing in modern web application development.",
-    // socials: ["Li", "Gh"],
+    name: "Mohit Sharma",
+    role: "MERN Stack Developer",
     color: "#22c55e",
-    img: MohitSir
+    img: "/team/mohit-sir.png"
   },
-  
- 
- 
   {
     id: 8,
     initials: "NR",
     name: "Nikita Rani",
     role: "Social Media Marketing",
-    // bio: "A graphic designer creates visuals, enhances branding, communicates ideas effectively.",
-    // socials: ["Li", "Tw"],
     color: "#a855f7",
-    img: Nikita
+    img: "/team/nikita-mam.png"
   },
-  // {
-  //   id: 8,
-  //   initials: "SR",
-  //   name: "Sagar Kumar",
-  //   role: "Meta Ads",
-  //   // bio: "Specializes in social media marketing, paid ads, and online branding strategies.",
-  //   socials: ["Li", "Tw"],
-  //   color: "#a855f7",
-  //   // img: SagarSir
-  // },
 ];
 
 export const TIMELINE = [
