@@ -6,15 +6,22 @@ import image7 from '../../assets/img2.jpg'
 import image3 from '../../assets/post3.jpeg'
 import img3 from '../../assets/post-no3.jpeg'
 
+
+
 export const POSTS = [
 
   // ── Post 1 ──
   {
     id: 1,
+    slug: "how-to-choose-the-best-digital-marketing-companies-in-zirakpur-for-maximum-growth",
     date: "19 March 2026",
+    dateISO: "2026-03-19",
+    modifiedDate: "2026-03-19",
+    author: "Arbaj Technology Editorial Team",
+    readTime: "8 min read",
     title: "How to Choose the Best Digital Marketing Companies in Zirakpur for Maximum Growth",
     excerpt:
-      "In today's pretty dynamic digital environment, establishing a robust digital presence is crucial to stay at the vanguard of the business world. Consumers use engines like google, social media, and on line evaluations to influence their shopping for choices.",
+      "Learn how to evaluate digital marketing companies in Zirakpur by comparing their experience, services, communication, reporting, pricing, and long-term strategy.",
     img: image1,
     featured: true,
 
@@ -159,10 +166,15 @@ In the aggressive on-line global, making the right choice can prove to be the di
 
   {
     id: 2,
+    slug: "how-can-digital-marketing-services-in-zirakpur-help-your-business-grow-faster-online",
     date: "12 June 2026",
+    dateISO: "2026-06-12",
+    modifiedDate: "2026-06-12",
+    author: "Arbaj Technology Editorial Team",
+    readTime: "10 min read",
     title: "How Can Digital Marketing Services in Zirakpur Help Your Business Grow Faster Online?",
     excerpt:
-      "In the enormously aggressive world of the net marketplace, having only an internet site might not be enough for organizations to draw potential customers and enhance their income. The reality that human beings search on the internet before creating a purchase or choosing services method is very critical for any commercial enterprise to have an internet presence.The importance of digital marketing offerings in Zirakpur lies herein.Such offerings allow agencies to interact with the proper audience, construct logo attention, create qualified leads, and obtain better conversion charges using one of a kind digital advertising and marketing strategies.Search engine optimization, social media advertising and marketing, and many other kinds of virtual marketing have turned out to be a number of the quickest methods of growing online.",
+      "Discover how SEO, Google Ads, social media marketing, and website optimization can help a Zirakpur business attract relevant visitors, leads, and customers online.",
     img: image6,
     featured: false,
 
@@ -362,10 +374,15 @@ Whether you're looking at search engine marketing or social media marketing, con
 
   {
     id: 3,
+    slug: "10-reasons-to-hire-a-digital-marketing-agency-zirakpur-for-online-success",
     date: "20 July 2026",
+    dateISO: "2026-07-20",
+    modifiedDate: "2026-07-20",
+    author: "Arbaj Technology Editorial Team",
+    readTime: "8 min read",
     title: "10 Reasons to Hire a Digital Marketing Agency Zirakpur for Online Success",
     excerpt:
-      "In the cutting-edge and fairly aggressive on-line marketplace environment, simply having a website isn’t enough to get customers into your business. A green virtual marketing plan wants to be implemented with the help of groups to make them look good and pressure suitable and good-looking leads. No matter whether you are going for a startup, a neighborhood business or a current professional venture or not, getting a virtual advertising enterprise Zirakpur will allow you to reach your business goals with more effectiveness. Industry understanding, good technology, and digital advertising techniques are some of the vital capabilities of an efficient virtual marketing corporation, which does not save easily for some time yet additionally delivers outstanding results.",
+      "Explore ten practical reasons to hire a digital marketing agency in Zirakpur, from specialist expertise and consistent execution to measurable reporting and scalable growth.",
     img: image3,
     featured: false,
 

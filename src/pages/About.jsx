@@ -1,9 +1,63 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/about.css';
-import { STATS, TEAM, MVV, TIMELINE, STACK, FAQS } from '../components/Data/AboutDAta.jsx';
+import {
+  STATS,
+  TEAM,
+  MVV,
+  TIMELINE,
+  STACK,
+  FAQS,
+} from "../components/Data/AboutData.jsx";
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
-// import arjunSir from "../../../public/team/arjun-sir.png";
+
+
+
+const SITE_URL = "https://arbajtechnologypvtltd.com";
+
+const ABOUT_PAGE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${SITE_URL}/about#about-page`,
+  url: `${SITE_URL}/about`,
+  name: "About Arbaj Technology Pvt. Ltd.",
+  description:
+    "Learn about Arbaj Technology, a digital marketing and web development company founded in 2021 in Zirakpur, Punjab.",
+  isPartOf: {
+    "@id": `${SITE_URL}/#website`,
+  },
+  about: {
+    "@id": `${SITE_URL}/#business`,
+  },
+  inLanguage: "en-IN",
+};
+
+const ABOUT_BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About",
+      item: `${SITE_URL}/about`,
+    },
+  ],
+};
+
+
+
+
+
+
+
+
 
 /* ─── Scroll reveal hook ─── */
 function useReveal() {
@@ -24,15 +78,11 @@ function useReveal() {
    HERO
 ═══════════════════════════════════════════════ */
 function AboutHero() {
-  // const TICKER_ITEMS = ["SEO", "Google Ads", "Social Media", "Web Development",
-  //   "Graphic Design", "Video Editing", "Brand Strategy", "Since 2019"];
-  // const all = [...TICKER_ITEMS, ...TICKER_ITEMS];
-
   const PROFILE_ROWS = [
-    { label: "SEO & Ads", val: "95%", w: "95%" },
-    { label: "Social Media", val: "90%", w: "90%" },
-    { label: "Web Dev", val: "85%", w: "85%" },
-    { label: "Client Retention", val: "98%", w: "98%" },
+    { label: "SEO & Ads", val: "Available", w: "100%" },
+    { label: "Social Media", val: "Available", w: "100%" },
+    { label: "Web Development", val: "Available", w: "100%" },
+    { label: "Creative Services", val: "Available", w: "100%" },
   ];
 
   return (
@@ -81,10 +131,10 @@ function AboutHero() {
             </h1>
 
             <p className="ab-hero__para">
-              A passionate team in Zirakpur, Punjab — delivering SEO, Google Ads, Social Media,
-              Web Development, and Design solutions for 50+ businesses across India since 2019.
+              A growing team based in Zirakpur, Punjab—providing SEO,
+              Google Ads, social media marketing, web development, graphic
+              design and video editing services since 2021.
             </p>
-
             <div className="ab-hero__btns">
               <Link to="/contact" className="ab-btn ab-btn--filled">
                 <span>Work With Us</span>
@@ -136,24 +186,20 @@ function AboutHero() {
             </div>
 
             <div className="ab-profile-card__tags">
-              {["50+ Clients", "5+ Years", "98% Retention", "Zirakpur, PB"].map((t) => (
-                <span className="ab-profile-card__tag" key={t}>{t}</span>
+              {[
+                "10 Clients",
+                "5+ Years",
+                "10+ Team Members",
+                "Zirakpur, Punjab",
+              ].map((tag) => (
+                <span className="ab-profile-card__tag" key={tag}>
+                  {tag}
+                </span>
               ))}
             </div>
           </div>
         </div>
       </section>
-
-      {/* Ticker */}
-      {/* <div className="ab-ticker">
-        <div className="ab-ticker__belt">
-          {all.map((item, i) => (
-            <span key={i} className="ab-ticker__word">
-              {item} <span className="ab-ticker__divider">✦</span>
-            </span>
-          ))}
-        </div>
-      </div> */}
     </>
   );
 }
@@ -178,9 +224,10 @@ function WhoWeAre() {
             <em>Powered by Strategy</em>
           </h2>
           <p className="ab-story__para">
-            Arbaj Technology was born from a simple belief — that great digital marketing
-            should solve real problems. Founded in 2019 in Zirakpur, Punjab, we've grown
-            from a small studio into a full-service agency trusted by 50+ businesses.
+            Arbaj Technology was founded in 2021 in Zirakpur, Punjab.
+            Since then, we have grown into a team of more than 10 people
+            supporting 10 clients across marketing, design, development
+            and creative services.
           </p>
           <p className="ab-story__para">
             We combine cutting-edge marketing with thoughtful design and transparent
@@ -189,15 +236,15 @@ function WhoWeAre() {
 
           <ul className="ab-story__list">
             {[
-              "50+ Happy Clients Across India",
+              "10 Clients Served",
               "5+ Years of Industry Experience",
-              "Certified Digital Marketing Experts",
-              "Transparent Monthly Reporting",
-              "Dedicated Account Manager",
-            ].map((f, i) => (
-              <li key={f} style={{ "--i": i }}>
+              "10+ Team Members",
+              "Transparent Project Communication",
+              "Dedicated Client Support",
+            ].map((feature, index) => (
+              <li key={feature} style={{ "--i": index }}>
                 <span className="ab-story__tick">✓</span>
-                {f}
+                {feature}
               </li>
             ))}
           </ul>
@@ -212,27 +259,47 @@ function WhoWeAre() {
 
         {/* Right — bento grid */}
         <div className="ab-story__bento">
+
+
           <div className="ab-bento-tile ab-bento-tile--dark">
-            <div className="ab-bento-tile__num"><em>50</em>+</div>
-            <div className="ab-bento-tile__label">Happy Clients</div>
+
+
+            <div className="ab-bento-tile__num">
+              <em>10</em>
+            </div>
+            <div className="ab-bento-tile__label">Clients Served</div>
           </div>
+
+
           <div className="ab-bento-tile ab-bento-tile--coral">
-            <div className="ab-bento-tile__num">98<em>%</em></div>
-            <div className="ab-bento-tile__label">Client Retention</div>
+            <div className="ab-bento-tile__num">
+              10<em>+</em>
+            </div>
+            <div className="ab-bento-tile__label">Team Members</div>
           </div>
+
+
           <div className="ab-bento-tile">
-            <div className="ab-bento-tile__num">5<em>+</em></div>
+            <div className="ab-bento-tile__num">
+              5<em>+</em>
+            </div>
             <div className="ab-bento-tile__label">Years Experience</div>
           </div>
+
+
           <div className="ab-bento-tile">
-            <div className="ab-bento-tile__num">10<em>×</em></div>
-            <div className="ab-bento-tile__label">Avg. ROI Delivered</div>
+            <div className="ab-bento-tile__num">
+              6<em>+</em>
+            </div>
+            <div className="ab-bento-tile__label">Core Services</div>
           </div>
+
+
           <div className="ab-bento-tile ab-bento-tile--wide">
             <div className="ab-bento-tile__wide-inner">
               <div className="ab-bento-tile__icon">🎯</div>
               <div className="ab-bento-tile__text">
-                <strong>Est. 2019 — Zirakpur, Punjab</strong>
+                <strong>Established in 2021 — Zirakpur, Punjab</strong>
                 <p>Full-service digital agency helping businesses across India grow online with measurable, data-driven results.</p>
               </div>
             </div>
@@ -289,14 +356,20 @@ function MissionVisionValues() {
 ═══════════════════════════════════════════════ */
 function Team() {
   const [ref, visible] = useReveal();
+
   return (
     <section
       ref={ref}
-      className={`ab-section ab-team ab-reveal ${visible ? "ab-reveal--show" : ""}`}
+      className={`ab-section ab-team ab-reveal ${visible ? "ab-reveal--show" : ""
+        }`}
     >
       <div className="ab-team__header">
         <div className="ab-label">— Our People</div>
-        <h2 className="ab-title">Meet the <em>Team</em></h2>
+
+        <h2 className="ab-title">
+          Meet the <em>Team</em>
+        </h2>
+
         <p className="ab-sub ab-sub--center">
           The talented humans behind every campaign, every pixel, and every result.
         </p>
@@ -304,21 +377,48 @@ function Team() {
 
       <div className="ab-team__track">
         {TEAM.map((member, i) => (
-          <div className="ab-member-card" key={member.id} style={{ "--i": i }}>
+          <div
+            className="ab-member-card"
+            key={member.id}
+            style={{ "--i": i }}
+          >
+            {/* LEFT — IMAGE */}
             <div className="ab-member-card__img-wrap">
               <img
                 src={member.img}
-                alt={member.name}
+                alt={`${member.name}, ${member.role} at Arbaj Technology`}
                 className="ab-member-card__img"
                 loading="lazy"
                 decoding="async"
               />
             </div>
-            <div className="ab-member-card__body">
-              <span className="ab-member-card__line" />
-              <h3 className="ab-member-card__name">{member.name}</h3>
-              <p className="ab-member-card__role">{member.role}</p>
-              <p className="ab-member-card__bio">{member.bio}</p>
+
+            {/* RIGHT — CONTENT */}
+            <div className="ab-member-card__content">
+
+              <h3 className="ab-member-card__name">
+                {member.name}
+              </h3>
+
+              <p className="ab-member-card__role">
+                {member.role}
+              </p>
+
+              {/* LinkedIn — icon only, no text label */}
+              {member.linkedin && (
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ab-member-card__linkedin"
+                  aria-label={`${member.name} on LinkedIn`}
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z" />
+                  </svg>
+                </a>
+              )}
+
             </div>
           </div>
         ))}
@@ -476,12 +576,21 @@ function CTABanner() {
               <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
             </svg>
           </Link>
-          <Link to="tel:917973611226" className="ab-btn ab-btn--outline-light">
-            <svg viewBox="0 0 20 20" fill="currentColor" width="17" height="17">
+          <a
+            href="tel:+917973611226"
+            className="ab-btn ab-btn--outline-light"
+            aria-label="Call Arbaj Technology at +91 79 7361 1226"
+          >
+            <svg
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              width="17"
+              height="17"
+            >
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             +91 79 7361 1226
-          </Link>
+          </a>
         </div>
       </div>
     </div>
@@ -495,11 +604,11 @@ export default function AboutPage() {
   return (
     <>
       <SEOptimization
-        title="About Us | Arbaj Technology – Digital Growth Partner"
-        description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency helping 50+ businesses grow with SEO, ads, and web development."
-        keywords="Arbaj Technology, digital marketing agency Zirakpur, SEO company India, web development, social media marketing"
+        title="About Arbaj Technology | Digital Agency in Zirakpur"
+        description="Learn about Arbaj Technology, a Zirakpur-based team providing SEO, Google Ads, social media, web development, design and video editing services since 2021."
         url="https://arbajtechnologypvtltd.com/about"
-        image="https://arbajtechnologypvtltd.com/og-image.jpg"
+        faqs={FAQS}
+        schema={[ABOUT_PAGE_SCHEMA, ABOUT_BREADCRUMB_SCHEMA]}
       />
       <main>
         <AboutHero />

@@ -4,16 +4,67 @@ import "../styles/blog.css";
 import SEOptimization from "../components/SEOptimization";
 import { POSTS } from "../components/Post/Post";
 
+const SITE_URL = "https://arbajtechnologypvtltd.com";
+
+function toSlug(value = "") {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 /* ═══════════════════════════════════════════════
    NEWSLETTER (currently disabled — keeping shell)
 ═══════════════════════════════════════════════ */
 function Newsletter() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "Arbaj Technology Digital Marketing Blog",
+      description:
+        "Practical articles about SEO, Google Ads, social media marketing, web development, and online business growth.",
+      url: `${SITE_URL}/blog`,
+      publisher: {
+        "@type": "Organization",
+        name: "Arbaj Technology",
+        url: SITE_URL,
+      },
+      blogPost: POSTS.map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        url: `${SITE_URL}/blog/${post.slug || toSlug(post.title)}`,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: `${SITE_URL}/blog`,
+        },
+      ],
+    },
+  ];
+
   return (
     <SEOptimization
-      title="Digital Marketing Blog | SEO, Ads & Growth Tips"
-      description="Learn SEO, Google Ads, and social media strategies with our expert blog. Get practical tips to increase traffic, leads, and online business growth."
-      url="https://arbajtechnologypvtltd.com/blog"
-      image="https://arbajtechnologypvtltd.com/og-blog.jpg"
+      title="Digital Marketing Blog | SEO & Growth Tips | Arbaj Technology"
+      description="Read practical SEO, Google Ads, social media, and web development tips from Arbaj Technology in Zirakpur to help your business grow online."
+      url={`${SITE_URL}/blog`}
+      image={`${SITE_URL}/lg.webp`}
+      schema={schema}
     />
   );
 }
@@ -50,13 +101,8 @@ export default function Blog() {
   const featured = !search ? filtered.find((p) => p.featured) : null;
   const grid = featured ? filtered.filter((p) => !p.featured) : filtered;
 
-  // const TICKER_ITEMS = [
-  //   "SEO Tips", "Google Ads", "Social Media", "Web Development",
-  //   "Content Marketing", "Brand Strategy", "Growth Hacks", "Digital Trends",
-  // ];
-
   return (
-    <>
+    <div className="bl-page">
       <Newsletter />
 
       {/* ── HERO ── */}
@@ -81,9 +127,7 @@ export default function Blog() {
                 <span>Tips, Trends &</span>
               </span>
               <span className="bl-hero__heading-row">
-                <span>
-                  <span className="bl-hero__grad">Marketing Strategies</span>
-                </span>
+                <span>Marketing Strategies</span>
               </span>
             </h1>
 
@@ -101,6 +145,7 @@ export default function Blog() {
               <input
                 type="text"
                 placeholder="Search articles..."
+                aria-label="Search blog articles"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="bl-hero__search-input"
@@ -128,16 +173,16 @@ export default function Blog() {
                 <span>Articles</span>
               </div>
               <div className="bl-hero__card-stat">
-                <strong>5<em>+</em></strong>
-                <span>Categories</span>
+                <strong>6</strong>
+                <span>Core Services</span>
               </div>
               <div className="bl-hero__card-stat">
-                <strong>50<em>k</em></strong>
-                <span>Readers</span>
+                <strong>2021</strong>
+                <span>Established</span>
               </div>
               <div className="bl-hero__card-stat">
-                <strong>98<em>%</em></strong>
-                <span>Useful</span>
+                <strong>Free</strong>
+                <span>Insights</span>
               </div>
             </div>
             <div className="bl-hero__card-tags">
@@ -150,17 +195,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Ticker */}
-      {/* <div className="bl-ticker">
-        <div className="bl-ticker__belt">
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i} className="bl-ticker__word">
-              {item} <span className="bl-ticker__div">✦</span>
-            </span>
-          ))}
-        </div>
-      </div> */}
-
       {/* ── MAIN ── */}
       <main className="bl-main">
 
@@ -168,7 +202,11 @@ export default function Blog() {
         {featured && (
           <article className="bl-featured">
             <div className="bl-featured__img-wrap">
-              <img src={featured.img} alt={featured.title} className="bl-featured__img" />
+              <img
+                src={featured.img}
+                alt={`${featured.title} - Arbaj Technology blog`}
+                className="bl-featured__img"
+              />
               <span className="bl-featured__badge">Featured</span>
             </div>
             <div className="bl-featured__body">
@@ -182,10 +220,7 @@ export default function Blog() {
               <div className="bl-featured__footer">
                 <div />
                 <Link
-                  to={`/blog/${featured.title
-                    .toLowerCase()
-                    .replace(/[^a-z0-9 ]/g, "")
-                    .replace(/\s+/g, "-")}`}
+                  to={`/blog/${featured.slug || toSlug(featured.title)}`}
                   className="bl-featured__cta"
                 >
                   <span>Read Article</span>
@@ -214,9 +249,10 @@ export default function Blog() {
                 <div className="bl-card__img-wrap">
                   <img
                     src={post.img}
-                    alt={post.title}
+                    alt={`${post.title} - Arbaj Technology blog`}
                     className="bl-card__img"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="bl-card__body">
@@ -229,10 +265,7 @@ export default function Blog() {
                   <p className="bl-card__excerpt">{post.excerpt}</p>
                   <div className="bl-card__footer">
                     <Link
-                      to={`/blog/${post.title
-                        .toLowerCase()
-                        .replace(/[^a-z0-9 ]/g, "")
-                        .replace(/\s+/g, "-")}`}
+                      to={`/blog/${post.slug || toSlug(post.title)}`}
                       className="bl-card__link"
                     >
                       Read Article
@@ -248,8 +281,8 @@ export default function Blog() {
         ) : (
           <div className="bl-empty">
             <svg viewBox="0 0 48 48" fill="none" width="48">
-              <circle cx="22" cy="22" r="14" stroke="#6E6B7B" strokeWidth="2" />
-              <path d="M32 32l8 8" stroke="#6E6B7B" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="22" cy="22" r="14" stroke="currentColor" strokeWidth="2" />
+              <path d="M32 32l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <p>No articles found for &quot;{search}&quot;</p>
             <button className="bl-empty__reset" onClick={() => setSearch("")}>
@@ -258,7 +291,7 @@ export default function Blog() {
           </div>
         )}
 
-        {/* Newsletter placeholder */}
+        {/* Newsletter placeholder
         <div className="bl-nl">
           <div className="bl-nl__bg" aria-hidden />
           <div className="bl-nl__content">
@@ -270,27 +303,17 @@ export default function Blog() {
             <p className="bl-nl__sub">
               Weekly insights on SEO, social, ads and growth. No spam. Unsubscribe anytime.
             </p>
-            <Link
-              to="/contact"
-              style={{
-                display: "inline-flex", alignItems: "center", gap: 10,
-                background: "var(--coral)", color: "#fff",
-                padding: "14px 32px", borderRadius: "999px",
-                fontFamily: "var(--font-display)", fontWeight: 700, fontSize: ".92rem",
-                transition: "transform .35s, box-shadow .35s",
-              }}
-            >
+            <Link to="/contact" className="bl-nl__cta">
               Get in Touch
               <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
                 <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
               </svg>
             </Link>
           </div>
-        </div>
+        </div> */}
 
       </main>
-    </>
+    </div>
   );
 }
 
-export { POSTS };

@@ -1,216 +1,380 @@
-import { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { POSTS } from "./Blog";
-import "../styles/Blogpost.css";
+import { Link, useParams } from "react-router-dom";
+import SEOptimization from "../components/SEOptimization";
+import { POSTS } from "../components/Post/Post";
+import "../styles/blogpost.css";
 
-/* ── helpers ── */
-function toSlug(title) {
-  return title
+const SITE_URL = "https://arbajtechnologypvtltd.com";
+
+function toSlug(value = "") {
+  return value
     .toLowerCase()
-    .replace(/[^a-z0-9 ]/g, "")
-    .replace(/\s+/g, "-");
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 }
 
-function parseInline(text) {
-  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
-  return parts.map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>;
-    }
-    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+function toISODate(value = "") {
+  const months = {
+    january: "01",
+    february: "02",
+    march: "03",
+    april: "04",
+    may: "05",
+    june: "06",
+    july: "07",
+    august: "08",
+    september: "09",
+    october: "10",
+    november: "11",
+    december: "12",
+  };
+
+  const [day, month, year] = value.trim().split(/\s+/);
+  const monthNumber = months[month?.toLowerCase()];
+
+  if (!day || !monthNumber || !year) return undefined;
+  return `${year}-${monthNumber}-${day.padStart(2, "0")}`;
+}
+
+function plainText(value = "") {
+  return value
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*#•]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getReadTime(post) {
+  if (post.readTime) return post.readTime;
+
+  const words = (post.content || [])
+    .filter((block) => block.type === "text")
+    .map((block) => plainText(block.value))
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  return `${Math.max(1, Math.ceil(words / 200))} min read`;
+}
+
+function absoluteImage(image) {
+  if (!image) return `${SITE_URL}/lg.webp`;
+  if (/^https?:\/\//i.test(image)) return image;
+  return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
+}
+
+function renderInline(value) {
+  const tokens = value.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
+
+  return tokens.filter(Boolean).map((token, index) => {
+    const linkMatch = token.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
     if (linkMatch) {
+      const [, label, href] = linkMatch;
+      const external = !href.startsWith(SITE_URL);
+
       return (
         <a
-          key={i}
-          href={linkMatch[2]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bp-content__link"
+          href={href}
+          key={`${href}-${index}`}
+          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         >
-          {linkMatch[1]}
+          {label}
         </a>
       );
     }
-    return part;
+
+    const boldMatch = token.match(/^\*\*([^*]+)\*\*$/);
+    if (boldMatch) {
+      return <strong key={`strong-${index}`}>{boldMatch[1]}</strong>;
+    }
+
+    return token;
   });
 }
 
-function renderContent(content) {
-  /* ── Array format (new) ── */
-  if (Array.isArray(content)) {
-    return content.map((block, blockIndex) => {
-      if (block.type === "image") {
-        return (
-          <figure key={`img-${blockIndex}`} className="bp-content__figure">
-            <img
-              src={block.src}
-              alt={block.alt || ""}
-              className="bp-content__img"
-              loading="lazy"
-            />
-          </figure>
-        );
-      }
+function TextBlock({ value }) {
+  const lines = value
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
 
-      if (block.type === "text") {
-        const lines = block.value.trim().split("\n");
-        const elements = [];
-        let key = 0;
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i].trim();
-          if (!line) continue;
-          if (line.startsWith("## ")) {
-            elements.push(
-              <h2 key={`${blockIndex}-${key++}`} className="bp-content__h2">
-                {line.slice(3)}
-              </h2>
-            );
-          } else if (line.startsWith("**") && line.endsWith("**") && line.length > 4) {
-            elements.push(
-              <p key={`${blockIndex}-${key++}`} className="bp-content__bold-line">
-                <strong>{line.slice(2, -2)}</strong>
-              </p>
-            );
-          } else {
-            elements.push(
-              <p key={`${blockIndex}-${key++}`} className="bp-content__p">
-                {parseInline(line)}
-              </p>
-            );
-          }
-        }
-        return elements;
-      }
-      return null;
-    });
-  }
-
-  /* ── String format (fallback) ── */
-  const lines = content.trim().split("\n");
   const elements = [];
-  let key = 0;
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-    if (line.startsWith("## ")) {
+  let listItems = [];
+  let listType = null;
+
+  const flushList = () => {
+    if (listItems.length === 0) return;
+
+    const ListTag = listType === "ol" ? "ol" : "ul";
+    elements.push(
+      <ListTag key={`list-${elements.length}`}>
+        {listItems.map((item, index) => (
+          <li key={`${item}-${index}`}>{renderInline(item)}</li>
+        ))}
+      </ListTag>
+    );
+
+    listItems = [];
+    listType = null;
+  };
+
+  lines.forEach((line) => {
+    if (line.startsWith("### ")) {
+      flushList();
       elements.push(
-        <h2 key={key++} className="bp-content__h2">{line.slice(3)}</h2>
+        <h3 key={`heading-${elements.length}`}>
+          {renderInline(line.slice(4))}
+        </h3>
       );
-    } else if (line.startsWith("**") && line.endsWith("**") && line.length > 4) {
-      elements.push(
-        <p key={key++} className="bp-content__bold-line">
-          <strong>{line.slice(2, -2)}</strong>
-        </p>
-      );
-    } else {
-      elements.push(
-        <p key={key++} className="bp-content__p">{parseInline(line)}</p>
-      );
+      return;
     }
-  }
+
+    if (line.startsWith("## ")) {
+      flushList();
+      elements.push(
+        <h2 key={`heading-${elements.length}`}>
+          {renderInline(line.slice(3))}
+        </h2>
+      );
+      return;
+    }
+
+    const orderedMatch = line.match(/^\d+\.\s+(.*)$/);
+    if (orderedMatch) {
+      if (listType && listType !== "ol") flushList();
+      listType = "ol";
+      listItems.push(orderedMatch[1]);
+      return;
+    }
+
+    const unorderedMatch = line.match(/^(?:•|-)\s+(.*)$/);
+    if (unorderedMatch) {
+      if (listType && listType !== "ul") flushList();
+      listType = "ul";
+      listItems.push(unorderedMatch[1]);
+      return;
+    }
+
+    flushList();
+
+    const standaloneBold = line.match(/^\*\*([^*]+)\*\*:?$/);
+    if (standaloneBold) {
+      elements.push(
+        <h3 key={`subheading-${elements.length}`}>{standaloneBold[1]}</h3>
+      );
+      return;
+    }
+
+    elements.push(
+      <p key={`paragraph-${elements.length}`}>{renderInline(line)}</p>
+    );
+  });
+
+  flushList();
   return elements;
 }
 
-/* ═══════════════════════════════════════════════
-   BLOG POST PAGE
-═══════════════════════════════════════════════ */
 export default function BlogPost() {
   const { slug } = useParams();
-  const navigate = useNavigate();
 
-  const post = POSTS.find((p) => toSlug(p.title) === slug);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [slug]);
+  const post = POSTS.find((item) => (item.slug || toSlug(item.title)) === slug);
 
   if (!post) {
     return (
-      <div className="bp-notfound">
-        <h2>Article not found</h2>
-        <Link to="/blog" className="bp-back">
-          <svg viewBox="0 0 12 12" fill="none" width="12">
-            <path d="M10 6H2M5 3L2 6l3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Back to Blog
-        </Link>
-      </div>
+      <>
+        <SEOptimization
+          title="Article Not Found | Arbaj Technology"
+          description="The requested article could not be found."
+          url={`${SITE_URL}/blog/${slug || "not-found"}`}
+          noindex
+        />
+
+        <main className="bp-not-found">
+          <p>404</p>
+          <h1>Article not found</h1>
+          <span>The article may have been moved or its URL may be incorrect.</span>
+          <Link to="/blog">Back to Blog</Link>
+        </main>
+      </>
     );
   }
 
-  const related = POSTS.filter((p) => p.id !== post.id).slice(0, 3);
+  const postSlug = post.slug || toSlug(post.title);
+  const canonicalUrl = `${SITE_URL}/blog/${postSlug}`;
+  const publishedDate = post.dateISO || toISODate(post.date);
+  const description = plainText(post.excerpt).slice(0, 160);
+  const imageUrl = absoluteImage(post.img);
+  const readTime = getReadTime(post);
+  const author = post.author || "Arbaj Technology Editorial Team";
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description,
+    image: imageUrl,
+    datePublished: publishedDate,
+    dateModified: post.modifiedDate || publishedDate,
+    mainEntityOfPage: canonicalUrl,
+    author: {
+      "@type": "Organization",
+      name: author,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@id": `${SITE_URL}/#business`,
+    },
+    inLanguage: "en-IN",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const relatedPosts = POSTS.filter((item) => item.id !== post.id).slice(0, 3);
 
   return (
-    <div className="bp-wrap">
+    <>
+      <SEOptimization
+        title={`${post.title} | Arbaj Technology`}
+        description={description}
+        url={canonicalUrl}
+        image={imageUrl}
+        type="article"
+        publishedTime={publishedDate}
+        modifiedTime={post.modifiedDate || publishedDate}
+        author={author}
+        schema={[articleSchema, breadcrumbSchema]}
+      />
 
-      {/* ── HERO ── */}
-      <div className="bp-hero">
-        <div className="bp-hero__img-wrap">
-          <img src={post.img} alt={post.title} className="bp-hero__img" />
-          <div className="bp-hero__overlay" />
-        </div>
+      <main className="bp-page">
+        <article className="bp-article">
+          <header className="bp-hero">
+            <div className="bp-shell bp-hero__inner">
+              <nav className="bp-breadcrumb" aria-label="Breadcrumb">
+                <Link to="/">Home</Link>
+                <span>/</span>
+                <Link to="/blog">Blog</Link>
+                <span>/</span>
+                <span aria-current="page">Article</span>
+              </nav>
 
-        <div className="bp-hero__content">
-          <button className="bp-back" onClick={() => navigate(-1)}>
-            <svg viewBox="0 0 12 12" fill="none" width="12">
-              <path d="M10 6H2M5 3L2 6l3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Back to Blog
-          </button>
+              <p className="bp-eyebrow">Digital Marketing Insights</p>
+              <h1>{post.title}</h1>
+              <p className="bp-excerpt">{post.excerpt}</p>
 
-          <div className="bp-hero__meta">
-            <span>{post.date}</span>
-            <span className="bp-hero__dot" />
-            <span>{post.readTime}</span>
+              <div className="bp-meta">
+                <span>By {author}</span>
+                <span aria-hidden="true">•</span>
+                <time dateTime={publishedDate}>{post.date}</time>
+                <span aria-hidden="true">•</span>
+                <span>{readTime}</span>
+              </div>
+            </div>
+          </header>
+
+          <div className="bp-shell bp-body-wrap">
+            <figure className="bp-cover">
+              <img
+                src={post.img}
+                alt={post.title}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </figure>
+
+            <div className="bp-layout">
+              <div className="bp-content">
+                {(post.content || []).map((block, index) => {
+                  if (block.type === "image") {
+                    return (
+                      <figure className="bp-inline-image" key={`image-${index}`}>
+                        <img
+                          src={block.src}
+                          alt={block.alt || post.title}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </figure>
+                    );
+                  }
+
+                  if (block.type === "text") {
+                    return (
+                      <div className="bp-text-block" key={`text-${index}`}>
+                        <TextBlock value={block.value} />
+                      </div>
+                    );
+                  }
+
+                  return null;
+                })}
+              </div>
+
+              <aside className="bp-aside">
+                <div className="bp-aside__card">
+                  <span>Need digital support?</span>
+                  <h2>Let’s discuss your business goals.</h2>
+                  <p>Talk to our team about SEO, advertising, social media, or web development.</p>
+                  <Link to="/contact">Book a Consultation</Link>
+                </div>
+              </aside>
+            </div>
           </div>
-
-          <h1 className="bp-hero__title">{post.title}</h1>
-          <p className="bp-hero__excerpt">{post.excerpt}</p>
-        </div>
-      </div>
-
-      {/* coral accent bar */}
-      <div className="bp-hero__bar" />
-
-      {/* ── MAIN CONTENT ── */}
-      <main className="bp-main">
-        <article className="bp-content">
-          {renderContent(post.content)}
         </article>
 
-        {/* Related posts */}
-        {related.length > 0 && (
-          <section className="bp-related">
-            <h3 className="bp-related__heading">More Articles</h3>
-            <div className="bp-related__grid">
-              {related.map((r) => (
-                <Link
-                  to={`/blog/${toSlug(r.title)}`}
-                  key={r.id}
-                  className="bp-related__card"
-                >
-                  <div className="bp-related__img-wrap">
-                    <img
-                      src={r.img}
-                      alt={r.title}
-                      className="bp-related__img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="bp-related__body">
-                    <div className="bp-related__meta">
-                      <span>{r.date}</span>
-                      <span className="bp-related__dot" />
-                      <span>{r.readTime}</span>
-                    </div>
-                    <h4 className="bp-related__title">{r.title}</h4>
-                  </div>
-                </Link>
-              ))}
+        {relatedPosts.length > 0 && (
+          <section className="bp-related" aria-labelledby="related-heading">
+            <div className="bp-shell">
+              <div className="bp-related__header">
+                <p>Continue Reading</p>
+                <h2 id="related-heading">Related Articles</h2>
+              </div>
+
+              <div className="bp-related__grid">
+                {relatedPosts.map((item) => {
+                  const relatedSlug = item.slug || toSlug(item.title);
+
+                  return (
+                    <article className="bp-related__card" key={item.id}>
+                      <img src={item.img} alt="" loading="lazy" decoding="async" />
+                      <div>
+                        <time dateTime={item.dateISO || toISODate(item.date)}>
+                          {item.date}
+                        </time>
+                        <h3>{item.title}</h3>
+                        <Link to={`/blog/${relatedSlug}`}>Read Article</Link>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </section>
         )}
       </main>
-    </div>
+    </>
   );
 }

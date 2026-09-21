@@ -1,66 +1,98 @@
 import { useState, useEffect, useRef } from "react";
 import '../styles/home.css';
-import { SERVICES, STATS, FAQS, CLIENTS } from '../components/Data/HomeData';
+
+import { SERVICES, STATS, FAQS, HERO_SLIDES, SERVICE_DIRECTORY_EXTRAS, ROMAN } from '../components/Data/HomeData';
 import SEOptimization from "../components/SEOptimization";
 import { Link } from "react-router-dom";
-import GoogleReviews from "../components/Googlereviews";
+import GoogleReviews from "../components/Googlereviews.jsx";
 import '../styles/Googlereviews.css';
+import FloatingPhotos from "../components/FloatingPhotos.jsx";
 
 
-const FLIP_WORDS = ["SEO", "Google Ads", "Web Development", "Meta Ads", "Video Editing", "Graphic Designing"];
 
-function FlipWord() {
-  const innerRef = useRef(null);
-  const idxRef = useRef(0);
 
-  useEffect(() => {
-    const inner = innerRef.current;
-    if (!inner) return;
 
-    const id = setInterval(() => {
-      const next = FLIP_WORDS[(idxRef.current + 1) % FLIP_WORDS.length];
+const SITE_URL = "https://arbajtechnologypvtltd.com";
 
-      const nextEl = document.createElement('span');
-      nextEl.className = 'flipword__word';
-      nextEl.textContent = next;
-      inner.appendChild(nextEl);
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#business`,
+  name: "Arbaj Technology Pvt. Ltd.",
+  url: SITE_URL,
+  logo: `${SITE_URL}/arbaj-logo.png`,
+  image: `${SITE_URL}/lg.webp`,
+  description:
+    "Arbaj Technology provides SEO, Google Ads, social media marketing, graphic design, video editing and website development services.",
+  telephone: "+91-7973611226",
+  email: "arbajtechnologypvtltd@gmail.com",
+  sameAs: [
+    "https://www.facebook.com/p/Arbaj-Technology-PvtLtd-61579390061534/",
+    "https://www.linkedin.com/company/143034324/",
+    "https://www.instagram.com/arbaj_technology/",
+    "https://www.youtube.com/@arbajtechnology",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "2nd Floor, SCO 40, Royale Estate Complex, Near Oxford Street",
+    addressLocality: "Zirakpur",
+    addressRegion: "Punjab",
+    postalCode: "140603",
+    addressCountry: "IN",
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Zirakpur",
+    },
+    {
+      "@type": "City",
+      name: "Chandigarh",
+    },
+    {
+      "@type": "City",
+      name: "Mohali",
+    },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-7973611226",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["English", "Hindi", "Punjabi"],
+  },
+};
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          inner.style.transform = 'translateY(-1.2em)';
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: "Arbaj Technology Pvt. Ltd.",
+  publisher: {
+    "@id": `${SITE_URL}/#business`,
+  },
+  inLanguage: "en-IN",
+};
 
-          setTimeout(() => {
-            inner.removeChild(inner.firstChild);
-            inner.style.transition = 'none';
-            inner.style.transform = 'translateY(0)';
 
-            requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                inner.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-              });
-            });
 
-            idxRef.current = (idxRef.current + 1) % FLIP_WORDS.length;
-          }, 620);
-        });
-      });
-    }, 2500);
-
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <span className="flipword">
-      <span className="flipword__inner" ref={innerRef}>
-        <span className="flipword__word">{FLIP_WORDS[0]}</span>
-      </span>
-    </span>
-  );
-}
-
-/* ═══════════════════════════════════════════════
-   SCROLL REVEAL HOOK
-═══════════════════════════════════════════════ */
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -80,65 +112,89 @@ function useReveal() {
   return [ref, visible];
 }
 
-/* ═══════════════════════════════════════════════
-   HERO
-═══════════════════════════════════════════════ */
 function Hero() {
+  const [current, setCurrent] = useState(0);
+  const [isLeaving, setIsLeaving] = useState(false);
+  const total = HERO_SLIDES.length;
+  const currentRef = useRef(current);
+  const transitionRef = useRef({ leave: null, auto: null });
+
+  useEffect(() => {
+    currentRef.current = current;
+  }, [current]);
+
+  const changeSlide = (nextIndex) => {
+    if (nextIndex === currentRef.current) return;
+
+    setIsLeaving(true);
+    clearTimeout(transitionRef.current.leave);
+
+    transitionRef.current.leave = window.setTimeout(() => {
+      setCurrent(nextIndex);
+      setIsLeaving(false);
+    }, 320);
+  };
+
+  useEffect(() => {
+    transitionRef.current.auto = window.setInterval(() => {
+      changeSlide((currentRef.current + 1) % total);
+    }, 5000);
+
+    return () => {
+      clearInterval(transitionRef.current.auto);
+      clearTimeout(transitionRef.current.leave);
+    };
+  }, [total]);
+
+  const slide = HERO_SLIDES[current];
+
   return (
     <>
       <section className="banner">
-        {/* signature growth-line animation, drawn on load */}
-        <div className="banner__chartline" aria-hidden="true">
-          <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
-            <path
-              className="chartline__fill"
-              d="M0,260 C150,250 250,210 380,220 C520,230 600,150 760,140 C900,130 1000,90 1200,80 L1200,400 L0,400 Z"
-              fill="#7FE6C4"
-              opacity="0.12"
-            />
-            <path
-              className="chartline__stroke"
-              d="M0,260 C150,250 250,210 380,220 C520,230 600,150 760,140 C900,130 1000,90 1200,80"
-            />
-            <circle className="chartline__dot" cx="1200" cy="80" r="9" fill="#FF6B5B" />
-          </svg>
+
+        <video
+          className="banner__bg-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero/AiRobot.jpeg"
+        >
+          <source src="/hero/backgroundVideo.mp4" type="video/mp4" />
+        </video>
+        <div className="banner__video-overlay" aria-hidden="true" />
+
+        <FloatingPhotos />
+        <div className="banner__corner-glow" aria-hidden="true" />
+
+        <div className="banner__sidebar">
+          <span className="banner__sidebar-email">arbajtechnologypvtltd@gmail.com</span>
+          <div className="banner__sidebar-line" />
+          <div className="banner__sidebar-icons">
+            <a href="https://www.facebook.com/p/Arbaj-Technology-PvtLtd-61579390061534/" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z" /></svg></a>
+            <a href="https://www.instagram.com/arbaj_technology/" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2c2.7 0 3.1 0 4.1.1 1 .1 1.7.2 2.3.5.6.2 1.1.6 1.6 1.1.5.5.8.9 1.1 1.6.2.6.4 1.3.5 2.3.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c-.1 1-.2 1.7-.5 2.3-.2.6-.6 1.1-1.1 1.6-.5.5-.9.8-1.6 1.1-.6.2-1.3.4-2.3.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1-.1-1.7-.2-2.3-.5-.6-.2-1.1-.6-1.6-1.1-.5-.5-.8-.9-1.1-1.6-.2-.6-.4-1.3-.5-2.3C2 15.1 2 14.7 2 12s0-3.1.1-4.1c.1-1 .2-1.7.5-2.3.2-.6.6-1.1 1.1-1.6.5-.5.9-.8 1.6-1.1.6-.2 1.3-.4 2.3-.5C8.9 2 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zm5.2-8.4a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" /></svg></a>
+            <a href="https://www.linkedin.com/company/143034324/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2.05h.05c.53-1 1.83-2.05 3.76-2.05C19 8 20.5 10 20.5 13.3V23h-4v-8.6c0-2.05-.04-4.7-2.86-4.7-2.86 0-3.3 2.24-3.3 4.55V23h-4V8z" /></svg></a>
+          </div>
         </div>
 
         <div className="banner__wrapper">
-          <div className="banner__copy">
-            <div className="banner__tag">
-              #1 Digital Marketing Company — In India
-            </div>
-
-            {/* <h1 className="banner__heading">
-              <span className="text-row"><span>Best Digital Marketing</span></span>
-              <span className="text-row">
-                <span>
-                  Company <span className="highlight">
-                    in India
-                    <svg viewBox="0 0 200 20" preserveAspectRatio="none">
-                      <path d="M5,12 C50,4 150,4 195,12" />
-                    </svg>
-                  </span>
-                </span>
-              </span>
-            </h1> */}
-
+          <div className={`banner__copy ${isLeaving ? 'banner__copy--exit' : ''}`} key={current}>
+            <div className="banner__tag">{slide.tag}</div>
 
             <h1 className="banner__heading">
-              <span className="text-row"><span>Best Digital Marketing</span></span>
-              <span className="text-row">
-                <span>Company for <FlipWord /></span>
-              </span>
+              <span className="text-row"><span>{slide.titleLine1}</span></span>
+              <span className="text-row"><span>{slide.titleLine2}</span></span>
+              {slide.titleLine3 && (
+                <span className="text-row"><span className="highlight-solid">{slide.titleLine3}</span></span>
+              )}
             </h1>
 
-
-            <p className="banner__para">
-              As one of the leading digital marketing businesses in India, Arbaj Technology
-              brings a wealth of experience in delivering growth solutions for companies.
-              We focus on building a strong online presence, increasing visibility, and
-              driving consistent, measurable growth.
-            </p>
+            <div className="banner__desc-row">
+              {/* <svg className="banner__arrow-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6 18L18 6M18 6H9M18 6v9" strokeLinecap="round" strokeLinejoin="round" />
+              </svg> */}
+              <p className="banner__para">{slide.description}</p>
+            </div>
 
             <div className="banner__btns">
               <Link to="/services" className="cta cta--filled">
@@ -147,101 +203,56 @@ function Hero() {
                   <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
                 </svg>
               </Link>
-              <Link to="/blog" className="cta cta--outline">
-                Read Our Blog
-              </Link>
-            </div>
-
-            <div className="banner__metrics">
-              {STATS.map((s) => (
-                <div className="banner__metric" key={s.label}>
-                  <strong>{s.number}</strong>
-                  <span>{s.label}</span>
-                </div>
-              ))}
+              <a
+                href="tel:+917973611226"
+                className="cta cta--outline"
+                aria-label="Call Arbaj Technology at +91 79 7361 1226"
+              >
+                Call: +91 79 7361 1226
+              </a>
             </div>
           </div>
 
-          {/* Floating Dashboard Card */}
-          <div className="dashboard-card" aria-hidden="true">
-            <div className="dashboard-card__header">
-              <div>
-                <div className="dashboard-card__title">Organic Traffic</div>
-                <div className="dashboard-card__value">↑ 284%</div>
-              </div>
-              <div className="dashboard-card__pill">
-                <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14">
-                  <path d="M8 1l1.5 1.5L5 7h6v2H5l4.5 4.5L8 15 1 8z" transform="rotate(90 8 8)" />
-                </svg>
-                Growing
-              </div>
-            </div>
-
-            <div className="dashboard-card__bars">
-              {[40, 65, 52, 80, 68, 90, 75, 95].map((h, i) => (
-                <div
-                  key={i}
-                  className="dashboard-card__bar"
-                  style={{ height: `${h}%`, "--d": `${0.5 + i * 0.08}s` }}
-                />
-              ))}
-            </div>
-
-            <div className="dashboard-card__labels">
-              <span>SEO</span>
-              <span>Google Ads</span>
-              <span>Social Media</span>
-            </div>
+          <div
+            className={`hero-slide-image ${isLeaving ? 'hero-slide-image--exit' : ''}`}
+            key={`img-${current}`}
+          >
+            <img src={slide.image} alt={slide.titleLine1} />
           </div>
+        </div>
+
+        <div className="hero-dots">
+          {HERO_SLIDES.map((_, i) => (
+            <button
+              key={i}
+              className={`hero-dots__dot ${i === current ? "hero-dots__dot--active" : ""}`}
+              onClick={() => changeSlide(i)}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
         </div>
       </section>
 
-      {/* ✅ FIX: Ticker banner ke BAHAR hai ab — overflow clip nahi hoga */}
-      <Ticker />
     </>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   TICKER
-═══════════════════════════════════════════════ */
-function Ticker() {
-  const items = [
-    "SEO", "Google Ads", "Social Media", "Website Development",
-    "Graphic Design", "Video Editing", "Brand Strategy", "Content Marketing",
-  ];
-  const all = [...items, ...items];
-  return (
-    <div className="marquee">
-      <div className="marquee__belt">
-        {all.map((item, i) => (
-          <span key={i} className="marquee__word">
-            {item} <span className="marquee__divider">✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
 
-/* ═══════════════════════════════════════════════
-   SERVICES
-═══════════════════════════════════════════════ */
 function Services() {
   const [ref, visible] = useReveal();
+  const [active, setActive] = useState(0);
+
   return (
     <section
-      className={`offerings page-section fade-up ${visible ? "fade-up--show" : ""}`}
+      className={`services-sec bleed-bg page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="services"
     >
-      <div className="offerings__top">
-        <div>
-          <div className="label-tag">What We Do</div>
-          <h2 className="block-title">
-            Our <em>Services</em>
-          </h2>
-        </div>
+      <div className="services-sec__head services-sec__head--directory">
+        <div className="label-tag">What We Do</div>
+        <h2 className="block-title">
+          Our <em>Services</em>
+        </h2>
         <p className="block-subtitle">
           From SEO and Google Ads to social media and web development —
           we build data-driven strategies that deliver measurable results
@@ -249,250 +260,195 @@ function Services() {
         </p>
       </div>
 
-      <div className="offerings__grid">
-        {SERVICES.map((s, i) => (
-          <div
-            className="offering-tile"
-            key={s.id}
-            style={{ "--accent": s.accent, "--i": i }}
-          >
-            <div className="offering-tile__num">{String(i + 1).padStart(2, "0")}</div>
-            <div className="offering-tile__icon">{s.icon}</div>
-            <h3 className="offering-tile__name">{s.title}</h3>
-            <p className="offering-tile__info">{s.desc}</p>
-            <Link to={s.link} className="offering-tile__more">
-              Learn More
-              <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ═══════════════════════════════════════════════
-   CLIENTS
-═══════════════════════════════════════════════ */
-function Clients() {
-  const [ref, visible] = useReveal();
-  // 4x duplicate taaki chhoti list mein bhi loop seamless dikhe, kabhi khali gap na aaye
-  const allClients = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
-
-  return (
-    <section
-      className={`clients page-section fade-up ${visible ? "fade-up--show" : ""}`}
-      ref={ref}
-      id="clients"
-    >
-      <div className="clients__top">
-        <div className="label-tag">Our Clients</div>
-        <h2 className="block-title">
-          Brands That <em>Trust Us</em>
-        </h2>
-      </div>
-
-      <div className="clients__slider">
-        <div className="clients__track">
-          {allClients.map((c, i) => (
-            <div className="client-tile" key={`${c.id}-${i}`}>
-              <img src={c.logo} alt={c.name} loading="lazy" />
-            </div>
-          ))}
+      <div className="services-directory">
+        <div className="services-directory__labels">
+          <span>Service</span>
+          <span>Features</span>
+          <span>Preview</span>
         </div>
+
+        {SERVICES.map((s, i) => {
+          const extra = SERVICE_DIRECTORY_EXTRAS[s.id] || {};
+          const isActive = active === i;
+
+          return (
+            <div
+              key={s.id}
+              className={`service-directory__row ${isActive ? "service-directory__row--active" : ""}`}
+              onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(0)}
+            >
+              <Link to={s.link} className="service-directory__name">
+                <span className="service-directory__number">{String(i + 1).padStart(2, "0")}</span>
+                <span className="service-directory__icon">{s.icon}</span>
+                {s.title}
+                <svg className="service-directory__arrow" viewBox="0 0 16 16" fill="none" width="14" height="14">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+
+              <ul className="service-directory__features">
+                {(extra.features || []).map((f, fi) => (
+                  <li key={fi}>
+                    <span>{ROMAN[fi]}.</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="service-directory__preview">
+                {extra.image && <img src={extra.image} alt={s.title} />}
+                <span>{extra.tag}</span>
+              </div>
+
+              <Link to={s.link} className="service-directory__mobile-link">
+                View service
+                <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   ABOUT
-═══════════════════════════════════════════════ */
 function About() {
   const [ref, visible] = useReveal();
   return (
     <section
-      className={`story page-section fade-up ${visible ? "fade-up--show" : ""}`}
+      className={`about-sec bleed-bg page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="about"
     >
-      <div className="story__layout">
-        <div className="story__details">
+      <div className="about-layout">
+
+        <div className="about-copy">
           <div className="label-tag">About Arbaj Technology</div>
+
           <h2 className="block-title">
             Your Reliable <em>Digital Growth Partner</em>
           </h2>
-          <p className="story__body">
+
+          <p className="about-copy__text">
             Our team of experienced digital strategists helps you grow online
             with modern solutions designed to create a successful future.
           </p>
-          <p className="story__body">
+          <p className="about-copy__text">
             Every project is tailored to fit our clients' goals — whether you're
             a new business or an established brand. We deliver only top quality
             digital marketing solutions and work hard for measurable results.
           </p>
 
-          <ul className="story__perks">
+          <ul className="about-perks">
             {[
               "10+ Successful Projects Completed",
               "5+ Years of Industry Experience",
               "Digital Marketing Certification",
-              "Transparent Reports & Results",
               "Personal Support & Account Management",
             ].map((f, i) => (
               <li key={f} style={{ "--i": i }}>
-                <span className="story__tick">✓</span>
+                <span className="about-perks__tick">✓</span>
                 {f}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="story__graphic">
-          <div className="ring-widget">
-            <svg viewBox="0 0 220 220">
-              <circle className="ring-widget__track" cx="110" cy="110" r="100" />
-              <circle className="ring-widget__arc" cx="110" cy="110" r="100" />
-            </svg>
-            <div className="ring-widget__text">
-              <strong>98%</strong>
-              <span>Client Satisfaction</span>
-            </div>
-          </div>
-
-          <div className="info-block">
-            <span className="info-block__emoji">🎯</span>
-            <div>
-              <strong>Our Mission</strong>
-              <p>
-                Empower your business with progressive solutions that propel
-                your brand toward success and growth in the digital world.
-              </p>
-            </div>
-          </div>
-
-          <div className="info-block">
-            <span className="info-block__emoji">🌟</span>
-            <div>
-              <strong>Our Vision</strong>
-              <p>
-                To be a leader in digital marketing services, delivering
-                innovative, transparent, and efficient solutions worldwide.
-              </p>
-            </div>
-          </div>
+        <div className="about-robot">
+          <span className="about-robot-dot about-robot-dot--1" />
+          <span className="about-robot-dot about-robot-dot--2" />
+          <span className="about-robot-dot about-robot-dot--3" />
+          <img src="/hero/AiRobot.jpeg" alt="Ai Robot" className="about-image__img" />
         </div>
+
       </div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   FAQ
-═══════════════════════════════════════════════ */
 function FAQ() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(0);
   const [ref, visible] = useReveal();
 
   return (
     <section
-      className={`questions page-section fade-up ${visible ? "fade-up--show" : ""}`}
+      className={`faq-sec bleed-bg page-section fade-up ${visible ? "fade-up--show" : ""}`}
       ref={ref}
       id="faq"
     >
-      <div className="questions__top">
+      <div className="faq-header">
         <div className="label-tag">FAQ</div>
         <h2 className="block-title">
           Questions You <em>Probably Have</em>
         </h2>
+        <p className="block-subtitle">
+          Quick answers to the things people usually ask before working with us.
+        </p>
       </div>
-      <div className="questions__list">
+
+      <div className="faq-accordion">
         {FAQS.map((item, i) => (
           <div
             key={i}
-            className={`accordion-row ${open === i ? "accordion-row--open" : ""}`}
+            className={`faq-row ${open === i ? "faq-row--open" : ""}`}
             style={{ "--i": i }}
           >
             <button
-              className="accordion-row__trigger"
+              className="faq-row__trigger"
               onClick={() => setOpen(open === i ? null : i)}
               aria-expanded={open === i}
             >
-              <span>{item.q}</span>
-              <span className="accordion-row__symbol">+</span>
+              <span className="faq-row__num">{String(i + 1).padStart(2, "0")}</span>
+              <span className="faq-row__q">{item.q}</span>
+              <span className="faq-row__toggle">+</span>
             </button>
-            <div className="accordion-row__body">
+            <div className="faq-row__body">
               <p>{item.a}</p>
             </div>
           </div>
         ))}
       </div>
-    </section>
-  );
-}
 
-
-
-
-
-
-/* ═══════════════════════════════════════════════
-   CTA BANNER
-═══════════════════════════════════════════════ */
-function CTABanner() {
-  const [ref, visible] = useReveal();
-  return (
-    <section
-      className={`promo-strip fade-up ${visible ? "fade-up--show" : ""}`}
-      ref={ref}
-    >
-      <div className="promo-strip__glow" aria-hidden="true" />
-      <div className="promo-strip__inner">
-        <h2>Ready to <em>Grow</em> Your Business?</h2>
-        <p>Book a free consultation today — no commitment, just a results-focused conversation.</p>
-        <div className="promo-strip__btns">
-          <Link to="/contact" className="cta cta--filled">
-            <span>Book Free Consultation</span>
-            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-              <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" />
-            </svg>
-          </Link>
-          <Link to="tel:917973611226" className="cta cta--outline">
-            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            Call Us
-          </Link>
+      <div className="faq-cta">
+        <span className="faq-cta__icon">💬</span>
+        <div className="faq-cta__text">
+          <strong>Still have questions?</strong>
+          <p>Our team is happy to walk you through anything, no pressure.</p>
         </div>
+        <Link to="/contact" className="faq-cta__link">
+          Talk to us
+          <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
       </div>
     </section>
   );
 }
 
-/* ═══════════════════════════════════════════════
-   PAGE
-═══════════════════════════════════════════════ */
+
 export default function HomePage() {
   return (
     <>
       <SEOptimization
-        title="Best Digital Marketing Company in India | Arbaj Technology"
-        description="Arbaj Technology is a leading digital marketing company in India offering SEO services, Google Ads management, social media marketing, and web development to grow your business online and increase ROI."
-        keywords="digital marketing company, Digital marketing company in Haryana, SEO services India, SEO company in India, web development company, Google Ads expert, social media marketing India, Arbaj Technology, Google Ads agency in Zirakpur"
+        title="Digital Marketing Company in Zirakpur | Arbaj Technology"
+        description="Arbaj Technology provides SEO, Google Ads, social media marketing and website development services in Zirakpur, Chandigarh and Mohali."
         url="https://arbajtechnologypvtltd.com/"
-        image="https://arbajtechnologypvtltd.com/preview.jpg"
         faqs={FAQS}
+        schema={[LOCAL_BUSINESS_SCHEMA, WEBSITE_SCHEMA]}
       />
+
       <main>
         <Hero />
         <Services />
-        <Clients />
+
         <About />
         <GoogleReviews />
         <FAQ />
-        <CTABanner />
+
       </main>
     </>
   );

@@ -1,34 +1,21 @@
-
-
 export const STATS = [
-  { number: "50+", label: "Happy Clients" },
+  { number: "10", label: "Clients Served" },
+  { number: "6", label: "Core Services" },
   { number: "5+", label: "Years Experience" },
-  { number: "98%", label: "Success Rate" },
-  { number: "15+", label: "Team Experts" },
+  { number: "10+", label: "Team Members" },
 ];
 
 export const MVV = [
   {
     id: 1,
     tag: "MISSION",
-    title: "Empowering Businesses Through Technology",
-    desc: "Our mission is to build meaningful digital products that help businesses grow, scale, and connect with people in powerful, measurable ways.",
+    title: "Helping Businesses Grow Through Digital Solutions",
+    desc: "Our mission is to create practical digital strategies and products that help businesses improve their presence, connect with customers, and grow sustainably.",
     icon: (
-      <svg viewBox="0 0 40 40" fill="none">
-        <circle
-          cx="20"
-          cy="20"
-          r="14"
-          stroke="currentColor"
-          strokeWidth="2.5"
-        />
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="14" stroke="currentColor" strokeWidth="2.5" />
         <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="2.5" />
-        <path
-          d="M20 6V2M20 38v-4M6 20H2M38 20h-4"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
+        <path d="M20 6V2M20 38v-4M6 20H2M38 20h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     accent: "#1d7afc",
@@ -37,31 +24,13 @@ export const MVV = [
   {
     id: 2,
     tag: "VISION",
-    title: "World-Class Digital Tools for Every Business",
-    desc: "We envision a future where every business — big or small — has access to world-class digital tools that level the playing field and drive real growth.",
+    title: "Accessible Digital Support for Growing Businesses",
+    desc: "We want businesses of every size to have access to thoughtful design, reliable technology, and marketing support suited to their goals and resources.",
     icon: (
-      <svg viewBox="0 0 40 40" fill="none">
-        <path
-          d="M4 32L14 18L20 24L28 12L36 20"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M30 8h8v8"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M4 38h32"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          opacity=".4"
-        />
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M4 32L14 18L20 24L28 12L36 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M30 8h8v8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4 38h32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".4" />
       </svg>
     ),
     accent: "#f4a200",
@@ -70,24 +39,12 @@ export const MVV = [
   {
     id: 3,
     tag: "VALUES",
-    title: "Integrity, Craft & Relentless Improvement",
-    desc: "We value honesty, deep craftsmanship, and the commitment to always get better — for our clients, our team, and the community we serve.",
+    title: "Integrity, Quality, and Continuous Improvement",
+    desc: "We value honest communication, careful work, dependable support, and the willingness to keep learning and improving with every project.",
     icon: (
-      <svg viewBox="0 0 40 40" fill="none">
-        <path
-          d="M20 6l3.6 7.3L32 14.6l-6 5.8 1.4 8.2L20 24.7l-7.4 3.9 1.4-8.2-6-5.8 8.4-1.3z"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M20 30v8M14 36l6-4 6 4"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          opacity=".6"
-        />
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 6l3.6 7.3L32 14.6l-6 5.8 1.4 8.2L20 24.7l-7.4 3.9 1.4-8.2-6-5.8 8.4-1.3z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+        <path d="M20 30v8M14 36l6-4 6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity=".6" />
       </svg>
     ),
     accent: "#22c55e",
@@ -102,15 +59,15 @@ export const TEAM = [
     name: "Arjan Bajwa",
     role: "Founder & CEO",
     color: "#1d7afc",
-    img: "/team/arjun-sir.png"
+    img: "/team/arjun-sir.png",
   },
   {
     id: 2,
-    initials: "sk",
+    initials: "SK",
     name: "Shubham Kumar",
     role: "Manager",
     color: "#1d7afc",
-    img: "/team/shubham-sir.png"
+    img: "/team/shubham-sir.png",
   },
   {
     id: 3,
@@ -118,7 +75,7 @@ export const TEAM = [
     name: "Monty Kumar",
     role: "Graphic Designer",
     color: "#f4a200",
-    img: "/team/monty-sir.png"
+    img: "/team/monty-sir.png",
   },
   {
     id: 5,
@@ -126,15 +83,15 @@ export const TEAM = [
     name: "Ritesh Kumar",
     role: "Web Developer",
     color: "#22c55e",
-    img: "/team/me.png"
+    img: "/team/ritesh-sir.png",
   },
   {
     id: 6,
     initials: "RB",
     name: "Ritik Banyal",
-    role: "SEO EXECUTIVE",
+    role: "SEO Executive",
     color: "#22c55e",
-    img: "/team/ritik-sir.png"
+    img: "/team/ritik.png",
   },
   {
     id: 7,
@@ -142,7 +99,7 @@ export const TEAM = [
     name: "Mohit Sharma",
     role: "MERN Stack Developer",
     color: "#22c55e",
-    img: "/team/mohit-sir.png"
+    img: "/team/mohit-sir.png",
   },
   {
     id: 8,
@@ -150,7 +107,7 @@ export const TEAM = [
     name: "Nikita Rani",
     role: "Social Media Marketing",
     color: "#a855f7",
-    img: "/team/nikita-mam.png"
+    img: "/team/nikita-mam.png",
   },
 ];
 
@@ -158,55 +115,51 @@ export const TIMELINE = [
   {
     year: "2021",
     title: "Founded in Zirakpur, Punjab",
-    desc: "Arbaj Technology was started as a boutique digital studio with one goal: build things that matter.",
+    desc: "Arbaj Technology began with a focus on providing practical digital services to growing businesses.",
   },
   {
     year: "2023",
-    title: "First 50 Clients Onboarded",
-    desc: "Despite global challenges, we scaled our team and delivered 80+ campaigns across SEO and Google Ads.",
+    title: "Expanded Digital Marketing Services",
+    desc: "The team strengthened its SEO, paid advertising, and social media marketing capabilities.",
   },
   {
     year: "2025",
-    title: "Expanded to Web & Design",
-    desc: "Launched full-service web development and graphic design verticals, becoming a true one-stop agency.",
+    title: "Added Web and Creative Services",
+    desc: "Website development, graphic design, and video editing became part of the company's integrated service offering.",
   },
   {
     year: "2026",
-    title: "50+ Happy Clients",
-    desc: "Now a full-service digital marketing agency trusted by 500+ clients across India — and growing fast.",
+    title: "Growing as a Full-Service Team",
+    desc: "Today, our 10+ member team supports 10 clients through marketing, design, development, and creative services.",
   },
 ];
 
 export const STACK = [
   { label: "Google Ads", dot: "#ff9900" },
-  { label: "Facebook Ads", dot: "#ff0000" },
-  { label: "Video Editing", dot: "#1877f2" },
-  { label: "Graphic Designing", dot: "#ff6b35" },
+  { label: "Meta Ads", dot: "#1877f2" },
+  { label: "Video Editing", dot: "#ff0000" },
+  { label: "Graphic Design", dot: "#ff6b35" },
   { label: "WordPress", dot: "#21759b" },
   { label: "React", dot: "#61dafb" },
-  { label: "Node.js", dot: "#f59e0b" },
+  { label: "Node.js", dot: "#22c55e" },
   { label: "SEO", dot: "#a259ff" },
-  // { label: "YouTube Ads", dot: "#ff0000" },
-  // { label: "Analytics", dot: "#e37400" },
-  { label: "Canva", dot: "#00c4cc" },
-  // { label: "Mailchimp", dot: "#ffe01b" },
 ];
 
 export const FAQS = [
   {
     q: "What makes Arbaj Technology different from other agencies?",
-    a: "We combine deep technical expertise with creative storytelling and data-driven strategy. Every campaign we run is custom-built for your business goals — not copy-pasted from a template.",
+    a: "We bring marketing, design, development, and creative services together while keeping communication clear and each project aligned with the client's actual goals.",
   },
   {
     q: "How long has Arbaj Technology been in business?",
-    a: "We were founded in 2019 in Zirakpur, Punjab. Over 5 years we've grown from a small studio to a full-service digital agency trusted by 500+ clients across India.",
+    a: "Arbaj Technology was founded in 2021 in Zirakpur, Punjab, and has grown into a team of more than 10 people serving clients across multiple digital disciplines.",
   },
   {
-    q: "What industries do you work with?",
-    a: "We work with businesses across e-commerce, healthcare, real estate, education, fintech, hospitality, and more. Our strategies are always tailored to your specific industry and audience.",
+    q: "What types of businesses do you work with?",
+    a: "We work with businesses that need support with online visibility, paid advertising, social media, websites, graphic design, or video content. The approach is tailored to each project.",
   },
   {
-    q: "Do you offer monthly retainer packages?",
-    a: "Yes! We offer flexible monthly retainer plans for SEO, Social Media, Google Ads, and website maintenance. Contact us to discuss a package that fits your budget and goals.",
+    q: "Do you offer monthly service packages?",
+    a: "Yes. Monthly plans may be available for SEO, social media marketing, Google Ads, website maintenance, and other ongoing requirements.",
   },
 ];

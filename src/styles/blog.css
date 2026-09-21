@@ -11,7 +11,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Montserrat', sans-serif;
   color: #1B1B2F;
-  background: #FFF8F3;
+  background: #f3f3f3;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -66,6 +66,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 160px 24px 100px;
   overflow: hidden;
   isolation: isolate;
+   width: 100%;
+  background: #1b1b2f;
 }
 
 /* dot-grid bg */
@@ -302,10 +304,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    MAIN WRAPPER
 ═══════════════════════════════════════════════ */
 .bl-main {
-  background: #FFF8F3;
-  padding: 70px 24px 100px;
-  max-width: 1240px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 70px max(24px, calc((100% - 1240px) / 2)) 100px;
+  background: #f3f3f3;
 }
 
 .bl-results {
@@ -626,6 +629,63 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .bl-nl__success {
   display: inline-flex; align-items: center; gap: 10px;
   color: #7FE6C4; font-size: 1rem; font-weight: 600;
+}
+
+
+
+
+/* HERO — MONOCHROME THEME */
+
+.bl-hero__grad {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #ffffff;
+  background-clip: initial;
+  color: #ffffff;
+  animation: none;
+}
+
+.bl-hero__badge-icon {
+  background: #ffffff;
+  color: #1b1b2f;
+}
+
+.bl-hero__badge-dot {
+  background: #a7a7b3;
+}
+
+.bl-hero__search:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+.bl-hero__search:focus-within .bl-hero__search-ico {
+  color: #ffffff;
+}
+
+.bl-hero__card-stat strong em {
+  color: #6e6b7b;
+}
+
+.bl-hero__card-stat:hover {
+  border-color: #a7a7b3;
+}
+
+.bl-hero__card-tag:hover {
+  border-color: #1b1b2f;
+  color: #1b1b2f;
+}
+
+/* Remove orange/green background glow */
+.bl-hero__orb--a,
+.bl-hero__orb--b,
+.bl-hero__orb--c {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.07) 0%,
+    transparent 70%
+  );
 }
 
 /* ═══════════════════════════════════════════════

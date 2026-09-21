@@ -1,18 +1,56 @@
-import image1 from "../../../public/clients/growth.jpg"
-import image2 from "../../../public/clients/famous.png"
-import image3 from "../../../public/clients/Ocean.png"
-import image4 from "../../../public/clients/jaguars.png"
+import image1 from "../../../public/clients/growth.jpg";
+import image2 from "../../../public/clients/famous.png";
+import image3 from "../../../public/clients/Ocean.png";
+import image4 from "../../../public/clients/jaguars.png";
 
+export const HERO_SLIDES = [
+  {
+    tag: "Arbaj Technology — Strategy. Creativity. Technology.",
+    titleLine1: "Digital Marketing",
+    titleLine2: "Company in Zirakpur",
+    titleLine3: "Built for Growth",
+    description:
+      "Grow your business with SEO, paid advertising, social media marketing, creative design and conversion-focused web development.",
+    image: "/hero/Growth-slide.png",
+  },
+  {
+    tag: "Arbaj Technology — Connect. Engage. Grow.",
+    titleLine1: "Social Media",
+    titleLine2: "Marketing That Builds",
+    titleLine3: "Your Brand",
+    description:
+      "Build a stronger social media presence through engaging content, consistent communication and campaigns created for your target audience.",
+    image: "/hero/Socail-media.png",
+  },
+  {
+    tag: "Arbaj Technology — Improve Visibility. Build Authority.",
+    titleLine1: "SEO Strategies",
+    titleLine2: "Built for Visibility",
+    titleLine3: "and Sustainable Growth",
+    description:
+      "Improve your search visibility and attract relevant organic traffic with technical SEO, content optimization and practical keyword strategies.",
+    image: "/hero/seo.png",
+  },
+  {
+    tag: "Arbaj Technology — Target. Connect. Convert.",
+    titleLine1: "Meta Ads",
+    titleLine2: "Reach the Right Audience",
+    titleLine3: "Generate Better Leads",
+    description:
+      "Reach relevant customers through focused Meta advertising campaigns designed around your business goals, audience and available budget.",
+    image: "/hero/Metaads.png",
+  },
+];
 
-
-
+/* ── Core services list — used by the directory layout for id / title / icon / link ── */
 export const SERVICES = [
   {
     id: 1,
     tag: "SEO",
     title: "SEO Services",
-    desc: "Improve your internet site’s Google ranking and attain your target marketplace with our a success search engine optimization answers. We offer keyword optimization, on-web page and rancid-web page optimization, technical search engine optimization, and exceptional one-way links to increase your site visitors.",
-    link: "/search-engine-optimization",
+    anchor: "search-engine-optimization",
+    desc: "Improve your website’s visibility in Google Search through keyword research, on-page optimization, technical audits, content improvements and ethical link-building strategies.",
+    link: "/services#search-engine-optimization",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -21,14 +59,14 @@ export const SERVICES = [
       </svg>
     ),
     accent: "#00d4ff",
-    
   },
   {
     id: 2,
     tag: "PPC",
-    title: "Google Ads ",
-    desc: "Seek instant exposure with our Google Ads answers. We lay out and manipulate powerful ad campaigns that attract real clients to your enterprise – helping you grow faster with tangible results",
-    link: "/google-ads", 
+    title: "Google Ads",
+    anchor: "google-ads",
+    desc: "Reach potential customers who are actively searching for your services through focused Google Ads campaigns, conversion tracking and continuous performance optimization.",
+    link: "/services#google-ads",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -41,9 +79,10 @@ export const SERVICES = [
   {
     id: 3,
     tag: "SMM",
-    title: "Social Media Marketing ",
-    link: "/social-media-marketing", 
-    desc: "Engage with your target audience and establish your logo on social media platforms along with Facebook, Instagram, LinkedIn, and YouTube. Our social media experts layout innovative content material and execute centered ad campaigns to growth your followers and engagement.",
+    title: "Social Media Marketing",
+    anchor: "social-media-marketing",
+    desc: "Build a consistent social presence with audience-focused content, creative campaigns, community engagement and paid advertising across relevant platforms.",
+    link: "/services#social-media-marketing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -57,9 +96,10 @@ export const SERVICES = [
   {
     id: 4,
     tag: "WEB",
-    title: "Web Development ",
-    desc: "Your internet site is your on-line id. We design and develop quick, modern, and cellular responsive internet sites that reflect your id flawlessly. Be it a commercial internet site or an e-commerce internet site, we design consumer-friendly internet sites for you.",
-    link: "/web-development", 
+    title: "Web Development",
+    anchor: "web-development",
+    desc: "We design and develop fast, responsive and user-friendly websites that represent your business clearly and support your marketing and lead-generation goals.",
+    link: "/services#web-development",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -74,8 +114,9 @@ export const SERVICES = [
     id: 5,
     tag: "DESIGN",
     title: "Graphic Design",
-    desc: " Our creative designers make your ideas come to life in terms of truth through our beautiful visuals. We offer emblems, banners, brochures, business cards, and social media pix that make your logo stand out and appearance expert.",
-    link: "/graphic-designing", 
+    anchor: "graphic-designing",
+    desc: "Build a recognizable visual identity with professional logos, social media creatives, banners, brochures and other designs tailored to your brand.",
+    link: "/services#graphic-designing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -90,8 +131,9 @@ export const SERVICES = [
     id: 6,
     tag: "VIDEO",
     title: "Video Editing",
-    desc: "We make fantastic films for promotions, advertisements, and social media content. Our video modifying team will make sure that your logo tale is told in a clean, engaging, and aesthetically pleasing fashion.",
-    link: "/video-editing", 
+    anchor: "video-editing",
+    desc: "Turn raw footage into polished promotional videos, advertisements, reels and social media content with thoughtful editing, sound and visual effects.",
+    link: "/services#video-editing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -102,6 +144,74 @@ export const SERVICES = [
     accent: "#ec4899",
   },
 ];
+
+/* ── Extra data for the directory-style Services layout — features + preview image
+     per service, keyed by the SERVICES id above. Put your actual photos in
+     /public/services/ and update the paths. ── */
+export const SERVICE_DIRECTORY_EXTRAS = {
+  1: { // SEO Services
+    tag: "SEO",
+    image: "/Service/SEO-1.png",
+    features: [
+      "Keyword Research & Strategy",
+      "On-Page & Technical SEO",
+      "Quality Link Building",
+      "Rankings & Traffic Reports",
+    ],
+  },
+  2: { // Google Ads
+    tag: "ADS",
+    image: "/Service/ad-campaigns.png",
+    features: [
+      "Campaign Strategy & Setup",
+      "Ad Copy & Creative",
+      "Bid & Budget Optimisation",
+      "Performance Tracking & ROI",
+    ],
+  },
+  3: { // Social Media Marketing
+    tag: "SMM",
+    image: "/Service/Social.png",
+    features: [
+      "Content Strategy & Calendar",
+      "Creative Design & Reels",
+      "Community Management",
+      "Ad Campaigns & Growth",
+    ],
+  },
+  4: { // Web Development
+    tag: "WEB",
+    image: "/Service/web.png",
+    features: [
+      "Custom Design & UX",
+      "Responsive Development",
+      "CMS & E-Commerce Integration",
+      "Testing, Launch & Support",
+    ],
+  },
+  5: { // Graphic Design
+    tag: "DESIGN",
+    image: "/Service/design.png",
+    features: [
+      "Logo & Brand Identity",
+      "Social Media Creatives",
+      "Brochures & Print Design",
+      "Packaging & Banners",
+    ],
+  },
+  6: { // Video Editing
+    tag: "VIDEO",
+    image: "/Service/VIDEO-EDIT.png",
+    features: [
+      "Creative Direction",
+      "Professional Editing",
+      "Color Grading & Sound",
+      "Social-Ready Deliverables",
+    ],
+  },
+};
+
+export const ROMAN = ["I", "II", "III", "IV"];
 
 export const STATS = [
   { number: "50+", label: "Happy Clients" },
@@ -131,9 +241,7 @@ export const FAQS = [
 
 export const CLIENTS = [
   { id: 1, name: "", logo: image1 },
-  { id: 2, name: "", logo: image2},
-  { id: 3, name: "", logo: image3},
-  { id: 4, name: "", logo: image4},
-  
-  
+  { id: 2, name: "", logo: image2 },
+  { id: 3, name: "", logo: image3 },
+  { id: 4, name: "", logo: image4 },
 ];

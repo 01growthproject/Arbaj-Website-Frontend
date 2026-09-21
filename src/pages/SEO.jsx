@@ -288,10 +288,10 @@ export default function SEOPage() {
     <>
 
       <SEOptimization
-        title="SEO Services in India | #1 SEO Company | Arbaj Technology"
+        title="SEO Services in Zirakpur & Chandigarh | Arbaj Technology"
         description="Boost your Google rankings with Arbaj Technology. We provide technical SEO, on-page SEO, link building, and local SEO services to grow your business online."
         keywords="SEO services India, SEO company India, local SEO Chandigarh, technical SEO, on page SEO, link building services, SEO expert India"
-        url="https://arbajtechnologypvtltd.com/seo"
+        url="https://arbajtechnologypvtltd.com/services/search-engine-optimization"
         image="https://arbajtechnologypvtltd.com/og-seo.jpg"
       />
     <main>
