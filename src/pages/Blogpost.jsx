@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import SEOptimization from "../components/SEOptimization";
 import { POSTS } from "../components/Post/Post";
-import "../styles/blogpost.css";
+import "../styles/Blogpost.css";
 
 const SITE_URL = "https://arbajtechnologypvtltd.com";
 
