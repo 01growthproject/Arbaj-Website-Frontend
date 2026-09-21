@@ -263,7 +263,11 @@ button {
   z-index: 1;
   pointer-events: none;
   overflow: hidden;
+  /* color: #050505; */
+  
 }
+
+
 .ab-hero__chartline svg {
   display: block;
   width: 100%;
@@ -271,8 +275,34 @@ button {
 }
 .ab-hero__chartline-fill {
   opacity: 0;
-  fill: #9d9ca1 !important;
+  fill: #a8b0c5 !important;
   animation: ab-fadeIn 1s ease 1.6s forwards;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 .ab-hero__chartline-stroke {
   fill: none;
@@ -471,17 +501,17 @@ button {
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #101010;
 }
 .ab-hero__stat strong em {
   font-style: normal;
-  color: var(--ab-accent-2);
+  /* color: var(--ab-accent-2); */
 }
 .ab-hero__stat span {
   display: block;
   margin-top: 4px;
   font-size: 0.82rem;
-  color: rgba(6, 6, 6, 0.831);
+  color: #101010;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;

@@ -1,8 +1,8 @@
 export const STATS = [
-  { number: "10", label: "Clients Served" },
+  { number: "10+", label: "Clients Served" },
   { number: "6", label: "Core Services" },
   { number: "5+", label: "Years Experience" },
-  { number: "10+", label: "Team Members" },
+  
 ];
 
 export const MVV = [
