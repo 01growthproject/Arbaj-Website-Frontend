@@ -169,8 +169,8 @@ export default function Portfolio() {
   return (
     <>
       <SEOptimization
-        title="Digital Marketing & Web Development Portfolio | Arbaj Technology"
-        description="Explore selected web development, SEO, social media, advertising, graphic design and video editing projects completed by Arbaj Technology."
+        title="Our Digital Marketing Portfolio | Arbaj Technology"
+        description="View our digital marketing projects including SEO, web development, social media marketing, video editing and paid ads. Call +91 79 7361 1226."
         url="https://arbajtechnologypvtltd.com/portfolio"
         schema={[PORTFOLIO_SCHEMA, PORTFOLIO_BREADCRUMB_SCHEMA]}
       />

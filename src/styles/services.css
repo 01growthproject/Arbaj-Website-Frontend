@@ -10,6 +10,12 @@
   --sv-muted: #969ba8;
   --sv-faint: #686d78;
 
+  --sv-radius-sm: 14px;
+  --sv-radius-md: 19px;
+  --sv-radius-lg: 24px;
+  --sv-shadow-soft: 0 14px 32px -18px rgba(0, 0, 0, 0.55);
+  --sv-shadow-elevated: 0 30px 65px -35px rgba(0, 0, 0, 0.9);
+
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--sv-text);
@@ -85,8 +91,8 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(2rem, 4.2vw, 3.65rem);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.08;
+  letter-spacing: -0.02em;
+  line-height: 1.14;
 }
 
 .sv-heading__title span {
@@ -198,8 +204,8 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(2.55rem, 5vw, 4.85rem);
   font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 1.02;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .sv-hero__word {
@@ -288,7 +294,7 @@
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025));
   border: 1px solid var(--sv-border-strong);
   border-radius: 28px;
-  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.42);
+  box-shadow: var(--sv-shadow-soft);
   animation: sv-fade-up 0.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
   margin-bottom: 50px; 
 }
@@ -470,7 +476,7 @@
   overflow: hidden;
   background: linear-gradient(145deg, #12141a, #0e1015);
   border: 1px solid var(--sv-border);
-  border-radius: 24px;
+  border-radius: var(--sv-radius-lg);
   opacity: 0;
   transform: translateY(28px);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
@@ -496,9 +502,9 @@
 }
 
 .sv-service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
   border-color: var(--sv-border-strong);
-  box-shadow: 0 30px 65px -35px rgba(0, 0, 0, 0.9);
+  box-shadow: var(--sv-shadow-elevated);
 }
 
 .sv-service-card:hover::after {
@@ -687,13 +693,14 @@
   padding: 25px;
   background: var(--sv-surface);
   border: 1px solid var(--sv-border);
-  border-radius: 19px;
-  transition: transform 0.35s ease, border-color 0.35s ease;
+  border-radius: var(--sv-radius-md);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .sv-process__content:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--sv-border-strong);
+  box-shadow: var(--sv-shadow-soft);
 }
 
 .sv-process__icon {
@@ -740,6 +747,7 @@
   background: linear-gradient(140deg, #171a21, #0d0f14 65%);
   border: 1px solid var(--sv-border-strong);
   border-radius: 30px;
+  box-shadow: var(--sv-shadow-soft);
 }
 
 .sv-closing__panel::after {
@@ -768,8 +776,8 @@
   font-family: "Sora", sans-serif;
   font-size: clamp(2rem, 4vw, 3.45rem);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .sv-closing__panel > p:not(.sv-eyebrow) {

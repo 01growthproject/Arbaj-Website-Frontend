@@ -301,12 +301,12 @@ function Services() {
                 <span>{extra.tag}</span>
               </div>
 
-              <Link to={s.link} className="service-directory__mobile-link">
+              {/* <Link to={s.link} className="service-directory__mobile-link">
                 View service
                 <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </Link>
+              </Link> */}
             </div>
           );
         })}
@@ -332,14 +332,16 @@ function About() {
             Your Reliable <em>Digital Growth Partner</em>
           </h2>
 
+         <p className="about-copy__text">
+  Our team of experienced{" "}
+  <Link to="/services" className="about-copy__link">
+    Digital Marketing Strategists
+  </Link>{" "}
+  at our digital marketing agency helps you grow online with modern solutions
+  designed to create a successful future.
+</p>
           <p className="about-copy__text">
-            Our team of experienced digital strategists helps you grow online
-            with modern solutions designed to create a successful future.
-          </p>
-          <p className="about-copy__text">
-            Every project is tailored to fit our clients' goals — whether you're
-            a new business or an established brand. We deliver only top quality
-            digital marketing solutions and work hard for measurable results.
+            Every project is tailored to fit our clients' goals — whether you're a new business or an established brand. We deliver high-quality digital marketing solutions and work hard to achieve measurable results.
           </p>
 
           <ul className="about-perks">
@@ -434,8 +436,8 @@ export default function HomePage() {
   return (
     <>
       <SEOptimization
-        title="Digital Marketing Company in Zirakpur | Arbaj Technology"
-        description="Arbaj Technology provides SEO, Google Ads, social media marketing and website development services in Zirakpur, Chandigarh and Mohali."
+        title="Best Digital Marketing Agency in Zirakpur | Arbaj Technology"
+        description="Boost your online presence with the Best Digital Marketing Agency in Zirakpur. SEO, web development, social media and paid advertising. Call +91 79 7361 1226."
         url="https://arbajtechnologypvtltd.com/"
         faqs={FAQS}
         schema={[LOCAL_BUSINESS_SCHEMA, WEBSITE_SCHEMA]}

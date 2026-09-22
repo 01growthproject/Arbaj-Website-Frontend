@@ -12,7 +12,7 @@ export const SERVICES = [
     title: "Search Engine Optimization",
     anchor: "search-engine-optimization",
     link: "/services#search-engine-optimization",
-    desc: "Improve your website's visibility in search results through keyword research, on-page optimization, technical SEO, content improvements, and responsible link-building strategies.",
+    desc: "We help your internet site appear higher on Google and get more potential customers. Our search engine optimization offerings enhance your internet site, target appropriate key phrases, and help carry additional visitors from search engines.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -22,21 +22,21 @@ export const SERVICES = [
     ),
     accent: "#00d4ff",
     features: [
-      "Keyword Research & Strategy",
-      "On-Page Optimization",
-      "Technical SEO Audits",
-      "Content Recommendations",
-      "Performance Reporting",
+      "Keyword Research",
+      "On-Page search engine marketing",
+      "Technical Search Engine Market",
+      "search engine marketing Content",
+      "Monthly performance reports",
     ],
-    result: "Stronger Organic Visibility",
+    result: "The expected result — more website visibility",
   },
   {
     id: 2,
     tag: "PPC",
-    title: "Google Ads",
+    title: "Paid Advertising",
     anchor: "google-ads",
     link: "/services#google-ads",
-    desc: "Reach people actively searching for your products or services with focused Google Ads campaigns, clear conversion tracking, and ongoing budget optimization.",
+    desc: "Reach the proper customers with focused paid advertising campaigns built to boom visibility, generate best leads, and assist measurable commercial enterprise boom.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -46,13 +46,14 @@ export const SERVICES = [
     ),
     accent: "#ff6b35",
     features: [
-      "Campaign Strategy & Setup",
-      "Keyword and Audience Targeting",
-      "Ad Copy Development",
-      "Conversion Tracking",
-      "Performance Reporting",
+      "Google & Meta Ads Campaigns",
+      "Audience & Keyword Targeting",
+      "Ad Creative & Copy Developmen",
+      "Conversion & Performance Tracking",
+      "Budget & Campaign Optimization",
+
     ],
-    result: "Focused Ad Performance",
+    result: "Expected outcome — Better Ad Reach & Lead Generation",
   },
   {
     id: 3,
@@ -60,7 +61,7 @@ export const SERVICES = [
     title: "Social Media Marketing",
     anchor: "social-media-marketing",
     link: "/services#social-media-marketing",
-    desc: "Build a consistent social presence through audience-focused content, creative campaigns, community engagement, and paid advertising across relevant platforms.",
+    desc: "Your social media need to do extra than simply fill your feed. We create content and campaigns that help your emblem live lively, reach the proper people, and build meaningful connections along with your target audience. From content material making plans to paid promotions, we manipulate your social presence with a clear method.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -71,13 +72,13 @@ export const SERVICES = [
     ),
     accent: "#a855f7",
     features: [
-      "Content Strategy & Calendar",
-      "Creative Post Design",
-      "Community Management",
-      "Paid Social Campaigns",
-      "Engagement Reporting",
+      "Social Media Strategy",
+      "Content Planning & Calendar",
+      "Post & Creative Design",
+      "Reels & Short-Form Content",
+      "Monthly Performance Reports",
     ],
-    result: "Stronger Audience Engagement",
+    result: "Expected Outcome: Stronger Brand Presence",
   },
   {
     id: 4,
@@ -85,7 +86,7 @@ export const SERVICES = [
     title: "Website Development",
     anchor: "web-development",
     link: "/services#web-development",
-    desc: "Get a fast, responsive, and user-friendly website designed to represent your business clearly and support your marketing and lead-generation goals.",
+    desc: "Create an professional internet site that appears first-rate, capabilities easily, and cleans amongst your clients to get in contact with your commercial organisation. We construct web sites which are designed round your logo, audience, and business organisation choice.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -96,13 +97,13 @@ export const SERVICES = [
     ),
     accent: "#22c55e",
     features: [
-      "Custom UI/UX Design",
-      "Responsive Development",
-      "E-Commerce Solutions",
-      "SEO-Ready Structure",
-      "Speed Optimization",
+      "Custom website design",
+      "Mobile-friendly and responsive",
+      "E-trade website development",
+      "search engine optimization-friendly internet site shape",
+      "Fast loading and optimized performance",
     ],
-    result: "Conversion-Focused Experience",
+    result: "Built for Performance & Growth",
   },
   {
     id: 5,
@@ -110,7 +111,7 @@ export const SERVICES = [
     title: "Graphic Design",
     anchor: "graphic-designing",
     link: "/services#graphic-designing",
-    desc: "Create a recognizable visual identity with professional logos, social media creatives, banners, brochures, and other designs tailored to your brand.",
+    desc: "Make your logo stand out with creative and expert designs that talk your message honestly. From trademarks and social media posts to brochures and promotional creatives, we create designs that fit your brand fashion and business desires.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -121,13 +122,13 @@ export const SERVICES = [
     ),
     accent: "#f59e0b",
     features: [
-      "Logo & Brand Identity",
-      "Social Media Graphics",
-      "Brochure & Flyer Design",
-      "Business Card Design",
-      "Banner & Ad Creatives",
+      "Logo & Visual Identity Design",
+      "Social Media Post & Creative Design",
+      "Brochure, Flyer & Catalogue Design",
+      "Business Card & Stationery Design",
+      "Promotional Banner & Ad Creative Design",
     ],
-    result: "Consistent Brand Identity",
+    result: "Expected Outcome: Strong & Consistent Brand Presence",
   },
   {
     id: 6,
@@ -135,7 +136,7 @@ export const SERVICES = [
     title: "Video Editing",
     anchor: "video-editing",
     link: "/services#video-editing",
-    desc: "Turn raw footage into polished promotional videos, advertisements, reels, and social content through thoughtful editing, sound, subtitles, and visual effects.",
+    desc: "We create easy, engaging videos that help your logo talk its message certainly and hook up with your target audience. From social media reels to promotional motion pictures and ad creatives, our group handles the enhancing, visuals, audio, and completing touches.",
     icon: (
       <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -145,13 +146,13 @@ export const SERVICES = [
     ),
     accent: "#ec4899",
     features: [
-      "Promotional Video Editing",
-      "Instagram Reels & Shorts",
-      "Ad Creative Editing",
-      "Motion Graphics",
-      "Subtitles & Sound Design",
+      "Promotional & Brand Videos",
+      "Instagram Reels & YouTube Shorts",
+      "Social Media Ad Videos",
+      "Motion Graphics & Visual Effects",
+      "Subtitles, Captions & Sound Editing",
     ],
-    result: "More Engaging Video Content",
+    result: "Expected Outcome Professional & Engaging Video Content",
   },
 ];
 

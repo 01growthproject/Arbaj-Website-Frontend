@@ -153,60 +153,60 @@ export const SERVICE_DIRECTORY_EXTRAS = {
     tag: "SEO",
     image: "/Service/SEO-1.png",
     features: [
-      "Keyword Research & Strategy",
-      "On-Page & Technical SEO",
-      "Quality Link Building",
-      "Rankings & Traffic Reports",
+      "Audit and keyword research",
+      "On-site and technical optimization",
+      "Content and link building",
+      "Traffic and strength gains",
     ],
   },
   2: { // Google Ads
     tag: "ADS",
     image: "/Service/ad-campaigns.png",
     features: [
-      "Campaign Strategy & Setup",
-      "Ad Copy & Creative",
-      "Bid & Budget Optimisation",
-      "Performance Tracking & ROI",
+      "Google Search and view adsp",
+      "Keyword research and advertising strategy",
+      "Campaign setup and optimization",
+      "Conversion and results tracking",
     ],
   },
   3: { // Social Media Marketing
     tag: "SMM",
     image: "/Service/Social.png",
     features: [
-      "Content Strategy & Calendar",
-      "Creative Design & Reels",
-      "Community Management",
-      "Ad Campaigns & Growth",
+      "Social media strategy and planning",
+      "Content creation and management",
+      "Audience engagement and growth",
+      "Results tracking and reporting",
     ],
   },
   4: { // Web Development
     tag: "WEB",
     image: "/Service/web.png",
     features: [
-      "Custom Design & UX",
+      "Custom Web Solutions",
+      "Modern UI/UX Design",
       "Responsive Development",
-      "CMS & E-Commerce Integration",
-      "Testing, Launch & Support",
+      "Performance Optimization",
     ],
   },
   5: { // Graphic Design
     tag: "DESIGN",
     image: "/Service/design.png",
     features: [
-      "Logo & Brand Identity",
-      "Social Media Creatives",
-      "Brochures & Print Design",
-      "Packaging & Banners",
+      "Social media and advertising",
+      "Logo design and brand identity",
+      "Posters, banners and brochures",
+      "Creative and professional photography",
     ],
   },
   6: { // Video Editing
     tag: "VIDEO",
     image: "/Service/VIDEO-EDIT.png",
     features: [
-      "Creative Direction",
-      "Professional Editing",
-      "Color Grading & Sound",
-      "Social-Ready Deliverables",
+      "Wheels and Short Form Video Essay",
+      "Advertising and promotional videos",
+      "Motion graphics and visual effects",
+      "Color grading and expert editing",
     ],
   },
 };
@@ -222,21 +222,25 @@ export const STATS = [
 
 export const FAQS = [
   {
+    q: "Do you work with small agencies and startups?",
+    a: "Yes, we work with startups, small organizations and hooked up businesses and create virtual advertising and marketing solutions primarily based on their dreams and necessities.",
+  },
+  {
+    q: "What services does your digital advertising agency offer?",
+    a: "We offer search engine optimization, website design and development, social media marketing, Google Ads, Meta Ads, graphic design, video editing and other virtual advertising services.",
+  },
+  {
+    q: "Why is Arbaj Technology the best digital marketing company for me?",
+    a: "Arbaj Technology is the best choice because we focus on real results, use proven marketing strategies, and give personal support to help your business grow faster online.",
+  },
+  {
+    q: "How long does SEO take to show results?",
+    a: "SEO is a long-term process. Results can vary depending on your website, competition, keywords and the SEO strategy being used.",
+  },
+   {
     q: "How do I get started with your agency?",
-    a: "To get started, just contact us and tell us about your business. Our team will understand your goals and create an easy, effective plan to grow your business online.",
-  },
-  {
-    q: "WHAT SERVICES DOES YOUR AGENCY OFFER?",
-    a: "We offer SEO, Google Ads, social media marketing, website design, website development, graphic design, and video editing services to help your business grow and build a strong online presence.",
-  },
-  {
-    q: "Why is ARBAJ TECHNOLOGY the best digital marketing company for me?",
-    a: "ARBAJ TECHNOLOGY is the best choice because we focus on real results, use proven marketing strategies, and give personal support to help your business grow faster online.",
-  },
-  {
-    q: "How do I get started with your agency?",
-    a: " Getting started is easy! Reach out to ARBAJ TECHNOLOGY PVT.LTD, and our experts will guide you step- by - step to boost your online growth.",
-  },
+    a: "Getting started is easy. Contact our team at +91 79 7361 1226 and share your business goals and requirements. We’ll discuss your needs and suggest the right digital marketing solutions for your business.",
+  }
 ];
 
 export const CLIENTS = [

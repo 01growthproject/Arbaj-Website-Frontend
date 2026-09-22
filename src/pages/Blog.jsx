@@ -60,8 +60,8 @@ function Newsletter() {
 
   return (
     <SEOptimization
-      title="Digital Marketing Blog | SEO & Growth Tips | Arbaj Technology"
-      description="Read practical SEO, Google Ads, social media, and web development tips from Arbaj Technology in Zirakpur to help your business grow online."
+      title="Digital Marketing Blog | SEO, Ads & Business Growth Tips"
+      description="Explore our Digital Marketing Blog for practical SEO, social media, Google Ads and website growth tips to reach more customers online. Call +91 79 7361 1226."
       url={`${SITE_URL}/blog`}
       image={`${SITE_URL}/lg.webp`}
       schema={schema}

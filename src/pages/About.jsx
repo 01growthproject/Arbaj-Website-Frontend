@@ -238,7 +238,6 @@ function WhoWeAre() {
             {[
               "10 Clients Served",
               "5+ Years of Industry Experience",
-              "10+ Team Members",
               "Transparent Project Communication",
               "Dedicated Client Support",
             ].map((feature, index) => (
@@ -265,18 +264,13 @@ function WhoWeAre() {
 
 
             <div className="ab-bento-tile__num">
-              <em>10</em>
+              10<em>+</em>
             </div>
             <div className="ab-bento-tile__label">Clients Served</div>
           </div>
 
 
-          <div className="ab-bento-tile ab-bento-tile--coral">
-            <div className="ab-bento-tile__num">
-              10<em>+</em>
-            </div>
-            <div className="ab-bento-tile__label">Team Members</div>
-          </div>
+         
 
 
           <div className="ab-bento-tile">
@@ -604,8 +598,8 @@ export default function AboutPage() {
   return (
     <>
       <SEOptimization
-        title="About Arbaj Technology | Digital Agency in Zirakpur"
-        description="Learn about Arbaj Technology, a Zirakpur-based team providing SEO, Google Ads, social media, web development, design and video editing services since 2021."
+        title="About Us | Digital Marketing Agency"
+        description="Learn about Arbaj Technology, a Zirakpur-based team providing SEO, Google Ads, social media, web development, design and video editing services since 202Get to know our team and services. About Us gives you an overview of SEO, website development, social media, Google Ads and Meta Ads. Call +91 79 7361 1226."
         url="https://arbajtechnologypvtltd.com/about"
         faqs={FAQS}
         schema={[ABOUT_PAGE_SCHEMA, ABOUT_BREADCRUMB_SCHEMA]}

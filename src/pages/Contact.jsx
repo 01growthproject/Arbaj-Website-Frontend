@@ -215,5 +215,8 @@ function FinalCTA() {
 }
 
 export default function ContactPage() {
-  return <><SEOptimization title="Contact Arbaj Technology | Free Digital Marketing Consultation" description="Contact Arbaj Technology in Zirakpur for SEO, Google Ads, social media and website development. Book a free consultation." keywords="contact Arbaj Technology, digital marketing agency Zirakpur, website development Punjab" url="https://arbajtechnologypvtltd.com/contact" image="https://arbajtechnologypvtltd.com/og-contact.jpg" faqs={FAQS} /><main className="ct-page"><Hero /><Methods /><Trust /><Location /><FAQs /><FinalCTA /></main></>;
+  return <><SEOptimization title="Contact Us | Digital Marketing Agency in Zirakpur."
+   description="Contact a digital marketing agency in Zirakpur for SEO, web development, social media marketing, Google Ads and Meta Ads. Call +91 79 7361 1226." 
+    
+    url="https://arbajtechnologypvtltd.com/contact" image="https://arbajtechnologypvtltd.com/og-contact.jpg" faqs={FAQS} /><main className="ct-page"><Hero /><Methods /><Trust /><Location /><FAQs /><FinalCTA /></main></>;
 }

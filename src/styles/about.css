@@ -130,7 +130,7 @@ button {
 .ab-title em {
   font-style: normal;
   color: var(--ab-accent-2);
-  position: relative;
+  /* position: relative; */
   white-space: nowrap;
 }
 .ab-title em::after {
@@ -1036,10 +1036,10 @@ button {
 ═══════════════════════════════════════════════ */
 
 .ab-member-card__img-wrap {
-  width: 340x;
+  width: 338px;
   height: 340px;
 
-  /* min-width: 338px; */
+  min-width: 338px;
   flex-shrink: 0;
 
   /* border-radius: 50%; */
@@ -1956,5 +1956,461 @@ button {
   }
   .ab-profile-card {
     animation: ab-cardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards !important;
+  }
+}
+
+/* ==================================================
+   FINAL RESPONSIVE CORRECTIONS
+   Keeps all content visible and prevents overflow
+================================================== */
+
+/* Keep the decorative chart dark enough for white text. */
+.ab-hero__chartline-fill {
+  fill: #171923 !important;
+}
+
+.ab-hero__chartline-stroke {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+
+.ab-hero__stat strong,
+.ab-hero__stat strong em {
+  color: #ffffff;
+}
+
+.ab-hero__stat span {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 900px) {
+  .ab-hero {
+    width: 100%;
+    min-height: auto;
+    padding: 120px 20px 60px;
+  }
+
+  .ab-hero__inner {
+    width: min(100%, 680px);
+    min-width: 0;
+    margin-inline: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .ab-hero__copy {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .ab-hero__badge {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  .ab-hero__heading {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto 22px;
+    font-size: clamp(2.3rem, 7.5vw, 3.8rem);
+    line-height: 1.1;
+    overflow-wrap: break-word;
+  }
+
+  .ab-hero__heading-row {
+    width: 100%;
+  }
+
+  .ab-hero__para {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.72);
+    text-align: center;
+  }
+
+  .ab-hero__btns {
+    justify-content: center;
+    margin-bottom: 36px;
+  }
+
+  .ab-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 12px;
+    padding: 0;
+  }
+
+  .ab-hero__stat {
+    min-width: 0;
+    padding: 18px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.055);
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+
+  .ab-hero__stat strong {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .ab-hero__stat span {
+    margin-top: 7px;
+    font-size: 0.68rem;
+    line-height: 1.45;
+    letter-spacing: 0.08em;
+  }
+
+  .ab-hero__chartline {
+    bottom: 0;
+    height: 34%;
+    opacity: 0.4;
+  }
+
+  .ab-profile-card {
+    width: min(100%, 560px);
+    min-width: 0;
+    margin-inline: auto;
+    padding: 26px;
+    overflow: hidden;
+    border-color: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(145deg, #1b1b28, #11111b);
+    box-shadow: 0 24px 55px -28px rgba(0, 0, 0, 0.9);
+    animation: ab-cardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards !important;
+  }
+
+  .ab-story__layout,
+  .ab-story__text,
+  .ab-story__bento,
+  .ab-team,
+  .ab-team__track,
+  .ab-member-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .ab-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 56px 16px;
+  }
+
+  /* Hero */
+  .ab-hero {
+    padding: 104px 16px 48px;
+  }
+
+  .ab-hero__inner {
+    gap: 28px;
+  }
+
+  .ab-hero__badge {
+    padding: 7px 13px 7px 8px;
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .ab-hero__heading {
+    margin-bottom: 18px;
+    font-size: clamp(1.9rem, 9vw, 2.65rem);
+    line-height: 1.12;
+  }
+
+  .ab-hero__accent {
+    white-space: normal;
+  }
+
+  .ab-hero__para {
+    margin-bottom: 25px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .ab-hero__btns {
+    width: 100%;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 30px;
+  }
+
+  .ab-hero__btns .ab-btn {
+    width: 100%;
+    min-height: 50px;
+    justify-content: center;
+  }
+
+  .ab-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0;
+  }
+
+  .ab-hero__stat {
+    padding: 16px 10px;
+    border-radius: 14px;
+  }
+
+  .ab-hero__stat strong {
+    font-size: 1.55rem;
+  }
+
+  .ab-hero__stat span {
+    font-size: 0.61rem;
+    line-height: 1.4;
+  }
+
+  .ab-hero__chartline {
+    height: 28%;
+    opacity: 0.25;
+  }
+
+  /* Profile card */
+  .ab-profile-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 16px;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .ab-profile-card__header {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .ab-profile-card__logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+  }
+
+  .ab-profile-card__name {
+    font-size: 0.95rem;
+  }
+
+  .ab-profile-card__tagline {
+    font-size: 0.66rem;
+    line-height: 1.4;
+  }
+
+  .ab-profile-card__rows {
+    gap: 13px;
+  }
+
+  .ab-profile-card__row {
+    display: grid;
+    grid-template-columns: 82px minmax(45px, 1fr) 72px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .ab-profile-card__row-label {
+    min-width: 0;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  .ab-profile-card__row-bar {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .ab-profile-card__row-val {
+    width: 72px;
+    min-width: 72px;
+    font-size: 0.67rem;
+    color: #ffffff;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .ab-profile-card__tags {
+    gap: 7px;
+  }
+
+  .ab-profile-card__tag {
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+
+  /* Story */
+  .ab-story__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 38px;
+  }
+
+  .ab-story__text {
+    order: 1;
+  }
+
+  .ab-story__bento {
+    order: 2;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .ab-bento-tile,
+  .ab-bento-tile--wide {
+    width: 100%;
+    min-width: 0;
+    grid-column: auto;
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 17px;
+  }
+
+  .ab-bento-tile__num {
+    font-size: 2.2rem;
+  }
+
+  .ab-bento-tile__wide-inner {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .ab-bento-tile__text {
+    min-width: 0;
+  }
+
+  .ab-bento-tile__text strong,
+  .ab-bento-tile__text p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Team */
+  .ab-team {
+    overflow: hidden;
+  }
+
+  .ab-team__track {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .ab-member-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 24px 18px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .ab-member-card__img-wrap {
+    width: min(100%, 250px);
+    min-width: 0;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 22px;
+    background: #202020;
+  }
+
+  .ab-member-card__img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: none;
+  }
+
+  .ab-member-card__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-width: 0;
+    margin: 18px 0 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .ab-member-card__name {
+    max-width: 100%;
+    font-size: 1.15rem;
+    overflow-wrap: break-word;
+  }
+
+  .ab-member-card__role {
+    font-size: 0.84rem;
+  }
+
+  /* Contained feature sections */
+  .ab-mvv,
+  .ab-timeline,
+  .ab-faq {
+    width: auto;
+    max-width: calc(100% - 24px);
+    margin-inline: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .ab-mvv__inner,
+  .ab-timeline__inner,
+  .ab-faq__inner {
+    width: 100%;
+    min-width: 0;
+    padding: 44px 18px;
+  }
+
+  .ab-tl-card,
+  .ab-faq-item,
+  .ab-mvv-card {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 380px) {
+  .ab-section,
+  .ab-hero {
+    padding-inline: 14px;
+  }
+
+  .ab-hero__heading {
+    font-size: 1.85rem;
+  }
+
+  .ab-profile-card {
+    padding-inline: 14px;
+  }
+
+  .ab-profile-card__row {
+    grid-template-columns: 70px minmax(32px, 1fr) 65px;
+    gap: 6px;
+  }
+
+  .ab-profile-card__row-val {
+    width: 65px;
+    min-width: 65px;
+    font-size: 0.61rem;
+  }
+
+  .ab-bento-tile__wide-inner {
+    flex-direction: column;
+  }
+
+  .ab-member-card__img-wrap {
+    width: min(100%, 220px);
+    height: 220px;
   }
 }

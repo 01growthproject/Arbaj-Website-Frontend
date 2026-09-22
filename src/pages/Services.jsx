@@ -218,10 +218,9 @@ function ServicesShowcase() {
     >
       <div className="sv-shell">
         <SectionHeading
-          eyebrow="Our Expertise"
-          title="One team. Every essential"
-          highlight="digital service."
-          description="We combine strategy, creativity and technology to build solutions that support every stage of your digital growth."
+          eyebrow="Our Services"
+          title="Everything You Need to Grow Online"
+          description="From marketing and marketing to internet improvement and innovative services, we offer the virtual solutions your enterprise needs to develop and build a robust online presence."
         />
 
         <div className="sv-services__grid">
@@ -348,8 +347,8 @@ export default function ServicePage() {
   return (
     <>
       <SEOptimization
-        title="Digital Marketing Services in Zirakpur | Arbaj Technology"
-        description="Explore SEO, Google Ads, social media marketing, website development, graphic design and video editing services from Arbaj Technology in Zirakpur."
+        title="Complete Digital Marketing Services in Zirakpur"
+        description="Professional SEO, web development, social media marketing, Google Ads, Meta Ads, graphic design and video editing services for businesses in Zirakpur. Call +91 79 7361 1226."
         url="https://arbajtechnologypvtltd.com/services"
         schema={[SERVICES_SCHEMA, BREADCRUMB_SCHEMA]}
       />
