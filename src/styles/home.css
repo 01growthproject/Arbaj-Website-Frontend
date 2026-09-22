@@ -834,7 +834,7 @@ a {
   text-decoration: none;
   transition: color 260ms ease;
 }
-.service-directory__row--active .service-directory__name { color: #fff; }
+/* .service-directory__row--active .service-directory__name { color: #fff; } */
 
 .service-directory__number {
   color: var(--text-4);
@@ -856,6 +856,7 @@ a {
   transform: translateX(-7px);
   transition: opacity 220ms ease, transform 220ms ease;
   flex-shrink: 0;
+  display: none;
 }
 .service-directory__row--active .service-directory__arrow { opacity: 1; transform: translateX(0); }
 

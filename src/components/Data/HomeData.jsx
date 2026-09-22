@@ -50,7 +50,7 @@ export const SERVICES = [
     title: "SEO Services",
     anchor: "search-engine-optimization",
     desc: "Improve your website’s visibility in Google Search through keyword research, on-page optimization, technical audits, content improvements and ethical link-building strategies.",
-    link: "/services#search-engine-optimization",
+    // link: "/services#search-engine-optimization",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="17" cy="17" r="10" stroke="currentColor" strokeWidth="2.5" />
@@ -66,7 +66,7 @@ export const SERVICES = [
     title: "Google Ads",
     anchor: "google-ads",
     desc: "Reach potential customers who are actively searching for your services through focused Google Ads campaigns, conversion tracking and continuous performance optimization.",
-    link: "/services#google-ads",
+    // link: "/services#google-ads",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M8 32L16 20L22 26L28 14L36 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -82,7 +82,7 @@ export const SERVICES = [
     title: "Social Media Marketing",
     anchor: "social-media-marketing",
     desc: "Build a consistent social presence with audience-focused content, creative campaigns, community engagement and paid advertising across relevant platforms.",
-    link: "/services#social-media-marketing",
+    // link: "/services#social-media-marketing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <circle cx="8" cy="20" r="4" stroke="currentColor" strokeWidth="2.5" />
@@ -99,7 +99,7 @@ export const SERVICES = [
     title: "Web Development",
     anchor: "web-development",
     desc: "We design and develop fast, responsive and user-friendly websites that represent your business clearly and support your marketing and lead-generation goals.",
-    link: "/services#web-development",
+    // link: "/services#web-development",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" strokeWidth="2.5" />
@@ -116,7 +116,7 @@ export const SERVICES = [
     title: "Graphic Design",
     anchor: "graphic-designing",
     desc: "Build a recognizable visual identity with professional logos, social media creatives, banners, brochures and other designs tailored to your brand.",
-    link: "/services#graphic-designing",
+    // link: "/services#graphic-designing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <path d="M10 30L8 36l6-2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -133,7 +133,7 @@ export const SERVICES = [
     title: "Video Editing",
     anchor: "video-editing",
     desc: "Turn raw footage into polished promotional videos, advertisements, reels and social media content with thoughtful editing, sound and visual effects.",
-    link: "/services#video-editing",
+    // link: "/services#video-editing",
     icon: (
       <svg viewBox="0 0 40 40" fill="none">
         <rect x="4" y="10" width="24" height="20" rx="3" stroke="currentColor" strokeWidth="2.5" />
