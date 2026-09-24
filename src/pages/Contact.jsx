@@ -197,11 +197,11 @@ function Trust() {
 function Location() {
   const [ref, show] = useReveal();
   return <section ref={ref} className={`ct-section ct-location ct-reveal ${show ? "is-visible" : ""}`} id="contact-map"><div className="ct-container"><Heading eyebrow="Our office" title="Visit us in Zirakpur, Punjab" text="Find us at Royale Estate Complex near Oxford Street. We’d be happy to discuss your project." /><div className="ct-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.445313565068!2d76.82016207633792!3d30.649586489645014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f95e047b300e3%3A0x3b2f6db977f15214!2sARBAJ%20TECHNOLOGY%20PVT.%20LTD!5e0!3m2!1sen!2sin!4v1775884244256!5m2!1sen!2sin" title="Arbaj Technology office" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div><i><Icon name="pin" /></i><span><strong>Arbaj Technology Pvt. Ltd.</strong>
-  
-  <small>
-  2nd Floor, SCO 40, Royale Estate Complex, Near Oxford Street,
-  Zirakpur, Punjab 140603, India
-</small>
+
+    <small>
+      2nd Floor, SCO 40, Royale Estate Complex, Near Oxford Street,
+      Zirakpur, Punjab 140603, India
+    </small>
   </span></div></div></div></section>;
 }
 
@@ -215,8 +215,15 @@ function FinalCTA() {
 }
 
 export default function ContactPage() {
-  return <><SEOptimization title="Contact Us | Digital Marketing Agency in Zirakpur."
-   description="Contact a digital marketing agency in Zirakpur for SEO, web development, social media marketing, Google Ads and Meta Ads. Call +91 79 7361 1226." 
-    
-    url="https://arbajtechnologypvtltd.com/contact" image="https://arbajtechnologypvtltd.com/og-contact.jpg" faqs={FAQS} /><main className="ct-page"><Hero /><Methods /><Trust /><Location /><FAQs /><FinalCTA /></main></>;
+  return <><SEOptimization title="Contact Us | Digital Marketing Agency in Zirakpur"
+    description="Contact a digital marketing agency in Zirakpur for SEO, web development, social media marketing, Google Ads and Meta Ads. Call +91 79 7361 1226."
+
+    url="https://arbajtechnologypvtltd.com/contact" image="https://arbajtechnologypvtltd.com/og-contact.jpg"
+    faqs={FAQS}
+
+    schema={[
+      CONTACT_BUSINESS_SCHEMA,
+      CONTACT_PAGE_SCHEMA,
+      CONTACT_BREADCRUMB_SCHEMA,
+    ]} /><main className="ct-page"><Hero /><Methods /><Trust /><Location /><FAQs /><FinalCTA /></main></>;
 }

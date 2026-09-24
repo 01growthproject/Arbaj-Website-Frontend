@@ -4,7 +4,7 @@ const SITE_NAME = "Arbaj Technology Pvt. Ltd.";
 const SITE_URL = "https://arbajtechnologypvtltd.com";
 
 const DEFAULT_TITLE =
-  "Best Digital Marketing Agency in Zirakpur | Arbaj Technology.";
+  "Best Digital Marketing Agency in Zirakpur | Arbaj Technology";
 
 const DEFAULT_DESCRIPTION =
   "Boost your online presence with the Best Digital Marketing Agency in Zirakpur. SEO, web development, social media and paid advertising. Call +91 79 7361 1226.";
@@ -24,7 +24,7 @@ function getAbsoluteUrl(value) {
 export default function SEOOptimization({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
-  url = SITE_URL,
+  url,
   image = DEFAULT_IMAGE,
   type = "website",
   schema,

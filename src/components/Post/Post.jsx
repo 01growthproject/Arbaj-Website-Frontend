@@ -375,9 +375,9 @@ Whether you're looking at search engine marketing or social media marketing, con
   {
     id: 3,
     slug: "10-reasons-to-hire-a-digital-marketing-agency-zirakpur-for-online-success",
-    date: "20 July 2026",
-    dateISO: "2026-07-20",
-    modifiedDate: "2026-07-20",
+    date: "24 Sep 2026",
+    dateISO: "24 Sep 2026",
+    modifiedDate: "24 Sep 2026",
     author: "Arbaj Technology Editorial Team",
     readTime: "8 min read",
     title: "10 Reasons to Hire a Digital Marketing Agency Zirakpur for Online Success",
