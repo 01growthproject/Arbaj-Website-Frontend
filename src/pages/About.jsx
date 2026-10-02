@@ -270,7 +270,7 @@ function WhoWeAre() {
           </div>
 
 
-         
+
 
 
           <div className="ab-bento-tile">
@@ -598,11 +598,10 @@ export default function AboutPage() {
   return (
     <>
       <SEOptimization
-        title="About Us | Digital Marketing Agency"
-        description="Learn about Arbaj Technology, a Zirakpur-based team providing SEO, Google Ads, social media, web development, design and video editing services since 202Get to know our team and services. About Us gives you an overview of SEO, website development, social media, Google Ads and Meta Ads. Call +91 79 7361 1226."
+        title="About Us | Digital Marketing Agency in Zirakpur"
+        description="Learn about Arbaj Technology, a Zirakpur-based digital marketing agency providing SEO, Google Ads, social media marketing, web development, graphic design and video editing services."
         url="https://arbajtechnologypvtltd.com/about"
-        faqs={FAQS}
-        schema={[ABOUT_PAGE_SCHEMA, ABOUT_BREADCRUMB_SCHEMA]}
+        image="https://arbajtechnologypvtltd.com/lg.webp"
       />
       <main>
         <AboutHero />
